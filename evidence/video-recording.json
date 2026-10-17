@@ -1,0 +1,48 @@
+{
+  "recordedOn": "2026-10-18",
+  "format": "Edited real Chrome tab capture with Chinese subtitles; no audio narration",
+  "durationSeconds": 238.7,
+  "sourceCaptureSeconds": 248.66,
+  "sourceRangeUsed": [
+    31,
+    234
+  ],
+  "publicTransactionsSent": false,
+  "localChainId": 31337,
+  "publicChainId": 11155111,
+  "localActions": [
+    "approve",
+    "deposit",
+    "selectStrategy",
+    "rebalance",
+    "setPaused(true)",
+    "redeem"
+  ],
+  "localInitialSeedCash": 10000,
+  "localAddedDeposit": 1000,
+  "localNavAfterRebalance": 10982.4,
+  "localRemainingShares": 8250,
+  "publicEvidenceKinds": 10,
+  "publicCoreKindsExcludingApprove": 9,
+  "notes": [
+    "Intro, architecture and closing pages are static explanatory slides.",
+    "Browser tab capture excludes browser chrome and wallet side panel.",
+    "Later direct API navigation was blocked by the browser and is outside the retained clip.",
+    "No live market or unattended public Keeper claim."
+  ],
+  "validation": {
+    "fullDecodePassed": true,
+    "width": 1280,
+    "height": 960,
+    "codec": "H.264",
+    "fps": 20,
+    "audioNarration": false,
+    "visualReview": "Keyframes checked across captured actions, public evidence, introductory and closing slides"
+  },
+  "files": {
+    "AlphaVault-Report-Draft.docx": "7c7f1c50225a5e9464f290e679641714db300b3dde65d1ad036503848869e008",
+    "AlphaVault-Presentation.pptx": "bc55e12b25659d63bd322d9ac99034ead9b4926407b5c32299c56f66a5fa2d60",
+    "AlphaVault-Demo.mp4": "bde84d58806829859db1e4bce5a3b30ba88f9f093f4b7eb3018741fb1dc2948e",
+    "AlphaVault-Demo.zh-CN.srt": "4ecbb53e34706a166cdc15a5e4725588df7d320951903791152591e035691c63"
+  }
+}

@@ -11,7 +11,7 @@ Source: requirements explicitly supplied in the current request. No original ass
 | REST API | Health/config/prices/strategies/portfolio/account/history/snapshots/jobs/backtests/calldata | Implemented and HTTP-tested |
 | Persistent database | Local SQLite WAL / hosted PostgreSQL; events, prices, strategies, snapshots, jobs, backtests, cursor and receipts | Implemented; local reopen/rollback and hosted restart sentinel verified |
 | Public deployment | MetaMask deployment wizard, resumable CLI, verified manifest import, wallet-only server, Render Free container + Supabase PostgreSQL | Sepolia business acceptance and public HTTPS/API deployment complete; cloud restart verified |
-| Submission materials | README, source, lockfile, tests, evidence, report/deck/demo skeletons | MVP pack ready; final report/video not claimed |
+| Submission materials | README, source, lockfile, tests, evidence, editable report/slides and recorded demo | Review draft ready; identity and final rubric reconciliation pending |
 | Quantitative asset management | Three allocation rules, bounded execution, synthetic backtest | Implemented; empirical market validation pending |
 
 ## Existing-project inventory
@@ -27,7 +27,7 @@ No existing source files, deployment files, .env files, wallets or reports were 
 ## Before final submission
 
 - Obtain the official handout and confirm individual submission rules, report length, required video length, filename convention, submission deadline and deployment availability window.
-- Publish the complete website/API with durable storage; AlphaVault contracts and initialization are already deployed on Sepolia.
+- Public website/API and durable PostgreSQL are deployed and restart-tested. Confirm availability throughout the marking window.
 - Ten distinct successful methods are recorded in `evidence/sepolia-business-evidence.json`, including ERC20 approval. If the official rubric excludes approval, add a core method such as strategy enablement; nine distinct core methods are currently demonstrated on Sepolia.
 - Verify all role wallets, chain IDs and contract addresses in the final report.
-- Complete report analysis, screenshots, citations, presentation and demonstration recording.
+- Review the 7-page report, 10-slide presentation and recorded demonstration in `submission/`; complete identity and any rubric-specific changes. See `SUBMISSION_CHECKLIST.zh-CN.md`.

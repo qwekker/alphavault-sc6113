@@ -169,7 +169,8 @@ scripts/         Compiler, chain setup, local runner, Keeper, deployment, eviden
 server/          REST API, SQLite/PostgreSQL stores, chain indexer, quantitative methods
 public/          Buildless responsive dashboard with locally bundled ethers
 test/            EVM, API and quant tests
-docs/            Architecture, API, deployment and submission skeletons
+docs/            Architecture, API, deployment and report source
+submission/      Editable report, slides, demo video and subtitles
 evidence/        Reproducible local results and verification records
 data/            Ignored persistent runtime data; separate local/Sepolia scopes
 ```
@@ -183,3 +184,7 @@ Set `DATABASE_URL` to the Supabase **Session pooler** connection string (port 54
 The indexer atomically commits the ledger and cursor, retaining the latest 2,000 portfolio/price/strategy snapshots per deployment. Events and verified receipts remain persistent. The API displays the latest 200 snapshots. The free Render process sleeps when idle; this deployment does not run an unattended signing Keeper.
 
 `test/postgres.test.mjs` runs actual PostgreSQL SQL using PGlite (WASM) and checks persistence across engine reopen. To exercise the `pg` network driver against a dedicated test database, set `TEST_DATABASE_URL` when running that test. The local WASM checks do not themselves verify Supabase credentials or network/TLS. Separate live cloud acceptance now verifies these; see `evidence/hosted-acceptance.json`.
+
+## Report and recorded demonstration
+
+The editable 7-page report draft, 10-slide presentation and approximately 4-minute recorded demo are in [`submission/`](submission/). The video uses Chinese subtitles and no audio narration, separating local-chain actions from public Sepolia historical evidence. It sends no new public transaction. See [`docs/SUBMISSION_CHECKLIST.zh-CN.md`](docs/SUBMISSION_CHECKLIST.zh-CN.md) for the artifact list and remaining identity/rubric/source-verification tasks. The slides have an approximately 7-minute speaking outline; that is separate from the video duration.

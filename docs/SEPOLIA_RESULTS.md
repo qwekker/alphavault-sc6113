@@ -46,4 +46,4 @@ The ten types include ERC20 approval and nine distinct core-contract methods. Re
 - `../evidence/sepolia-paused-redemption-check.json`: pause event preceding successful redemption, amounts and remaining shares.
 - `../evidence/sepolia-persisted-receipts.json`: cached SQLite receipt export; the revalidated export above is preferred.
 
-Public HTTPS frontend/API hosting, hosted database restart acceptance, explorer source verification and final report/slides/video remain outstanding. Local URL `http://127.0.0.1:3102` is not public hosting. Prices expire one hour after reporting; refresh them before another trading demonstration.
+Public HTTPS frontend/API hosting and hosted database restart acceptance completed on 2026-10-18 at https://alphavault-sepolia.onrender.com. Editable report/slides and an edited demonstration video are now in `submission/`. Explorer source verification, student identity and final rubric reconciliation remain pending. Local URL `http://127.0.0.1:3102` is not public hosting. Prices expire one hour after reporting; refresh them before another trading demonstration.

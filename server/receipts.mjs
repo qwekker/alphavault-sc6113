@@ -19,11 +19,11 @@ export async function receiptEvidence(ctx,hash) {
  return {chainId:manifest.chainId,vault:manifest.contracts.PortfolioVault,hash:receipt.hash,from:receipt.from,to:receipt.to,contract,method:decoded.name,kind:contract+'.'+decoded.name,status:receipt.status===1?'confirmed':'reverted',blockNumber:receipt.blockNumber,blockHash:receipt.blockHash,timestamp:block.timestamp,confirmations:Math.max(0,head-receipt.blockNumber+1),gasUsed:receipt.gasUsed.toString(),effectiveGasPrice:receipt.gasPrice.toString(),feeWei:(receipt.gasUsed*receipt.gasPrice).toString(),explorerUrl:manifest.chainId===11155111?'https://sepolia.etherscan.io/tx/'+receipt.hash:null};
 }
 export function createReceiptService(service) {
- const {db}=service.store;db.exec('CREATE TABLE IF NOT EXISTS receipts(scope TEXT,hash TEXT,payload TEXT,PRIMARY KEY(scope,hash));');
- const remember=async hash=>{const evidence=await receiptEvidence(service.ctx,hash);if(evidence.status==='pending-or-unknown')throw new Error('Transaction not yet confirmed; try again later');db.prepare('INSERT OR REPLACE INTO receipts VALUES(?,?,?)').run(service.scope,hash,JSON.stringify(evidence));return evidence;};
+ const {db}=service.store;
+ const remember=async hash=>{const evidence=await receiptEvidence(service.ctx,hash);if(evidence.status==='pending-or-unknown')throw new Error('Transaction not yet confirmed; try again later');await db.prepare('INSERT INTO receipts VALUES(?,?,?) ON CONFLICT(scope,hash) DO UPDATE SET payload=excluded.payload').run(service.scope,hash,JSON.stringify(evidence));return evidence;};
  const exportAll=async()=>{
-  const saved=db.prepare('SELECT hash FROM receipts WHERE scope=? ORDER BY rowid LIMIT 300').all(service.scope);
-  const totalSaved=Number(db.prepare('SELECT count(*) n FROM receipts WHERE scope=?').get(service.scope).n);
+  const saved=await db.prepare('SELECT hash FROM receipts WHERE scope=? ORDER BY hash LIMIT 300').all(service.scope);
+  const totalSaved=Number((await db.prepare('SELECT count(*) n FROM receipts WHERE scope=?').get(service.scope)).n);
   const receipts=[],excluded=[];
   // Revalidate before export so reorged/pending receipts are never counted as success.
   for(const {hash} of saved){try{const r=await receiptEvidence(service.ctx,hash);if(r.status==='pending-or-unknown')excluded.push({hash,reason:r.status});else receipts.push(r);}catch(e){excluded.push({hash,reason:e.message});}}

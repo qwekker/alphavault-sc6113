@@ -50,6 +50,8 @@ Connect a browser wallet on Sepolia, refresh both mock price reports as risk off
 
 ## 4. Container deployment with persistent storage
 
+The default `render.yaml` now uses **Free Render + external Supabase PostgreSQL**. Follow `HOSTING.zh-CN.md`: supply secret `DATABASE_URL` from the Session pooler and require `DATABASE_REQUIRED=postgres`. No Render disk is provisioned. PostgreSQL tables are created in the private `alphavault` schema. Free compute may sleep; Supabase may pause inactive projects. The following SQLite volume instructions apply only to the optional VPS/Compose deployment.
+
 Build the included `Dockerfile`. It runs `npm ci` and compilation, and starts only the wallet-mode server as the unprivileged `node` user. Build dependencies are installed for compilation and then pruned. The hosted server and standalone Keeper no longer load Ganache or the Solidity compiler at runtime.
 
 Mount:
@@ -76,7 +78,7 @@ Run exactly one Keeper for this vault. It checks every ten seconds, trades only 
 
 ## 6. Acceptance evidence
 
-Record the final HTTPS frontend/API URLs, deployment addresses, chain ID, verification links and availability date. Run the demonstration with separate wallet accounts. Collect successful receipts for the 13 methods in README; attach screenshots of strategy selection, before/after allocations, a policy rejection, paused redemption and the ledger. Restart the hosted service and verify the same SQLite events remain. An unsuccessful gas estimate has no transaction hash; do not list it as a failed mined transaction.
+Record the final HTTPS frontend/API URLs, deployment addresses, chain ID, verification links and availability date. Run the demonstration with separate wallet accounts. Collect successful receipts for the 13 methods in README; attach screenshots of strategy selection, before/after allocations, a policy rejection, paused redemption and the ledger. Restart the hosted service and verify the same database records remain, including a non-chain persistence sentinel. An unsuccessful gas estimate has no transaction hash; do not list it as a failed mined transaction.
 
 The MetaMask wizard, manifest validation and receipt exporter have also been exercised on public Sepolia; see `SEPOLIA_RESULTS.md`. Public hosting and its persistence/restart acceptance are still pending. The CLI deployment path was rehearsed locally.
 

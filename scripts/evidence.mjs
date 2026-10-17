@@ -30,7 +30,7 @@ try {
  if(kinds.length<10||receipts.some(r=>r.status!==1))throw new Error('Evidence requirements failed');
  const sourceHashes=Object.fromEntries(['PortfolioVault','StrategyEngine','RiskManager','MockERC20','MockExchange'].map(n=>[n,createHash('sha256').update(readFileSync(root+'contracts/'+n+'.sol')).digest('hex')]));
  mkdirSync(root+'evidence',{recursive:true});writeFileSync(root+'evidence/transactions.json',JSON.stringify({generatedAt:new Date().toISOString(),network:'ephemeral LOCAL Ganache; not Sepolia',chainId:31337,compiler:c.artifacts.PortfolioVault.compiler,sourceHashes,distinctTransactionKinds:kinds,receipts,rejections,finalState:final},null,2));
- writeFileSync(root+'evidence/snapshots.json',JSON.stringify(service.snapshots(),null,2));
+ writeFileSync(root+'evidence/snapshots.json',JSON.stringify(await service.snapshots(),null,2));
  writeFileSync(root+'evidence/backtests.json',JSON.stringify([0,1,2].map(n=>backtest(n)),null,2));
  console.log(`${receipts.length} successful receipts; ${kinds.length} distinct transaction kinds; 2 expected rejections. Evidence saved.`);
 }finally{store.close();await chain.close();}

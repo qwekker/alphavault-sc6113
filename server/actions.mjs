@@ -27,6 +27,6 @@ export async function demoAction(service,action,args,role) {
  if(role!==built.role)throw new Error('This action requires '+built.role+' role');
  const index={admin:0,investor:1,manager:2,risk:3,keeper:4}[role];
  const {role:_,chainId,...transaction}=built;
- try {const tx=await ctx.signers[index].sendTransaction(transaction);const receipt=await tx.wait();service.job(action,'confirmed',tx.hash);await service.sync();return {hash:tx.hash,blockNumber:receipt.blockNumber,status:receipt.status,gasUsed:receipt.gasUsed.toString()};}
- catch(e) {service.job(action,'rejected','',e.reason||e.shortMessage||'Transaction rejected');throw e;}
+ try {const tx=await ctx.signers[index].sendTransaction(transaction);const receipt=await tx.wait();await service.job(action,'confirmed',tx.hash);await service.sync();return {hash:tx.hash,blockNumber:receipt.blockNumber,status:receipt.status,gasUsed:receipt.gasUsed.toString()};}
+ catch(e) {await service.job(action,'rejected','',e.reason||e.shortMessage||'Transaction rejected');throw e;}
 }

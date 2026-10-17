@@ -1,10 +1,10 @@
-# Creating these resources incurs hosting charges. Review the provider's total first.
+# Free Render compute; persistent data lives in external Supabase PostgreSQL.
 # Use the contents of this AlphaVault directory as the repository root.
 services:
   - type: web
     name: alphavault-sepolia
     runtime: docker
-    plan: 0.5c-512mb
+    plan: free
     region: singapore
     numInstances: 1
     dockerfilePath: ./Dockerfile
@@ -18,15 +18,15 @@ services:
         value: /app/config/sepolia-deployment.json
       - key: RECEIPT_SEED_FILE
         value: /app/config/sepolia-receipts.json
-      - key: DB_PATH
-        value: /app/data/alphavault.sqlite
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_REQUIRED
+        value: postgres
+      - key: INDEX_INTERVAL_MS
+        value: 60000
       - key: HOST
         value: 0.0.0.0
       - key: PORT
         value: 10000
       - key: NODE_ENV
         value: production
-    disk:
-      name: alphavault-sqlite
-      mountPath: /app/data
-      sizeGB: 1

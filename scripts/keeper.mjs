@@ -10,8 +10,8 @@ export async function keeperTick(service,signer) {
  if(!s.automationEnabled||s.paused||s.validationError||s.valuationStale||s.navUsd<=0||s.timestamp<s.lastRebalance+s.cooldown)return {status:'skipped',reason:'Not eligible'};
  const drift=Math.max(...s.target.map((x,i)=>Math.abs(x-s.weights[i])));
  if(drift<Number(process.env.DRIFT_BPS||300))return {status:'skipped',reason:'Within drift threshold'};
- try {const tx=await service.ctx.vault.connect(signer).rebalance(s.limits.maxSlippage,s.timestamp+300);await tx.wait();service.job('keeper','confirmed',tx.hash);await service.sync();return {status:'confirmed',hash:tx.hash};}
- catch(e){service.job('keeper','rejected','',e.reason||e.shortMessage);throw e;}
+ try {const tx=await service.ctx.vault.connect(signer).rebalance(s.limits.maxSlippage,s.timestamp+300);await tx.wait();await service.job('keeper','confirmed',tx.hash);await service.sync();return {status:'confirmed',hash:tx.hash};}
+ catch(e){await service.job('keeper','rejected','',e.reason||e.shortMessage);throw e;}
 }
 export function runKeeper(service,signer,interval=10000) {
  let stopped=false,timer;

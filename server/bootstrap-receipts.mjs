@@ -7,7 +7,7 @@ export async function bootstrapReceipts(service,seed) {
  if(!Array.isArray(seed.hashes)||seed.hashes.length>300||seed.hashes.some(h=>typeof h!=='string'||!/^0x[\da-fA-F]{64}$/.test(h)))throw new Error('Invalid receipt seed hashes');
  const receipts=createReceiptService(service);let imported=0,skipped=0;
  for(const hash of new Set(seed.hashes.map(h=>h.toLowerCase()))){
-  if(service.store.db.prepare('SELECT 1 FROM receipts WHERE scope=? AND hash=?').get(service.scope,hash)){skipped++;continue;}
+  if(await service.store.db.prepare('SELECT 1 FROM receipts WHERE scope=? AND hash=?').get(service.scope,hash)){skipped++;continue;}
   await receipts.remember(hash);imported++;
  }
  return {imported,skipped};

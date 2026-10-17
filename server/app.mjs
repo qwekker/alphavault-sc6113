@@ -10,17 +10,17 @@ export function createApp(service,{demo=false}={}) {
  const run=fn=>(req,res,next)=>Promise.resolve(fn(req,res)).catch(next);
  app.post('/api/receipts',run(async(req,res)=>res.json(await receipts.remember(req.body.hash))));
  app.get('/api/evidence',run(async(req,res)=>res.json(await receipts.exportAll())));
- app.get('/api/health',run(async(req,res)=>{await service.ctx.provider.getBlockNumber();res.json({ok:true,database:'sqlite',mode:demo?'local-demo':'wallet',chainId:service.ctx.manifest.chainId});}));
+ app.get('/api/health',async(req,res)=>{try{await service.ctx.provider.getBlockNumber();await service.store.health();res.json({ok:true,database:service.store.kind,mode:demo?'local-demo':'wallet',chainId:service.ctx.manifest.chainId});}catch{res.status(503).json({ok:false,error:'Chain or database unavailable'});}});
  if(demo)app.get('/api/setup/artifacts',(req,res)=>res.json(service.ctx.artifacts));
  app.get('/api/config',(req,res)=>res.json({...service.ctx.manifest,demo,strategies:['Equal Weight','Momentum','Volatility Target'],disclosures:['Mock prices reported by risk officer','Prefunded mock exchange; 20 bp fee','Nontransferable shares; in-kind redemption']}));
  app.get('/api/portfolio',run(async(req,res)=>res.json(await service.sync())));
  app.get('/api/prices',run(async(req,res)=>res.json((await service.sync()).assets)));
  app.get('/api/strategies',run(async(req,res)=>{const s=await service.sync();res.json({selected:s.selected,enabled:s.strategyEnabled,target:s.target,validationError:s.validationError,cashBuffer:s.cashBuffer,targetVolatility:s.targetVolatility,cooldown:s.cooldown});}));
- app.get('/api/history',run(async(req,res)=>{const limit=Number(req.query.limit??50);if(!Number.isInteger(limit)||limit<1||limit>200)return res.status(400).json({error:'limit must be 1..200'});await service.sync();res.json(service.history(limit));}));
- app.get('/api/snapshots',run(async(req,res)=>{await service.sync();res.json(service.snapshots());}));
+ app.get('/api/history',run(async(req,res)=>{const limit=Number(req.query.limit??50);if(!Number.isInteger(limit)||limit<1||limit>200)return res.status(400).json({error:'limit must be 1..200'});await service.sync();res.json(await service.history(limit));}));
+ app.get('/api/snapshots',run(async(req,res)=>{await service.sync();res.json(await service.snapshots());}));
  app.get('/api/account/:address',run(async(req,res)=>res.json(await service.account(req.params.address))));
- app.get('/api/backtests/:id',run(async(req,res)=>{const id=Number(req.params.id);if(!Number.isInteger(id)||id<0||id>2)return res.status(400).json({error:'strategy must be 0..2'});const result=backtest(id);service.store.db.prepare('INSERT OR REPLACE INTO backtests VALUES(?,?,?,?)').run(id,Date.now(),result.source,JSON.stringify(result));res.json(result);}));
- app.get('/api/jobs',(req,res)=>res.json(service.store.db.prepare('SELECT * FROM jobs WHERE scope=? ORDER BY id DESC LIMIT 50').all(service.scope)));
+ app.get('/api/backtests/:id',run(async(req,res)=>{const id=Number(req.params.id);if(!Number.isInteger(id)||id<0||id>2)return res.status(400).json({error:'strategy must be 0..2'});const result=backtest(id);await service.store.db.prepare('INSERT INTO backtests VALUES(?,?,?,?) ON CONFLICT(strategy) DO UPDATE SET created_at=excluded.created_at,source=excluded.source,result=excluded.result').run(id,Date.now(),result.source,JSON.stringify(result));res.json(result);}));
+ app.get('/api/jobs',run(async(req,res)=>res.json(await service.store.db.prepare('SELECT * FROM jobs WHERE scope=? ORDER BY id DESC LIMIT 50').all(service.scope))));
  app.post('/api/transactions/build',run(async(req,res)=>res.json(await buildAction(service.ctx,req.body.action,req.body.args))));
  let busy=false;
  app.post('/api/demo/action',run(async(req,res)=>{

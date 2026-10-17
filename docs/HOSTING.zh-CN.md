@@ -21,7 +21,7 @@
 
 后端会自动创建 `alphavault` schema 和八张表：events、snapshots、prices、strategies、jobs、backtests、cursors、receipts。它不使用 Supabase `public` schema；表开启 RLS、无公共策略，前端仅访问我们的 REST API。连接串只留在服务器环境变量中。
 
-连接默认校验证书。若供应商要求项目 CA，在 Render 增加 `DATABASE_CA_CERT`，填供应商提供的 PEM（可使用字面量 `\n` 表示换行）。不要通过关闭 TLS 校验解决连接问题。
+连接默认校验证书。Supabase 域名自动使用随项目打包的官方 `config/supabase-ca.crt`（来自项目 Database Settings 的 Download certificate）。若供应商要求其他 CA，在 Render 增加 `DATABASE_CA_CERT`，填供应商提供的 PEM（可使用字面量 `\n` 表示换行）。不要通过关闭 TLS 校验解决连接问题。
 
 ## 2. Render
 

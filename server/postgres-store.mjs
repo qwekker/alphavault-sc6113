@@ -1,4 +1,5 @@
 import pg from 'pg';
+import {readFileSync} from 'node:fs';
 import {createStore} from './store.mjs';
 
 // Separate from Supabase's public Data API schema; only the backend uses this database.
@@ -19,9 +20,11 @@ ${['events','snapshots','prices','strategies','jobs','backtests','cursors','rece
 export function connectionOptions(env) {
  let url;try{url=new URL(env.DATABASE_URL);}catch{throw new Error('Invalid DATABASE_URL; copy the Supabase Session pooler connection string');}
  if(!['postgres:','postgresql:'].includes(url.protocol)||!url.hostname||!url.username||!url.password||url.password.includes('YOUR-PASSWORD'))throw new Error('DATABASE_URL must contain the actual PostgreSQL host, user and password');
+ const supabaseHost=url.hostname.endsWith('.pooler.supabase.com')||url.hostname.endsWith('.supabase.co');
+ const ca=env.DATABASE_CA_CERT?env.DATABASE_CA_CERT.replace(/\\n/g,'\n'):(supabaseHost?readFileSync(new URL('../config/supabase-ca.crt',import.meta.url),'utf8'):undefined);
  // Never allow URL SSL parameters to silently disable certificate verification.
  return {host:url.hostname,port:Number(url.port||5432),user:decodeURIComponent(url.username),password:decodeURIComponent(url.password),database:decodeURIComponent(url.pathname.slice(1)||'postgres'),
-  ssl:{rejectUnauthorized:true,minVersion:'TLSv1.2',...(env.DATABASE_CA_CERT?{ca:env.DATABASE_CA_CERT.replace(/\\n/g,'\n')}:{})},
+  ssl:{rejectUnauthorized:true,minVersion:'TLSv1.2',...(ca?{ca}:{})},
   options:'-c search_path=alphavault',max:3,idleTimeoutMillis:30000,connectionTimeoutMillis:15000,statement_timeout:20000};
 }
 // SQL comes exclusively from server code. Values are always passed separately.

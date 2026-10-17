@@ -69,6 +69,9 @@ test('cloud configuration fails closed and verifies TLS even with insecure URL o
  const config=connectionOptions({DATABASE_URL:'postgresql://postgres.test:pass%40word@host.example:5432/postgres?sslmode=disable'});
  assert.equal(config.ssl.rejectUnauthorized,true);assert.equal(config.password,'pass@word');assert.equal(config.max,3);
  assert.equal(config.options,'-c search_path=alphavault');
+ const supabase=connectionOptions({DATABASE_URL:'postgresql://postgres.test:password@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres'});
+ assert.match(supabase.ssl.ca,/BEGIN CERTIFICATE/);assert.equal(supabase.ssl.rejectUnauthorized,true);assert.equal(config.ssl.ca,undefined);
+ const override=connectionOptions({DATABASE_URL:'postgresql://user:password@host.example/db',DATABASE_CA_CERT:'line1\\nline2'});assert.equal(override.ssl.ca,'line1\nline2');
 });
 
 test('PostgreSQL telemetry retention bounds storage without deleting the event ledger',async()=>{

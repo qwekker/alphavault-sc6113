@@ -5,50 +5,56 @@ TAP version 13
 # - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
 # - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
 # Falling back to a NodeJS implementation; performance may be degraded.
-# (node:40742) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (node:41409) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 # (Use `node --trace-warnings ...` to show where the warning was created)
 # Subtest: PostgreSQL indexes chain state through all read API routes and deduplicates concurrent sync
 ok 1 - PostgreSQL indexes chain state through all read API routes and deduplicates concurrent sync
   ---
-  duration_ms: 3069.890167
+  duration_ms: 3053.527459
   type: 'test'
   ...
 # Subtest: PostgreSQL transaction failure rolls back both records and cursor
 ok 2 - PostgreSQL transaction failure rolls back both records and cursor
   ---
-  duration_ms: 2.888916
+  duration_ms: 2.371125
   type: 'test'
   ...
 # Subtest: PostgreSQL verified receipts, backtests and non-chain jobs survive database reopen
 ok 3 - PostgreSQL verified receipts, backtests and non-chain jobs survive database reopen
   ---
-  duration_ms: 105.826709
+  duration_ms: 107.755292
   type: 'test'
   ...
 # Subtest: PostgreSQL reorg discards orphaned state and resumes indexing
 ok 4 - PostgreSQL reorg discards orphaned state and resumes indexing
   ---
-  duration_ms: 276.172
+  duration_ms: 286.023792
   type: 'test'
   ...
 # Subtest: PostgreSQL health failures are reported instead of claiming a healthy database
 ok 5 - PostgreSQL health failures are reported instead of claiming a healthy database
   ---
-  duration_ms: 5.982875
+  duration_ms: 2.59125
   type: 'test'
   ...
 # Subtest: cloud configuration fails closed and verifies TLS even with insecure URL options
 ok 6 - cloud configuration fails closed and verifies TLS even with insecure URL options
   ---
-  duration_ms: 0.2635
+  duration_ms: 2.62425
   type: 'test'
   ...
-1..6
-# tests 6
+# Subtest: PostgreSQL telemetry retention bounds storage without deleting the event ledger
+ok 7 - PostgreSQL telemetry retention bounds storage without deleting the event ledger
+  ---
+  duration_ms: 87.983041
+  type: 'test'
+  ...
+1..7
+# tests 7
 # suites 0
-# pass 6
+# pass 7
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 3909.786375
+# duration_ms 4110.9535

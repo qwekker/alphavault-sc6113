@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-17T16:32:32.472416+00:00",
+  "url": "https://alphavault-sepolia.onrender.com",
+  "healthUrl": "https://alphavault-sepolia.onrender.com/api/health",
+  "platform": "Render Free Docker",
+  "serviceId": "srv-db9q1ktg1s2s739knt50",
+  "blueprintId": "exs-db9pf24s728c73ciaij0",
+  "deploymentId": "dep-db9q438m7kps73eatr3g",
+  "deployedCodeCommit": "52aca85",
+  "database": "Supabase Free PostgreSQL",
+  "databaseProject": "lqzkmaqvhneooidltxul",
+  "region": "Singapore",
+  "tlsCertificateVerified": true,
+  "initialReceiptImport": {
+    "imported": 12,
+    "skipped": 0
+  },
+  "restartReceiptImport": {
+    "imported": 0,
+    "skipped": 12
+  },
+  "databaseRestartVerified": true,
+  "persistenceProof": "Non-chain jobs row id=1 retained exactly across Render service restart; no bootstrap or chain indexer recreates it.",
+  "sentinel": "cloud-restart-sentinel-20261018",
+  "apiAcceptance": "Both check-hosted runs passed: wallet mode, postgres, Sepolia vault, signing endpoint denied, evidence >=10 methods, canonical receipt revalidation and historical event comparison.",
+  "uiAcceptance": {
+    "title": "AlphaVault \u00b7 Portfolio Console",
+    "navUsd": 748.8,
+    "shareIndex": 99.84,
+    "strategy": "Momentum",
+    "allocationBps": [
+      2000,
+      6000,
+      2000
+    ],
+    "risk": "Stale prices",
+    "wallet": "not connected"
+  },
+  "limitations": [
+    "Free service sleeps when idle; database can pause when inactive.",
+    "No new wallet-signing test was performed on the public domain. Prior Sepolia business transactions were reverified.",
+    "Prices are manually reported mock prices and currently stale. No live market performance claim.",
+    "No unattended cloud signing Keeper.",
+    "Contract explorer source verification and final report/video remain separate work."
+  ]
+}

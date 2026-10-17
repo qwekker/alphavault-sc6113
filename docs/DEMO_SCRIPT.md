@@ -33,7 +33,7 @@ Wait 60 seconds between successful rebalances or leave the Keeper process runnin
 - Unauthorized action and risk-policy rejection (distinguish preflight from mined failure).
 - Pause state plus successful redemption receipt.
 - Ledger export and actual receipt status/gas.
-- Deployment overview and public URL only once available.
+- Deployment overview: https://alphavault-sepolia.onrender.com (open in advance to wake the free service). Connect MetaMask to this HTTPS origin separately. If prices are stale, show the risk warning or have the risk officer refresh both mock reports before live trading.
 - Database persistence after stopping and restarting the API.
 - Narration identifying mock assets, mock prices, mock venue and synthetic research.
 

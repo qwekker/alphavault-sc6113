@@ -9,8 +9,8 @@ Source: requirements explicitly supplied in the current request. No original ass
 | At least three interacting contracts | Vault → StrategyEngine → RiskManager plus direct Vault → RiskManager | Implemented and tested |
 | At least ten distinct on-chain transactions | 12 core methods + ERC20 approve; evidence script | Implemented; 13 methods locally, 10 methods across 12 successful Sepolia receipts (including ERC20 approval) |
 | REST API | Health/config/prices/strategies/portfolio/account/history/snapshots/jobs/backtests/calldata | Implemented and HTTP-tested |
-| Persistent database | SQLite WAL; events, prices, strategies, snapshots, jobs, backtests, cursor | Implemented; reopen and rollback tested |
-| Public deployment | MetaMask deployment wizard, resumable CLI, verified manifest import, wallet-only server, container + persistent volume | Sepolia deployment and three-wallet business acceptance complete; public website/API hosting pending |
+| Persistent database | Local SQLite WAL / hosted PostgreSQL; events, prices, strategies, snapshots, jobs, backtests, cursor and receipts | Implemented; local reopen/rollback and hosted restart sentinel verified |
+| Public deployment | MetaMask deployment wizard, resumable CLI, verified manifest import, wallet-only server, Render Free container + Supabase PostgreSQL | Sepolia business acceptance and public HTTPS/API deployment complete; cloud restart verified |
 | Submission materials | README, source, lockfile, tests, evidence, report/deck/demo skeletons | MVP pack ready; final report/video not claimed |
 | Quantitative asset management | Three allocation rules, bounded execution, synthetic backtest | Implemented; empirical market validation pending |
 

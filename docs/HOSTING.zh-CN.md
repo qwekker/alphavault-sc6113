@@ -1,6 +1,6 @@
 # AlphaVault 免费公网部署
 
-当前状态：独立 GitHub 仓库 `qwekker/alphavault-sc6113` 已建立并授权 Render 读取。默认部署配置已改为 Render Free + Supabase PostgreSQL；真实云连接和公网验收尚未完成。原本地 SQLite 数据和已部署 Sepolia 合约继续保留。
+当前状态：独立 GitHub 仓库 `qwekker/alphavault-sc6113` 已建立并授权 Render 读取。默认部署配置已改为 Render Free + Supabase PostgreSQL；真实云连接、API 验收和服务重启持久化验收已于 2026-10-18 完成。公网地址：https://alphavault-sepolia.onrender.com 。验证记录：`../evidence/hosted-acceptance.json`。原本地 SQLite 数据和已部署 Sepolia 合约继续保留。
 
 ## 免费资源与限制
 

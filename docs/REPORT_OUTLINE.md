@@ -7,9 +7,9 @@
 
 ## Abstract
 
-Draft: AlphaVault demonstrates a transparent portfolio-management workflow in which investors deposit test assets, a strategy manager selects an allocation rule, and an independent risk contract authorizes a Keeper's rebalance. The implementation combines three interacting Solidity contracts, a REST API, durable SQLite records and a wallet-capable dashboard. Three strategies and synthetic, cost-aware backtests illustrate quantitative system design. Local testing covers accounting, policy enforcement and failure handling. Public deployment and empirical market evaluation must be reported separately when completed.
+Draft: AlphaVault demonstrates a transparent portfolio-management workflow in which investors deposit test assets, a strategy manager selects an allocation rule, and an independent risk contract authorizes a Keeper's rebalance. The implementation combines three interacting Solidity contracts, a REST API, durable PostgreSQL records (SQLite for local demonstrations) and a wallet-capable dashboard. Three strategies and synthetic, cost-aware backtests illustrate quantitative system design. Local testing covers accounting, policy enforcement and failure handling. The Sepolia-connected public service passed API and database restart checks; empirical market evaluation remains outside this mock demonstration.
 
-Revise the abstract after public deployment; do not imply mock prices are live data or local receipts are Sepolia evidence.
+Revise the abstract with final measured results; do not imply mock prices are live data or local receipts are Sepolia evidence.
 
 ## 1. Problem and motivation
 
@@ -73,18 +73,18 @@ Add browser acceptance evidence for deposit, strategy selection, rebalance, poli
 
 ## 7. Deployment, limitations and discussion
 
-Before final submission fill in the actual HTTPS URL, API endpoint, chain ID, contract addresses, source-verification links, testnet receipt hashes and database-restart check. Sepolia deployment and the three-wallet business demonstration are complete; public website/API hosting and source verification are pending. Use `SEPOLIA_RESULTS.md` for measured outcomes and `../evidence/sepolia-business-evidence.json` for the 12 receipts / 10-method coverage.
+Before final submission fill in the actual HTTPS URL, API endpoint, chain ID, contract addresses, source-verification links, testnet receipt hashes and database-restart check. Sepolia deployment and the three-wallet business demonstration are complete; public website/API hosting and database restart acceptance are complete at https://alphavault-sepolia.onrender.com; explorer source verification is pending. Use `SEPOLIA_RESULTS.md` for measured outcomes and `../evidence/sepolia-business-evidence.json` for the 12 receipts / 10-method coverage.
 
-Discuss trusted oracle/admin, no production audit, limited mock venue liquidity, market drift after validation, stale inputs, in-kind exit exposure, virtual-balance residuals, simplified Keeper operation, SQLite single-instance deployment, one-block observations vs finality, and no live profitability conclusion.
+Discuss trusted oracle/admin, no production audit, limited mock venue liquidity, market drift after validation, stale inputs, in-kind exit exposure, virtual-balance residuals, simplified Keeper operation, single-instance indexing and free-host sleeping behavior, one-block observations vs finality, and no live profitability conclusion.
 
 ## 8. Conclusion and future work
 
-Summarize demonstrated system behavior with evidence. Prioritize public acceptance first, then independent oracle integration, empirical cost-sensitive research, multisig role administration, incremental routing and external security review.
+Summarize demonstrated system behavior with evidence. Prioritize explorer verification and final submission materials, then independent oracle integration, empirical cost-sensitive research, multisig role administration, incremental routing and external security review.
 
 ## References and appendix
 
 - Solidity documentation: security considerations and checks-effects-interactions.
 - OpenZeppelin documentation: ERC-4626 inflation attack / virtual-share discussion; explicitly state this is not an ERC-4626 implementation.
-- ethers, SQLite and Ganache documentation, with versions.
+- ethers, PostgreSQL, SQLite and Ganache documentation, with versions.
 - Original course brief when obtained.
 - Appendix: commands, role matrix, complete receipt inventory, API examples, database schema and code availability.

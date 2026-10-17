@@ -1,6 +1,6 @@
 # Deployment runbook
 
-Current status: local MVP verified; all 17 AlphaVault Sepolia deployment/initialization steps completed and verified. Local wallet-mode dashboard is configured on port 3102 with separate SQLite storage. Twelve successful multi-role business receipts cover ten methods. Public website/API hosting remains pending. See `evidence/sepolia-verification.json`.
+Current status: local MVP verified; all 17 AlphaVault Sepolia deployment/initialization steps completed and verified. Local wallet-mode dashboard is configured on port 3102 with separate SQLite storage. Twelve successful multi-role business receipts cover ten methods. Public HTTPS hosting is live at https://alphavault-sepolia.onrender.com on Render Free, backed by Supabase PostgreSQL; API and restart persistence were verified on 2026-10-18 (see `evidence/hosted-acceptance.json`). See `evidence/sepolia-verification.json`.
 
 ## 1. Local preparation
 

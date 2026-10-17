@@ -1,0 +1,10 @@
+{
+  "database": "data/sepolia/alphavault.sqlite",
+  "rows": {
+    "events": 6,
+    "prices": 18,
+    "strategies": 6,
+    "snapshots": 6,
+    "cursors": 1
+  }
+}

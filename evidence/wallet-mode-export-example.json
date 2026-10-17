@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-10-17T10:31:42.668Z",
+  "chainId": 31337,
+  "vault": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+  "source": "RPC-verified transactions submitted to this deployment",
+  "totalSaved": 1,
+  "exportLimit": 300,
+  "truncated": false,
+  "finality": "Canonical at export time; confirmations are reported, not a finality guarantee",
+  "successfulKinds": 1,
+  "minimumTenKindsMet": false,
+  "coverage": [
+    {
+      "kind": "PortfolioVault.deposit",
+      "completed": true
+    },
+    {
+      "kind": "PortfolioVault.redeem",
+      "completed": false
+    },
+    {
+      "kind": "PortfolioVault.setAutomation",
+      "completed": false
+    },
+    {
+      "kind": "PortfolioVault.rebalance",
+      "completed": false
+    },
+    {
+      "kind": "StrategyEngine.selectStrategy",
+      "completed": false
+    },
+    {
+      "kind": "StrategyEngine.configure",
+      "completed": false
+    },
+    {
+      "kind": "StrategyEngine.setEnabled",
+      "completed": false
+    },
+    {
+      "kind": "RiskManager.updateMarket",
+      "completed": false
+    },
+    {
+      "kind": "RiskManager.setAssetEnabled",
+      "completed": false
+    },
+    {
+      "kind": "RiskManager.setLimits",
+      "completed": false
+    },
+    {
+      "kind": "RiskManager.setPaused",
+      "completed": false
+    },
+    {
+      "kind": "RiskManager.setRole",
+      "completed": false
+    },
+    {
+      "kind": "MockERC20.approve",
+      "completed": false
+    }
+  ],
+  "receipts": [
+    {
+      "chainId": 31337,
+      "vault": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "hash": "0x203d0d1002616a10e74a30af9b76e24f1477d6e0339f34d95db719c45257a91e",
+      "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "to": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "contract": "PortfolioVault",
+      "method": "deposit",
+      "kind": "PortfolioVault.deposit",
+      "status": "confirmed",
+      "blockNumber": 17,
+      "blockHash": "0x80de221ade205c7d364127fdc0e49d23e4ec5d920fd8138b5c6df682f7d12bf2",
+      "timestamp": 1792229583,
+      "confirmations": 9,
+      "gasUsed": "137079",
+      "effectiveGasPrice": "139264488",
+      "feeWei": "19090236750552",
+      "explorerUrl": null
+    }
+  ],
+  "excluded": [],
+  "verificationContext": "Local-chain wallet-mode rehearsal; NOT public Sepolia evidence"
+}

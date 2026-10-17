@@ -1,0 +1,88 @@
+TAP version 13
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_darwin_arm64_127.node'
+# Require stack:
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: role plan rejects zero or conflated core roles
+ok 1 - role plan rejects zero or conflated core roles
+  ---
+  duration_ms: 935.5215
+  type: 'test'
+  ...
+# Subtest: wrong chain and changed artifacts are rejected before signing
+ok 2 - wrong chain and changed artifacts are rejected before signing
+  ---
+  duration_ms: 23.881542
+  type: 'test'
+  ...
+# Subtest: wallet rejection clears only the unsent step; checkpoint failure sends nothing
+ok 3 - wallet rejection clears only the unsent step; checkpoint failure sends nothing
+  ---
+  duration_ms: 52.404375
+  type: 'test'
+  ...
+# Subtest: an uncertain wallet submission blocks automatic duplicate sends
+ok 4 - an uncertain wallet submission blocks automatic duplicate sends
+  ---
+  duration_ms: 26.056583
+  type: 'test'
+  ...
+# Subtest: deploy three assets, resume a JSON checkpoint without redeploying, and finish all 17 steps
+ok 5 - deploy three assets, resume a JSON checkpoint without redeploying, and finish all 17 steps
+  ---
+  duration_ms: 2592.464375
+  type: 'test'
+  ...
+# Subtest: exported manifest has valid wiring and bootstrap risk permission is revoked
+ok 6 - exported manifest has valid wiring and bootstrap risk permission is revoked
+  ---
+  duration_ms: 147.507042
+  type: 'test'
+  ...
+# Subtest: tampered journal hashes and bad manifest wiring are rejected
+ok 7 - tampered journal hashes and bad manifest wiring are rejected
+  ---
+  duration_ms: 115.871458
+  type: 'test'
+  ...
+# Subtest: completed deployment does not send another transaction when resumed
+ok 8 - completed deployment does not send another transaction when resumed
+  ---
+  duration_ms: 71.834125
+  type: 'test'
+  ...
+# Subtest: retry requires a matching reverted deployment transaction and retains failed attempt
+ok 9 - retry requires a matching reverted deployment transaction and retains failed attempt
+  ---
+  duration_ms: 31.812667
+  type: 'test'
+  ...
+# Subtest: smart-contract/delegated deployers are refused before wallet submission
+ok 10 - smart-contract/delegated deployers are refused before wallet submission
+  ---
+  duration_ms: 7.806917
+  type: 'test'
+  ...
+# Subtest: only a never-submitted plan can be edited, preserving role addresses
+ok 11 - only a never-submitted plan can be edited, preserving role addresses
+  ---
+  duration_ms: 19.521792
+  type: 'test'
+  ...
+# Subtest: wrapped failure recovery verifies exact single call and keeps successes or unrelated attempts blocked
+ok 12 - wrapped failure recovery verifies exact single call and keeps successes or unrelated attempts blocked
+  ---
+  duration_ms: 499.701625
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4935.32

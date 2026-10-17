@@ -1,0 +1,96 @@
+{
+  "capturedAt": "2026-10-17T15:19:05.504473+00:00",
+  "source": "Persisted backend-verified receipts from SQLite; not independently revalidated at export",
+  "receipt": {
+    "chainId": 11155111,
+    "vault": "0x4076F1c885eF0f0651005e862D3264D538C941C9",
+    "hash": "0x9cf7a414a7583650ede3eb9e14db51789d4ffa932ec85912509cb574b64da9b6",
+    "from": "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+    "to": "0x4076F1c885eF0f0651005e862D3264D538C941C9",
+    "contract": "PortfolioVault",
+    "method": "rebalance",
+    "kind": "PortfolioVault.rebalance",
+    "status": "confirmed",
+    "blockNumber": 11934945,
+    "blockHash": "0x2160a5fbf22f7820b5d7fbd9bc785fc2dd36e185bf723d5dc0969d6e3e683649",
+    "timestamp": 1792250280,
+    "confirmations": 1,
+    "gasUsed": "563260",
+    "effectiveGasPrice": "1500007444",
+    "feeWei": "844894192907440",
+    "explorerUrl": "https://sepolia.etherscan.io/tx/0x9cf7a414a7583650ede3eb9e14db51789d4ffa932ec85912509cb574b64da9b6"
+  },
+  "events": [
+    {
+      "scope": "11155111:0x4076f1c885ef0f0651005e862d3264d538c941c9",
+      "tx_hash": "0x9cf7a414a7583650ede3eb9e14db51789d4ffa932ec85912509cb574b64da9b6",
+      "log_index": 11,
+      "block_number": 11934945,
+      "block_hash": "0x2160a5fbf22f7820b5d7fbd9bc785fc2dd36e185bf723d5dc0969d6e3e683649",
+      "contract": "MockExchange",
+      "name": "Swap",
+      "payload": [
+        "0x4076F1c885eF0f0651005e862D3264D538C941C9",
+        "0xe1C4F513b40B8A188aAD8aA173beF339f37068Ff",
+        "0x3FbC8F294aCf246507032175A2689A7691300944",
+        "600000000000000000000",
+        "199600000000000000"
+      ]
+    },
+    {
+      "scope": "11155111:0x4076f1c885ef0f0651005e862d3264d538c941c9",
+      "tx_hash": "0x9cf7a414a7583650ede3eb9e14db51789d4ffa932ec85912509cb574b64da9b6",
+      "log_index": 15,
+      "block_number": 11934945,
+      "block_hash": "0x2160a5fbf22f7820b5d7fbd9bc785fc2dd36e185bf723d5dc0969d6e3e683649",
+      "contract": "MockExchange",
+      "name": "Swap",
+      "payload": [
+        "0x4076F1c885eF0f0651005e862D3264D538C941C9",
+        "0xe1C4F513b40B8A188aAD8aA173beF339f37068Ff",
+        "0xc71d024c775EC1c62A05DDF0E38308C986B26972",
+        "200000000000000000000",
+        "3326666666666666"
+      ]
+    },
+    {
+      "scope": "11155111:0x4076f1c885ef0f0651005e862d3264d538c941c9",
+      "tx_hash": "0x9cf7a414a7583650ede3eb9e14db51789d4ffa932ec85912509cb574b64da9b6",
+      "log_index": 16,
+      "block_number": 11934945,
+      "block_hash": "0x2160a5fbf22f7820b5d7fbd9bc785fc2dd36e185bf723d5dc0969d6e3e683649",
+      "contract": "PortfolioVault",
+      "name": "Rebalanced",
+      "payload": [
+        "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+        "1",
+        "1000000000000000000000",
+        "998399999999999960000",
+        [
+          "2000",
+          "6000",
+          "2000"
+        ]
+      ]
+    }
+  ],
+  "latestSnapshot": {
+    "scope": "11155111:0x4076f1c885ef0f0651005e862d3264d538c941c9",
+    "block_number": 11934949,
+    "block_hash": "0x5e51bf89724c0690072e3c93e860b5fe3cc5fec0efb34af4c40c8f689f6cd12c",
+    "timestamp": 1792250328,
+    "nav": "998399999999999960000",
+    "supply": "1000000000000000000000000000",
+    "share_index": 99.83999999999999,
+    "weights": "[2003,5997,1999]"
+  },
+  "holdingsAfter": {
+    "mUSD": "200",
+    "mETH": "0.1996",
+    "mBTC": "0.003326666666666666"
+  },
+  "navAfterMUSD": "998.399999999999960000",
+  "mockExchangeFeesMUSD": "1.60",
+  "roundingLossMUSD": "0.000000000000040000",
+  "networkFeeSepoliaETH": "0.000844894192907440"
+}

@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "chainId": 11155111,
+  "roles": {
+    "admin": "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+    "investor": "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+    "manager": "0xF72d3B36594dA7b06E3994112C8B1516e57cB3aA",
+    "risk": "0xF540005bC24b6E39A6abD22923BC9a7550C94252",
+    "keeper": "0x0258E85f725F2d17f87f0f25984A7FD503448169"
+  },
+  "artifactHash": "0x77bd6239f0e436d47d4e3b8baa619d5fe10228308c9c6eb19113bb1bf79efe82",
+  "createdAt": "2026-10-17T13:30:35.401Z",
+  "steps": [
+    {
+      "key": "usd",
+      "label": "Deploy mock USD",
+      "status": "confirmed",
+      "hash": "0x8af7fb5eb61acb035b9b0e9036772354147c734fa14c50fbded8f87b85aec7a0",
+      "blockNumber": 11934459,
+      "blockHash": "0xeec571f0f769c3d04132c6a77ad7b8a1960e6ed32f29ece8f950efcabf0f0b59",
+      "contractAddress": "0xe1C4F513b40B8A188aAD8aA173beF339f37068Ff",
+      "gasUsed": "3499787",
+      "feeWei": "5249680583994888"
+    },
+    {
+      "key": "eth",
+      "label": "Deploy mock Ether",
+      "status": "confirmed",
+      "hash": "0xbbb02e07d69355df7d0020933f63e84797080069c439b9c1d211792450493b25",
+      "blockNumber": 11934463,
+      "blockHash": "0xf1a5ee45f987e49f956798c0d36f0055abf4934bd63f398fd88f21dcd207bf1f",
+      "contractAddress": "0x3FbC8F294aCf246507032175A2689A7691300944",
+      "gasUsed": "3499811",
+      "feeWei": "5249716580495653"
+    },
+    {
+      "key": "btc",
+      "label": "Deploy mock Bitcoin",
+      "status": "confirmed",
+      "hash": "0xadef6b6ddbd20601e64e2eedcaa04bd64debb788f2b682d1b160b64aebc12dff",
+      "blockNumber": 11934468,
+      "blockHash": "0xc761d45c00fde1e82cdffb369e710b73518cf779779a1721b33fee988514c7ee",
+      "contractAddress": "0xc71d024c775EC1c62A05DDF0E38308C986B26972",
+      "gasUsed": "3499835",
+      "feeWei": "5249752580496205"
+    },
+    {
+      "key": "risk",
+      "label": "Deploy RiskManager",
+      "status": "confirmed",
+      "hash": "0x14397bab6576a32332f757bb05bf2c126d8c1ec1d618785a80c22b95328cf3cb",
+      "blockNumber": 11934513,
+      "blockHash": "0x8de0c495d593544beae0e1ebc900b9da6023f86b0705651fd7d5d5cd254dc50c",
+      "contractAddress": "0xe526418735631F067ea62eC84A7c3A383C37AcaE",
+      "gasUsed": "8645573",
+      "feeWei": "12968359707493752"
+    },
+    {
+      "key": "strategy",
+      "label": "Deploy StrategyEngine",
+      "status": "confirmed",
+      "hash": "0x9fd05f022d7518a6cc1c84c4727f5001ac8d537494f7c1a28e28940d057625ef",
+      "blockNumber": 11934519,
+      "blockHash": "0x38d9f0e06c06515a337762737b6285a7fe8921bd9c50e83f0283f74f8c71340c",
+      "contractAddress": "0x548055cd0103CAA87FAD3a4e329f4c5Dfbd14bFe",
+      "gasUsed": "6270174",
+      "feeWei": "9405261150484176"
+    },
+    {
+      "key": "exchange",
+      "label": "Deploy mock exchange",
+      "status": "confirmed",
+      "hash": "0x02f0c6b0ece15b7bf86241564d721501f449ac86801e3958cfa0369aca6e640c",
+      "blockNumber": 11934527,
+      "blockHash": "0x4a8a1b6b06cd9cc007024b16da9a01617f71591cf1879bacc45af4ec089f4ae4",
+      "contractAddress": "0x49cD1ecFCCE174Cc95A7dD3d6b79319d6719cf01",
+      "gasUsed": "3358482",
+      "feeWei": "5037723073886604"
+    },
+    {
+      "key": "vault",
+      "label": "Deploy PortfolioVault",
+      "status": "confirmed",
+      "hash": "0xed0c158d80d96ee11aa8c121da7c3fb4b73d679918f3b4026b880e09eefb7e27",
+      "blockNumber": 11934532,
+      "blockHash": "0xe289e3d8591110d8cad0d207c92d6aba1269a723ccd04a1f5da9d2c173db3b32",
+      "contractAddress": "0x4076F1c885eF0f0651005e862D3264D538C941C9",
+      "gasUsed": "11206269",
+      "feeWei": "16809403746537918"
+    },
+    {
+      "key": "price-eth",
+      "label": "Initialize mETH market report",
+      "status": "confirmed",
+      "hash": "0xc14d747cd44800d4829f1827f5083e08dfe0eba66683690136e3068b44a7f525",
+      "blockNumber": 11934577,
+      "blockHash": "0x896c6a789609461e45d730ad2391ad1078c5824d7348b31f56ad5fa2531415af",
+      "contractAddress": null,
+      "gasUsed": "467890",
+      "feeWei": "701835021055050"
+    },
+    {
+      "key": "enable-eth",
+      "label": "Enable mETH",
+      "status": "confirmed",
+      "hash": "0x7059c289845d81f0a14f0743df7565459cdf0e037dd7e166fde224fab8ba15da",
+      "blockNumber": 11934626,
+      "blockHash": "0x6c17b9ef09aecc8aa532cd8e42d14d4cc03828a61fcef1b2fd84c4a778bd9633",
+      "contractAddress": null,
+      "gasUsed": "134449",
+      "feeWei": "201673515192737"
+    },
+    {
+      "key": "price-btc",
+      "label": "Initialize mBTC market report",
+      "status": "confirmed",
+      "hash": "0x4364c62a8d3e32e3173d997d59061e26d194c6dd724930953844860195f514ed",
+      "blockNumber": 11934639,
+      "blockHash": "0x68bfb867f6c179a1592ed14ca52fb861ff81e17895e34ead1f2c468e5dff77e3",
+      "contractAddress": null,
+      "gasUsed": "470040",
+      "feeWei": "705060051234360"
+    },
+    {
+      "key": "enable-btc",
+      "label": "Enable mBTC",
+      "status": "confirmed",
+      "hash": "0xa7910f290b7d35bfb43c138fd51c36ca59550c59d148fc8328183e6eddc423a7",
+      "blockNumber": 11934651,
+      "blockHash": "0xc12d6207a1508561f18c4c037ba037163fb8b3585b55edaa802447833e087a34",
+      "contractAddress": null,
+      "gasUsed": "136587",
+      "feeWei": "204880515434331"
+    },
+    {
+      "key": "liquidity-usd",
+      "label": "Fund exchange USD",
+      "status": "confirmed",
+      "hash": "0xb2bb42a1646997162a21a8019d119d0220db5d8d76e52075732e9f6f67197dd4",
+      "blockNumber": 11934661,
+      "blockHash": "0x8c3ad23c612a4af0e4ee19c2b2f5497c9e44ab06359eac48d79a79e239cc4447",
+      "contractAddress": null,
+      "gasUsed": "238419",
+      "feeWei": "357628533617079"
+    },
+    {
+      "key": "liquidity-eth",
+      "label": "Fund exchange ETH",
+      "status": "confirmed",
+      "hash": "0xb932719e54647e1182eb87e2848ae9f16a349c7fffac46cc912d15126a68dccd",
+      "blockNumber": 11934667,
+      "blockHash": "0x323b5aa9fc172077791ededa0eff95cb07a75017ab1bcff3a9443dfe11b158df",
+      "contractAddress": null,
+      "gasUsed": "238407",
+      "feeWei": "357610538621934"
+    },
+    {
+      "key": "liquidity-btc",
+      "label": "Fund exchange BTC",
+      "status": "confirmed",
+      "hash": "0x2ef01fb53c6e02a6f4d87e6419b16c9933e2667472a9062a43a499b8ab973b5d",
+      "blockNumber": 11934674,
+      "blockHash": "0x18970206880673b766908fcf6ae63ac900ccfe265c586b50f31595b90927ea9c",
+      "contractAddress": null,
+      "gasUsed": "238407",
+      "feeWei": "357610544820516"
+    },
+    {
+      "key": "investor-funds",
+      "label": "Mint 100,000 mock USD to investor",
+      "status": "confirmed",
+      "hash": "0xd54bf42f0e3ebd7b38285fe780e0a1858c8e796fe1f243326423a4b24607814e",
+      "blockNumber": 11934685,
+      "blockHash": "0xe65279514b46e9d9596b32ff18fc4e783a9255269c389697a265595d9de0ff16",
+      "contractAddress": null,
+      "gasUsed": "140499",
+      "feeWei": "210748534984251"
+    },
+    {
+      "key": "grant-risk",
+      "label": "Grant risk role to designated officer",
+      "status": "confirmed",
+      "hash": "0x93c996c1c84021869e6c88d865761f0e34c317cad929fe61d713f7c85198d4b5",
+      "blockNumber": 11934694,
+      "blockHash": "0xc05e9d2ea67d64098c86cf5b08bdec499b13ac3f7536b5e1c1b407a55b46e618",
+      "contractAddress": null,
+      "gasUsed": "128825",
+      "feeWei": "193237532592725"
+    },
+    {
+      "key": "revoke-bootstrap",
+      "label": "Revoke temporary deployer risk role",
+      "status": "confirmed",
+      "hash": "0x99207480de54b12d2bd803c2aae5f3877c4881ebb2cc78f88e7f5a803f4acfdf",
+      "blockNumber": 11934716,
+      "blockHash": "0x3195b465bb19df831e43b5342b0d872463e94026dc7e8a04ef8cc1a6b9e1d7b2",
+      "contractAddress": null,
+      "gasUsed": "24724",
+      "feeWei": "37086009667084"
+    }
+  ],
+  "failedAttempts": [
+    {
+      "key": "price-eth",
+      "label": "Initialize mETH market report",
+      "status": "reverted",
+      "hash": "0x9ee74038cfd43bb1af6c014c9153f5dca588631c6761666d0fecea976ee6b52a",
+      "blockNumber": 11934537,
+      "blockHash": "0xbd695148319782c2a01ee82a847aa85ff72c044629b081f75e035358baa887c7",
+      "gasUsed": "543779",
+      "feeWei": "815668510875580",
+      "route": "reverted-wallet-wrapper"
+    },
+    {
+      "key": "enable-eth",
+      "label": "Enable mETH",
+      "status": "reverted",
+      "hash": "0x357855c704878915b3f72799a151215ca7b129511ec5d8bd32aa6dc35d0f225b",
+      "blockNumber": 11934597,
+      "blockHash": "0x3ed5e696257908941f5cb435c0933ca95d4a0a7b960fff291f513eb4abc9e4a8",
+      "gasUsed": "214618",
+      "feeWei": "321927013735552",
+      "route": "reverted-wallet-wrapper"
+    }
+  ]
+}

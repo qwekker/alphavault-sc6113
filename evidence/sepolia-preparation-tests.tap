@@ -1,0 +1,102 @@
+TAP version 13
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_darwin_arm64_127.node'
+# Require stack:
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: role plan rejects zero or conflated core roles
+ok 1 - role plan rejects zero or conflated core roles
+  ---
+  duration_ms: 865.56975
+  type: 'test'
+  ...
+# Subtest: wrong chain and changed artifacts are rejected before signing
+ok 2 - wrong chain and changed artifacts are rejected before signing
+  ---
+  duration_ms: 22.596541
+  type: 'test'
+  ...
+# Subtest: wallet rejection clears only the unsent step; checkpoint failure sends nothing
+ok 3 - wallet rejection clears only the unsent step; checkpoint failure sends nothing
+  ---
+  duration_ms: 47.298167
+  type: 'test'
+  ...
+# Subtest: an uncertain wallet submission blocks automatic duplicate sends
+ok 4 - an uncertain wallet submission blocks automatic duplicate sends
+  ---
+  duration_ms: 21.140875
+  type: 'test'
+  ...
+# Subtest: deploy three assets, resume a JSON checkpoint without redeploying, and finish all 17 steps
+ok 5 - deploy three assets, resume a JSON checkpoint without redeploying, and finish all 17 steps
+  ---
+  duration_ms: 2815.328417
+  type: 'test'
+  ...
+# Subtest: exported manifest has valid wiring and bootstrap risk permission is revoked
+ok 6 - exported manifest has valid wiring and bootstrap risk permission is revoked
+  ---
+  duration_ms: 173.993125
+  type: 'test'
+  ...
+# Subtest: tampered journal hashes and bad manifest wiring are rejected
+ok 7 - tampered journal hashes and bad manifest wiring are rejected
+  ---
+  duration_ms: 125.505542
+  type: 'test'
+  ...
+# Subtest: completed deployment does not send another transaction when resumed
+ok 8 - completed deployment does not send another transaction when resumed
+  ---
+  duration_ms: 80.111041
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_darwin_arm64_127.node'
+# Require stack:
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# (node:36504) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: receipt evidence validates deployment-specific approval, gas and cost
+ok 9 - receipt evidence validates deployment-specific approval, gas and cost
+  ---
+  duration_ms: 1524.335292
+  type: 'test'
+  ...
+# Subtest: mints, deployment receipts and approvals for other spenders are excluded
+ok 10 - mints, deployment receipts and approvals for other spenders are excluded
+  ---
+  duration_ms: 19.246209
+  type: 'test'
+  ...
+# Subtest: pending/unknown hashes cannot be persisted as successful evidence
+ok 11 - pending/unknown hashes cannot be persisted as successful evidence
+  ---
+  duration_ms: 1.876083
+  type: 'test'
+  ...
+# Subtest: export deduplicates method types, revalidates canonical receipts and reports missing methods
+ok 12 - export deduplicates method types, revalidates canonical receipts and reports missing methods
+  ---
+  duration_ms: 39.224042
+  type: 'test'
+  ...
+# Subtest: a reverted receipt is retained but not counted as successful coverage
+ok 13 - a reverted receipt is retained but not counted as successful coverage
+  ---
+  duration_ms: 39.408208
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6490.319959

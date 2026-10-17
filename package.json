@@ -1,0 +1,32 @@
+{
+  "name": "alphavault-sc6113",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "compile": "node scripts/compile.mjs",
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "dev": "node scripts/demo.mjs",
+    "start": "node server/start.mjs",
+    "keeper": "node scripts/keeper.mjs",
+    "deploy:sepolia": "node --env-file-if-exists=.env.sepolia.local scripts/deploy-sepolia.mjs",
+    "evidence": "node scripts/evidence.mjs",
+    "check": "npm run compile && npm test",
+    "setup": "node scripts/setup-server.mjs",
+    "sepolia:check": "node --env-file-if-exists=.env.sepolia.local scripts/sepolia-check.mjs",
+    "sepolia": "node --env-file=.env.sepolia.local server/start.mjs",
+    "import:deployment": "node --env-file-if-exists=.env.sepolia.local scripts/import-deployment.mjs"
+  },
+  "dependencies": {
+    "ethers": "6.13.5",
+    "express": "4.21.2"
+  },
+  "devDependencies": {
+    "ganache": "7.9.2",
+    "solc": "0.8.30",
+    "supertest": "7.0.0"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "checkedAt": "2026-10-17T14:31:14.412Z",
+  "/api/health": {
+    "ok": true,
+    "database": "sqlite",
+    "mode": "wallet",
+    "chainId": 11155111
+  },
+  "/api/config": {
+    "chainId": 11155111,
+    "networkName": "Sepolia",
+    "mode": "mock-assets",
+    "createdAt": "2026-10-17T13:30:35.401Z",
+    "deploymentBlock": 11934513,
+    "roles": {
+      "admin": "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+      "investor": "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+      "manager": "0xF72d3B36594dA7b06E3994112C8B1516e57cB3aA",
+      "risk": "0xF540005bC24b6E39A6abD22923BC9a7550C94252",
+      "keeper": "0x0258E85f725F2d17f87f0f25984A7FD503448169"
+    },
+    "contracts": {
+      "RiskManager": "0xe526418735631F067ea62eC84A7c3A383C37AcaE",
+      "StrategyEngine": "0x548055cd0103CAA87FAD3a4e329f4c5Dfbd14bFe",
+      "MockExchange": "0x49cD1ecFCCE174Cc95A7dD3d6b79319d6719cf01",
+      "PortfolioVault": "0x4076F1c885eF0f0651005e862D3264D538C941C9"
+    },
+    "assets": [
+      {
+        "address": "0xe1C4F513b40B8A188aAD8aA173beF339f37068Ff",
+        "symbol": "mUSD",
+        "decimals": 18
+      },
+      {
+        "address": "0x3FbC8F294aCf246507032175A2689A7691300944",
+        "symbol": "mETH",
+        "decimals": 18
+      },
+      {
+        "address": "0xc71d024c775EC1c62A05DDF0E38308C986B26972",
+        "symbol": "mBTC",
+        "decimals": 18
+      }
+    ],
+    "artifactHash": "0x77bd6239f0e436d47d4e3b8baa619d5fe10228308c9c6eb19113bb1bf79efe82",
+    "demo": false,
+    "strategies": [
+      "Equal Weight",
+      "Momentum",
+      "Volatility Target"
+    ],
+    "disclosures": [
+      "Mock prices reported by risk officer",
+      "Prefunded mock exchange; 20 bp fee",
+      "Nontransferable shares; in-kind redemption"
+    ]
+  },
+  "/api/portfolio": {
+    "scope": "11155111:0x4076f1c885ef0f0651005e862d3264d538c941c9",
+    "blockNumber": 11934729,
+    "blockHash": "0xa6c864b3e163621dab4ff425a0df02b990381b739eaab05ce8fbb0bb901f3356",
+    "timestamp": 1792247472,
+    "nav": "0",
+    "navUsd": 0,
+    "totalSupply": "0",
+    "shareIndex": 100,
+    "assets": [
+      {
+        "address": "0xe1C4F513b40B8A188aAD8aA173beF339f37068Ff",
+        "symbol": "mUSD",
+        "decimals": 18,
+        "price": "1000000000000000000",
+        "priceUsd": 1,
+        "volatility": 0,
+        "momentum": 0,
+        "updatedAt": 1792244700,
+        "enabled": true,
+        "stale": false,
+        "balance": "0",
+        "balanceFormatted": 0,
+        "valueUsd": 0,
+        "weightBps": 0
+      },
+      {
+        "address": "0x3FbC8F294aCf246507032175A2689A7691300944",
+        "symbol": "mETH",
+        "decimals": 18,
+        "price": "3000000000000000000000",
+        "priceUsd": 3000,
+        "volatility": 4000,
+        "momentum": 800,
+        "updatedAt": 1792245516,
+        "enabled": true,
+        "stale": false,
+        "balance": "0",
+        "balanceFormatted": 0,
+        "valueUsd": 0,
+        "weightBps": 0
+      },
+      {
+        "address": "0xc71d024c775EC1c62A05DDF0E38308C986B26972",
+        "symbol": "mBTC",
+        "decimals": 18,
+        "price": "60000000000000000000000",
+        "priceUsd": 60000,
+        "volatility": 3000,
+        "momentum": 400,
+        "updatedAt": 1792246320,
+        "enabled": true,
+        "stale": false,
+        "balance": "0",
+        "balanceFormatted": 0,
+        "valueUsd": 0,
+        "weightBps": 0
+      }
+    ],
+    "weights": [
+      0,
+      0,
+      0
+    ],
+    "target": [
+      2000,
+      4000,
+      4000
+    ],
+    "validationError": null,
+    "selected": 0,
+    "paused": false,
+    "automationEnabled": false,
+    "lastRebalance": 0,
+    "cooldown": 60,
+    "cashBuffer": 2000,
+    "targetVolatility": 1200,
+    "strategyEnabled": [
+      true,
+      true,
+      true
+    ],
+    "limits": {
+      "maxWeight": 7000,
+      "minCash": 1000,
+      "maxVolatility": 5000,
+      "maxSlippage": 100,
+      "maxAge": 3600
+    },
+    "valuationStale": false
+  },
+  "/api/account/0x0258E85f725F2d17f87f0f25984A7FD503448169": {
+    "address": "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+    "shares": "0",
+    "cash": "100000000000000000000000",
+    "allowance": "0"
+  }
+}

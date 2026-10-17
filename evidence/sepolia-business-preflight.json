@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-17T14:35:12.362Z",
+  "balances": {
+    "investor": {
+      "address": "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+      "sepoliaETH": "0.005928604404976648"
+    },
+    "manager": {
+      "address": "0xF72d3B36594dA7b06E3994112C8B1516e57cB3aA",
+      "sepoliaETH": "0.008878233978096402"
+    },
+    "risk": {
+      "address": "0xF540005bC24b6E39A6abD22923BC9a7550C94252",
+      "sepoliaETH": "0.0"
+    }
+  },
+  "account": {
+    "address": "0x0258E85f725F2d17f87f0f25984A7FD503448169",
+    "shares": "0",
+    "cash": "100000000000000000000000",
+    "allowance": "0"
+  },
+  "portfolio": {
+    "nav": "0",
+    "paused": false,
+    "valuationStale": false,
+    "automationEnabled": false,
+    "validationError": null
+  }
+}

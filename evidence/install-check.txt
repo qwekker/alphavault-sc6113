@@ -1,0 +1,1 @@
+2026-10-17: npm ci --no-audit --no-fund in a separate empty directory using the delivered package.json and package-lock.json. Exit code 0; 443 packages installed. Node 22.23.2 / npm 10.9.8.

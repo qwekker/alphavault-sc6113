@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "description": "Stopped and restarted persistent demo; block-tagged NAV, shares and block hash survived; UI showed 9984 before subsequent transactions.",
+  "retainedBlock": 22,
+  "blockHash": "0x540632f73b35abe776640e5796d65ee85e5322e32e345fecb5930b8ab142cbe4",
+  "nav": "9983999999999999918000",
+  "supply": "10000000000000000000000000000",
+  "snapshotCount": 5,
+  "eventsAfterRestart": 15
+}

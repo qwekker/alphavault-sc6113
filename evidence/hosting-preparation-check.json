@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-17T15:33:05.873441+00:00",
+  "environment": "isolated local Node wallet-mode service, real read-only Sepolia RPC",
+  "originalDashboardUntouched": true,
+  "freshStartupImportedReceipts": 12,
+  "successfulKinds": 10,
+  "nonChainSentinelPresentAfterShutdown": true,
+  "dockerBuildVerified": false,
+  "dockerBlocker": "Docker daemon not running",
+  "publicHostDeployed": false,
+  "tests": {
+    "passed": 57,
+    "failed": 0
+  },
+  "restartImportedReceipts": 0,
+  "restartSkippedReceipts": 12,
+  "nonChainSentinelVisibleThroughApiAfterRestart": true,
+  "localDatabaseRestartVerified": true,
+  "cloudDiskPersistenceVerified": false
+}

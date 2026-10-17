@@ -1,0 +1,17 @@
+services:
+  alphavault:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3100:3100"
+    environment:
+      RPC_URL: ${RPC_URL:?Set a Sepolia RPC URL}
+      DEPLOYMENT_FILE: /app/config/sepolia-deployment.json
+      RECEIPT_SEED_FILE: /app/config/sepolia-receipts.json
+      DB_PATH: /app/data/alphavault.sqlite
+      HOST: 0.0.0.0
+      PORT: 3100
+    volumes:
+      - alphavault-db:/app/data
+volumes:
+  alphavault-db:

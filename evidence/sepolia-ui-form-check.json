@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-17T15:28:15.272035+00:00",
+  "method": "Actual Chrome DOM read after reloading dashboard; no transaction sent",
+  "configuration": {
+    "target": 1200,
+    "cash": 2000,
+    "cooldown": 120,
+    "maxWeight": 6500,
+    "minCash": 1500,
+    "maxVolatility": 3500,
+    "maxSlippage": 100,
+    "maxAge": 3600
+  },
+  "pauseState": "Active: deposits and trading are permitted, subject to policy checks.",
+  "checks": [
+    "JavaScript syntax passed",
+    "Form values match final RPC portfolio snapshot after reload"
+  ],
+  "limitations": [
+    "In-progress edit preservation implemented but not separately exercised in this browser pass",
+    "54-test suite result predates this display-only change"
+  ]
+}

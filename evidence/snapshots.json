@@ -1,0 +1,172 @@
+[
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 16,
+    "block_hash": "0x83379b9ed422083051436ba77da18b9a20a2575bb2f246b71ffb55af4258ed8d",
+    "timestamp": 1792229567,
+    "nav": "0",
+    "supply": "0",
+    "share_index": 100,
+    "weights": "[0,0,0]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 17,
+    "block_hash": "0xe04110771d97ae57330797d83405b44034bdd3ef74ff047d378f8036e027e8ea",
+    "timestamp": 1792229567,
+    "nav": "10000000000000000000000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 100,
+    "weights": "[10000,0,0]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 18,
+    "block_hash": "0x0e3bb7bbb84713affa48a697e68ac8224bac42707ac3b29ffcd42ecc3c897593",
+    "timestamp": 1792229567,
+    "nav": "10000000000000000000000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 100,
+    "weights": "[10000,0,0]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 19,
+    "block_hash": "0x873cd2eb22221c7460612c374f5c0cc0f4e052ea2c7f55917bc9292806ee278f",
+    "timestamp": 1792229567,
+    "nav": "10000000000000000000000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 100,
+    "weights": "[10000,0,0]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 20,
+    "block_hash": "0x1d3bb5a4933fa6161e9c5133ed6159c31052d3decd1b603a38eee6b7222cd12b",
+    "timestamp": 1792229567,
+    "nav": "10000000000000000000000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 100,
+    "weights": "[10000,0,0]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 21,
+    "block_hash": "0x77e1e6336b35937486971bf7c9e6d29c4634397df8a17f9d592a49321e2b0406",
+    "timestamp": 1792229567,
+    "nav": "10000000000000000000000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 100,
+    "weights": "[10000,0,0]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 22,
+    "block_hash": "0xdb41e2496010a71810b9092ccbe3882a24414260311628532e0d9a295000f3e6",
+    "timestamp": 1792229568,
+    "nav": "9983999999999999918000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 99.84,
+    "weights": "[2003,3998,3998]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 23,
+    "block_hash": "0xb537efb77990a2e3108440f1ef130a020d1d4b34d9cab8dec0bb0c13990419c4",
+    "timestamp": 1792229568,
+    "nav": "9983999999999999918000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 99.84,
+    "weights": "[2003,3998,3998]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 24,
+    "block_hash": "0x8e7c12233bfa16af30cadb9ea4f79cd920a6bf0376934ceedd4a9fc44fc6afed",
+    "timestamp": 1792229568,
+    "nav": "9983999999999999918000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 99.84,
+    "weights": "[2003,3998,3998]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 25,
+    "block_hash": "0xaede423e2348976926ba3cc523df7ba7b24b92364f214a07ec7305222b842cd0",
+    "timestamp": 1792229568,
+    "nav": "9983999999999999918000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 99.84,
+    "weights": "[2003,3998,3998]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 26,
+    "block_hash": "0xfed2bdb83caf6c3f6f18ca0aa9fbefc0f20ac3cab3c20e1e2f00789889e5b0fe",
+    "timestamp": 1792229568,
+    "nav": "9983999999999999918000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 99.84,
+    "weights": "[2003,3998,3998]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 27,
+    "block_hash": "0x407d3b62a9364bb3f8d84dddd8f75fd895d620705f7850e758199da4c6b52f45",
+    "timestamp": 1792229568,
+    "nav": "9983999999999999918000",
+    "supply": "10000000000000000000000000000",
+    "share_index": 99.84,
+    "weights": "[2003,3998,3998]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 28,
+    "block_hash": "0xf81ebefa3d4f074afbeb5276ab7a46086454c2b6135a08b5fc7615d43266a55a",
+    "timestamp": 1792229568,
+    "nav": "10143679999999999917920",
+    "supply": "10000000000000000000000000000",
+    "share_index": 101.4368,
+    "weights": "[1971,4092,3935]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 30,
+    "block_hash": "0x1ff8f4829b0240b1fc4cd388ff8448699495c151fcf75746ca672e9cc8d39aae",
+    "timestamp": 1792229630,
+    "nav": "10111188811775999850818",
+    "supply": "10000000000000000000000000000",
+    "share_index": 101.11188811776,
+    "weights": "[2003,5997,1999]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 31,
+    "block_hash": "0x037c462c312134cc506ccc597c9f39fd0dcf8fbd50734601d031bb2d02f930da",
+    "timestamp": 1792229630,
+    "nav": "10111188811775999850818",
+    "supply": "10000000000000000000000000000",
+    "share_index": 101.11188811776,
+    "weights": "[2003,5997,1999]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 32,
+    "block_hash": "0x588cf6f54b8378cf42995704c097f28c0541d9528740464d0564dffdaa3bbcfc",
+    "timestamp": 1792229630,
+    "nav": "7583391608831999951234",
+    "supply": "7500000000000000000000000000",
+    "share_index": 101.11188811776,
+    "weights": "[2003,5997,1999]"
+  },
+  {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "block_number": 33,
+    "block_hash": "0xf827e3338599d491409d96e80495fb1a50c74e4f299236391dfdea24aa6e9aed",
+    "timestamp": 1792229630,
+    "nav": "7583391608831999951234",
+    "supply": "7500000000000000000000000000",
+    "share_index": 101.11188811776,
+    "weights": "[2003,5997,1999]"
+  }
+]

@@ -1,0 +1,32 @@
+# Creating these resources incurs hosting charges. Review the provider's total first.
+# Use the contents of this AlphaVault directory as the repository root.
+services:
+  - type: web
+    name: alphavault-sepolia
+    runtime: docker
+    plan: 0.5c-512mb
+    region: singapore
+    numInstances: 1
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: "off"
+    envVars:
+      - key: RPC_URL
+        sync: false
+      - key: DEPLOYMENT_FILE
+        value: /app/config/sepolia-deployment.json
+      - key: RECEIPT_SEED_FILE
+        value: /app/config/sepolia-receipts.json
+      - key: DB_PATH
+        value: /app/data/alphavault.sqlite
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: alphavault-sqlite
+      mountPath: /app/data
+      sizeGB: 1

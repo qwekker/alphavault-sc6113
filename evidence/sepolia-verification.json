@@ -1,0 +1,91 @@
+{
+  "verifiedAt": "2026-10-17T14:30:18.752Z",
+  "verificationBlock": 11934725,
+  "ok": true,
+  "chainId": 11155111,
+  "vault": "0x4076F1c885eF0f0651005e862D3264D538C941C9",
+  "checkedContracts": 7,
+  "successfulDeploymentSteps": 17,
+  "failedAttempts": [
+    {
+      "key": "price-eth",
+      "label": "Initialize mETH market report",
+      "status": "reverted",
+      "hash": "0x9ee74038cfd43bb1af6c014c9153f5dca588631c6761666d0fecea976ee6b52a",
+      "blockNumber": 11934537,
+      "blockHash": "0xbd695148319782c2a01ee82a847aa85ff72c044629b081f75e035358baa887c7",
+      "gasUsed": "543779",
+      "feeWei": "815668510875580",
+      "route": "reverted-wallet-wrapper"
+    },
+    {
+      "key": "enable-eth",
+      "label": "Enable mETH",
+      "status": "reverted",
+      "hash": "0x357855c704878915b3f72799a151215ca7b129511ec5d8bd32aa6dc35d0f225b",
+      "blockNumber": 11934597,
+      "blockHash": "0x3ed5e696257908941f5cb435c0933ca95d4a0a7b960fff291f513eb4abc9e4a8",
+      "gasUsed": "214618",
+      "feeWei": "321927013735552",
+      "route": "reverted-wallet-wrapper"
+    }
+  ],
+  "roles": {
+    "manager": true,
+    "risk": true,
+    "keeper": true,
+    "deployerRiskRevoked": true
+  },
+  "assets": [
+    {
+      "address": "0xe1C4F513b40B8A188aAD8aA173beF339f37068Ff",
+      "symbol": "mUSD",
+      "decimals": 18,
+      "exchangeBalance": "100000000.0",
+      "investorBalance": "100000.0",
+      "market": {
+        "price": "1.0",
+        "volatility": 0,
+        "momentum": 0,
+        "updatedAt": 1792244700,
+        "enabled": true
+      }
+    },
+    {
+      "address": "0x3FbC8F294aCf246507032175A2689A7691300944",
+      "symbol": "mETH",
+      "decimals": 18,
+      "exchangeBalance": "1000000.0",
+      "investorBalance": "0.0",
+      "market": {
+        "price": "3000.0",
+        "volatility": 4000,
+        "momentum": 800,
+        "updatedAt": 1792245516,
+        "enabled": true
+      }
+    },
+    {
+      "address": "0xc71d024c775EC1c62A05DDF0E38308C986B26972",
+      "symbol": "mBTC",
+      "decimals": 18,
+      "exchangeBalance": "1000000.0",
+      "investorBalance": "0.0",
+      "market": {
+        "price": "60000.0",
+        "volatility": 3000,
+        "momentum": 400,
+        "updatedAt": 1792246320,
+        "enabled": true
+      }
+    }
+  ],
+  "automationEnabled": false,
+  "totalSupply": "0",
+  "deploymentFeesETH": "0.063297268220609263",
+  "failedAttemptFeesETH": "0.001137595524611132",
+  "limitations": [
+    "Public website hosting, source verification and multi-role business demonstration remain pending.",
+    "Prices are manually supplied mock market data."
+  ]
+}

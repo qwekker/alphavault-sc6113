@@ -1,0 +1,7 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { syntheticPrices,signals,weightsFor,backtest } from '../server/quant.mjs';
+test('off-chain allocation logic matches documented contract rules',()=>{const s=[{volatility:4000,momentum:800},{volatility:3000,momentum:400}];assert.deepEqual(weightsFor(0,s),[2000,4000,4000]);assert.deepEqual(weightsFor(1,s),[2000,6000,2000]);assert.deepEqual(weightsFor(2,s),[6572,1714,1714]);assert.deepEqual(weightsFor(1,s.map(x=>({...x,momentum:-1}))),[10000,0,0]);});
+test('flat prices produce zero signal and transaction costs reduce value',()=>{const rows=Array.from({length:80},(_,day)=>({day,prices:[1,3000,60000]}));assert.deepEqual(signals(rows),[{volatility:0,momentum:0},{volatility:0,momentum:0}]);const result=backtest(0,{rows});assert(result.totalReturn<0);assert(result.transactionCosts>0);assert.equal(backtest(0,{rows,feeBps:0}).totalReturn,0);});
+test('changing future data cannot change earlier backtest outcomes',()=>{const rows=syntheticPrices();const edited=structuredClone(rows);for(let i=120;i<edited.length;i++)edited[i].prices[1]*=2;const a=backtest(1,{rows}),b=backtest(1,{rows:edited});assert.deepEqual(a.history.filter(x=>x.day<120),b.history.filter(x=>x.day<120));assert.equal(a.liveMarketData,false);});
+test('backtest cost comparison and missing-history errors are explicit',()=>{assert(backtest(0,{feeBps:20}).history.at(-1).nav<backtest(0,{feeBps:0}).history.at(-1).nav);assert.throws(()=>signals(syntheticPrices(10)));assert.throws(()=>backtest(4));});

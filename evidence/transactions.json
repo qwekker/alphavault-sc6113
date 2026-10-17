@@ -1,0 +1,423 @@
+{
+  "generatedAt": "2026-10-17T09:32:49.494Z",
+  "network": "ephemeral LOCAL Ganache; not Sepolia",
+  "chainId": 31337,
+  "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+  "sourceHashes": {
+    "PortfolioVault": "cc09f2a5fcd1050c9e4be437c4255dd14cc1d11c3b3f03ac2e8f61b420b491a7",
+    "StrategyEngine": "ac1c1bed42bc306450bdc42bcec432c36868d4042fb942e16d4e7e25ebb6635c",
+    "RiskManager": "db174f87fa13bd639a5cdaa886ddfe87ca4707cf84ca54f0bababf15438e4f6c",
+    "MockERC20": "492d81c19a91ebecb6627f8bfc52ba7d6bd2ae10216c640e2b6688afa5cbbcf9",
+    "MockExchange": "e12eeab2335c5a428e681bc7cf415eec3a98c2b6cf168b9766776d70d14c0a80"
+  },
+  "distinctTransactionKinds": [
+    "updateMarket",
+    "setAssetEnabled",
+    "approve",
+    "deposit",
+    "configure",
+    "selectStrategy",
+    "setAutomation",
+    "setLimits",
+    "rebalance",
+    "setEnabled",
+    "setRole",
+    "setPaused",
+    "redeem"
+  ],
+  "receipts": [
+    {
+      "action": "deploy MockERC20",
+      "hash": "0xba76b31189a61ee7a62376090e90c244e7e950abe10b76b302839857d11ff4bd",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": null,
+      "block": 1,
+      "status": 1,
+      "gasUsed": "538035"
+    },
+    {
+      "action": "deploy MockERC20",
+      "hash": "0xfac21a0364c6ac1dbfacd10d29fd7660419b6ab872a3906afaa8214780e13848",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": null,
+      "block": 2,
+      "status": 1,
+      "gasUsed": "538059"
+    },
+    {
+      "action": "deploy MockERC20",
+      "hash": "0xfdecb51da48997a04246e2f21332deb4c98c79889c77607b8cb7c5380750e6fa",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": null,
+      "block": 3,
+      "status": 1,
+      "gasUsed": "538083"
+    },
+    {
+      "action": "deploy RiskManager",
+      "hash": "0x54f4cc42ce569776522bf1f94145688c08eb453a74c941ac1334a8883c15229c",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": null,
+      "block": 4,
+      "status": 1,
+      "gasUsed": "1349557"
+    },
+    {
+      "action": "deploy StrategyEngine",
+      "hash": "0xd26951d989035bbf0301a623cda15a1b8394b2aeac64dc9f9705a9754596a746",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": null,
+      "block": 5,
+      "status": 1,
+      "gasUsed": "940530"
+    },
+    {
+      "action": "deploy MockExchange",
+      "hash": "0xf3b93d43171826072ca1a2d7db211d049c2694008947ae08ba6103c6e5c12b3b",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": null,
+      "block": 6,
+      "status": 1,
+      "gasUsed": "494288"
+    },
+    {
+      "action": "deploy PortfolioVault",
+      "hash": "0x6b828a3c617157b842f47c2471c6f2d83e1cdfe296fd7b80fae61c13ce9b04dd",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": null,
+      "block": 7,
+      "status": 1,
+      "gasUsed": "1599869"
+    },
+    {
+      "action": "updateMarket",
+      "hash": "0x1bd139fe40aaf7b135be8014350e63817dd22c802e07f182f77f8f3ae3b02654",
+      "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 8,
+      "status": 1,
+      "gasUsed": "122210"
+    },
+    {
+      "action": "setAssetEnabled",
+      "hash": "0xbfd9087ea2796b1387ad87e9c70df7c0de7b0d4409306ca37026e0814f5e24f6",
+      "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 9,
+      "status": 1,
+      "gasUsed": "52429"
+    },
+    {
+      "action": "updateMarket",
+      "hash": "0x6fd8b525513e48bff2561b7fdf5e29a1403601a1a90a16cd9c9cafbf52c969a3",
+      "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 10,
+      "status": 1,
+      "gasUsed": "124360"
+    },
+    {
+      "action": "setAssetEnabled",
+      "hash": "0x8015ab67fd848e7a62d47fbc3eeeeace771df721fb042808ec6fc80934467682",
+      "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 11,
+      "status": 1,
+      "gasUsed": "54567"
+    },
+    {
+      "action": "mint exchange liquidity",
+      "hash": "0xc29550988db2661d7cd9befd3e1bbae60f06432c0087b37571c605879dab2ab3",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "block": 12,
+      "status": 1,
+      "gasUsed": "68379"
+    },
+    {
+      "action": "mint exchange liquidity",
+      "hash": "0xe8f690358ce26711aef9e007355a334e907ba1eabad895a28c7b6486dae99f14",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      "block": 13,
+      "status": 1,
+      "gasUsed": "68367"
+    },
+    {
+      "action": "mint exchange liquidity",
+      "hash": "0x31f196e6b46726272b4142f9b56c4c527056266fcf576405782ccbcd909a46c8",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "block": 14,
+      "status": 1,
+      "gasUsed": "68367"
+    },
+    {
+      "action": "mint investor funds",
+      "hash": "0x8dd9a235be1dd712e295c1d3ad4511826486c9a4c0fb7948b9fb60e7767fd5d6",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "block": 15,
+      "status": 1,
+      "gasUsed": "51279"
+    },
+    {
+      "action": "approve",
+      "hash": "0xcc1e447480bc60f9175da9fbd98a0b6f1c174a2475735d1cebe1a22b75a4d54b",
+      "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "to": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "block": 16,
+      "status": 1,
+      "gasUsed": "46175"
+    },
+    {
+      "action": "deposit",
+      "hash": "0x203d0d1002616a10e74a30af9b76e24f1477d6e0339f34d95db719c45257a91e",
+      "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "to": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "block": 17,
+      "status": 1,
+      "gasUsed": "137079"
+    },
+    {
+      "action": "configure",
+      "hash": "0xbe30a9a5a187571dd42d014abafa1cdcc003d0281396d3ca7c29d5f191eed344",
+      "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "to": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "block": 18,
+      "status": 1,
+      "gasUsed": "36523"
+    },
+    {
+      "action": "selectStrategy",
+      "hash": "0xb6456470ed9b08c6e0d16c0cba6e90c14c03e4825855be382e2b93008d0b6491",
+      "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "to": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "block": 19,
+      "status": 1,
+      "gasUsed": "33266"
+    },
+    {
+      "action": "setAutomation",
+      "hash": "0x6c0342fcd43f0e5c9f9f0e040981cff2f2f0df12bca47e310f4636d942d34da3",
+      "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "to": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "block": 20,
+      "status": 1,
+      "gasUsed": "51034"
+    },
+    {
+      "action": "setLimits",
+      "hash": "0xcdd768e01b7e792325c0eb907b595a06b511fd0a0f7afa78ca14099cd943d77f",
+      "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 21,
+      "status": 1,
+      "gasUsed": "37819"
+    },
+    {
+      "action": "rebalance",
+      "hash": "0x64ca8e98ddc94799b3b1fc37554e7316fb5a44023784cafa516f208d50c25894",
+      "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "to": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "block": 22,
+      "status": 1,
+      "gasUsed": "274006"
+    },
+    {
+      "action": "selectStrategy",
+      "hash": "0x39ff0dc6044c685ebc8fb4a2a10a2fe44ca6175f82d12246bb8f07f25be8850b",
+      "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "to": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "block": 23,
+      "status": 1,
+      "gasUsed": "53228"
+    },
+    {
+      "action": "setEnabled",
+      "hash": "0x1c003e38361c3ecc3411b194ee2dac8bb71e2d8eba5178e5d4fc0e59ae50b2a2",
+      "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "to": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "block": 24,
+      "status": 1,
+      "gasUsed": "34670"
+    },
+    {
+      "action": "setEnabled",
+      "hash": "0x0d8bd3294d4e77ba4afcfa9fc1629bc5ec539d5193d48192856b6a47b9c30b2b",
+      "from": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "to": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "block": 25,
+      "status": 1,
+      "gasUsed": "34682"
+    },
+    {
+      "action": "setRole",
+      "hash": "0xf464ab25ae0faf57719f2a4fc92ccbb2d2af6dd04757c6a623062c3d8a48716b",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 26,
+      "status": 1,
+      "gasUsed": "46818"
+    },
+    {
+      "action": "setRole",
+      "hash": "0xea223ce138ffb86ddff1ebeda6d7b6bcf749dd6c4e38e76ec8f61eb51c36063f",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 27,
+      "status": 1,
+      "gasUsed": "24906"
+    },
+    {
+      "action": "updateMarket",
+      "hash": "0xee1b92836918eaabefb3129867a1fa473eb634cd8244ebc3151bd96c5eae8d8e",
+      "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 28,
+      "status": 1,
+      "gasUsed": "53810"
+    },
+    {
+      "action": "rebalance",
+      "hash": "0xa9e8390e8b88b3980d4e21c9c6a7c11b48debfb90a90c8ad1fbe0bca52f76cac",
+      "from": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "to": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "block": 30,
+      "status": 1,
+      "gasUsed": "295547"
+    },
+    {
+      "action": "setPaused",
+      "hash": "0x9438334b3fd5af275efa47e707edf2263d6cd349aa5e23c6372a6b76783a4a0e",
+      "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 31,
+      "status": 1,
+      "gasUsed": "46933"
+    },
+    {
+      "action": "redeem",
+      "hash": "0x35c1c63d3d954a6ffb9b5db2bdfcc65e8be6abee44f2215f125e12d38ceb477d",
+      "from": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "to": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "block": 32,
+      "status": 1,
+      "gasUsed": "140119"
+    },
+    {
+      "action": "setPaused",
+      "hash": "0xc4e4130f40e3af6182c4656456a81351c5f2b792ed45e41b2235940d03a77002",
+      "from": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "to": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "block": 33,
+      "status": 1,
+      "gasUsed": "25021"
+    }
+  ],
+  "rejections": [
+    {
+      "action": "paused deposit",
+      "stage": "gas-estimation or eth_call",
+      "transactionHash": null,
+      "error": "missing revert data"
+    },
+    {
+      "action": "unauthorized strategy change",
+      "stage": "gas-estimation or eth_call",
+      "transactionHash": null,
+      "error": "missing revert data"
+    }
+  ],
+  "finalState": {
+    "scope": "31337:0x0165878a594ca255338adfa4d48449f69242eb8f",
+    "blockNumber": 33,
+    "blockHash": "0xf827e3338599d491409d96e80495fb1a50c74e4f299236391dfdea24aa6e9aed",
+    "timestamp": 1792229630,
+    "nav": "7583391608831999951234",
+    "navUsd": 7583.391608832,
+    "totalSupply": "7500000000000000000000000000",
+    "shareIndex": 101.11188811776,
+    "assets": [
+      {
+        "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+        "symbol": "mUSD",
+        "decimals": 18,
+        "price": "1000000000000000000",
+        "priceUsd": 1,
+        "volatility": 0,
+        "momentum": 0,
+        "updatedAt": 1792229567,
+        "enabled": true,
+        "stale": false,
+        "balance": "1519108895999999987714",
+        "balanceFormatted": 1519.108896,
+        "valueUsd": 1519.108896,
+        "weightBps": 2003
+      },
+      {
+        "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+        "symbol": "mETH",
+        "decimals": 18,
+        "price": "3120000000000000000000",
+        "priceUsd": 3120,
+        "volatility": 4200,
+        "momentum": 1000,
+        "updatedAt": 1792229568,
+        "enabled": true,
+        "stale": false,
+        "balance": "1457760267507692296",
+        "balanceFormatted": 1.4577602675076924,
+        "valueUsd": 4548.212034624,
+        "weightBps": 5997
+      },
+      {
+        "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+        "symbol": "mBTC",
+        "decimals": 18,
+        "price": "60000000000000000000000",
+        "priceUsd": 60000,
+        "volatility": 3000,
+        "momentum": 400,
+        "updatedAt": 1792229567,
+        "enabled": true,
+        "stale": false,
+        "balance": "25267844636800000",
+        "balanceFormatted": 0.0252678446368,
+        "valueUsd": 1516.070678208,
+        "weightBps": 1999
+      }
+    ],
+    "weights": [
+      2003,
+      5997,
+      1999
+    ],
+    "target": [
+      2000,
+      6000,
+      2000
+    ],
+    "validationError": null,
+    "selected": 1,
+    "paused": false,
+    "automationEnabled": true,
+    "lastRebalance": 1792229630,
+    "cooldown": 60,
+    "cashBuffer": 2000,
+    "targetVolatility": 1200,
+    "strategyEnabled": [
+      true,
+      true,
+      true
+    ],
+    "limits": {
+      "maxWeight": 7000,
+      "minCash": 1000,
+      "maxVolatility": 5000,
+      "maxSlippage": 100,
+      "maxAge": 3600
+    },
+    "valuationStale": false
+  }
+}

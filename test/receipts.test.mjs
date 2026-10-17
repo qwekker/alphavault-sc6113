@@ -1,0 +1,15 @@
+import {before,after,test} from 'node:test';
+import assert from 'node:assert/strict';
+import {parseEther} from 'ethers';
+import {localChain,deploy,seed} from '../scripts/chain.mjs';
+import {createService} from '../server/service.mjs';
+import {createStore} from '../server/store.mjs';
+import {receiptEvidence,createReceiptService} from '../server/receipts.mjs';
+let chain,c,store,service,receipts;const txs=[];
+before(async()=>{chain=await localChain();c=await deploy(chain.provider,chain.signers,undefined,async(action,tx)=>txs.push({action,hash:tx.hash}));await seed(c);store=createStore();service=createService(c,store);receipts=createReceiptService(service);});
+after(async()=>{store.close();await chain.close();});
+test('receipt evidence validates deployment-specific approval, gas and cost',async()=>{const hash=txs.find(t=>t.action==='approve').hash;const r=await receipts.remember(hash);assert.equal(r.status,'confirmed');assert.equal(r.kind,'MockERC20.approve');assert.equal(r.chainId,31337);assert.equal(BigInt(r.feeWei),BigInt(r.gasUsed)*BigInt(r.effectiveGasPrice));assert.equal(r.explorerUrl,null);});
+test('mints, deployment receipts and approvals for other spenders are excluded',async()=>{await assert.rejects(receiptEvidence(c,txs.find(t=>t.action.startsWith('deploy')).hash));await assert.rejects(receiptEvidence(c,txs.find(t=>t.action==='mint investor funds').hash),/supported/);const tx=await c.tokens[0].connect(c.signers[1]).approve(await c.signers[5].getAddress(),parseEther('1'));await tx.wait();await assert.rejects(receiptEvidence(c,tx.hash),/this vault/);});
+test('pending/unknown hashes cannot be persisted as successful evidence',async()=>{await assert.rejects(receipts.remember('0x'+'ab'.repeat(32)),/not yet confirmed/);await assert.rejects(receipts.remember('not-a-hash'),/Invalid/);});
+test('export deduplicates method types, revalidates canonical receipts and reports missing methods',async()=>{for(const action of ['deposit','selectStrategy','setAutomation'])await receipts.remember(txs.find(t=>t.action===action).hash);await receipts.remember(txs.find(t=>t.action==='approve').hash);const out=await receipts.exportAll();assert.equal(out.successfulKinds,4);assert.equal(out.receipts.length,4);assert.equal(out.minimumTenKindsMet,false);assert.equal(out.coverage.length,13);assert(out.coverage.find(r=>r.kind==='PortfolioVault.rebalance').completed===false);});
+test('a reverted receipt is retained but not counted as successful coverage',async()=>{const tx=await c.vault.connect(c.signers[1]).rebalance(100,9999999999,{gasLimit:500000});await assert.rejects(tx.wait());const r=await receipts.remember(tx.hash);assert.equal(r.status,'reverted');const out=await receipts.exportAll();assert.equal(out.successfulKinds,4);assert(out.receipts.some(x=>x.hash===tx.hash&&x.status==='reverted'));});

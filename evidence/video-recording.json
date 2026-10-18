@@ -1,7 +1,7 @@
 {
   "recordedOn": "2026-10-18",
-  "format": "Edited real Chrome tab capture with English subtitles and synthetic English narration",
-  "durationSeconds": 238.7,
+  "format": "Ten-minute narrated presentation with actual application capture and English subtitles",
+  "durationSeconds": 600,
   "sourceCaptureSeconds": 248.66,
   "sourceRangeUsed": [
     31,
@@ -25,10 +25,12 @@
   "publicEvidenceKinds": 10,
   "publicCoreKindsExcludingApprove": 9,
   "notes": [
-    "Intro, architecture and closing pages are static explanatory slides.",
+    "The 203-second application segment retains original action order and speed; it is placed at 230..433 seconds in the final video.",
+    "The existing processed capture requires a sub-second final-frame hold to fill its 203-second slot.",
+    "Explanatory chapters cover problem, stakeholders, five diagrams, measured impact, tests, limits and submission.",
     "Browser tab capture excludes browser chrome and wallet side panel.",
-    "Later direct API navigation was blocked by the browser and is outside the retained clip.",
-    "No live market or unattended public Keeper claim."
+    "Public view shows historical Sepolia state; no new public signatures or unattended public Keeper claim.",
+    "The first video page shows the author without a date."
   ],
   "validation": {
     "fullDecodePassed": true,
@@ -37,19 +39,23 @@
     "codec": "H.264",
     "fps": 20,
     "audioNarration": true,
-    "visualReview": "English caption keyframes checked across all major actions; named title and changed report pages inspected; remaining slide/page renders unchanged.",
+    "visualReview": "All twelve slide renders and nineteen video keyframes reviewed, including each chapter and recorded workflow actions.",
     "audioCodec": "AAC",
-    "audioDurationSeconds": 238.7,
+    "audioDurationSeconds": 600,
     "sampleAccurateSegmentSlots": true,
     "subtitleLanguage": "English",
-    "integratedLoudnessLUFS": -16.3,
-    "truePeakDBFS": -1.2
+    "integratedLoudnessLUFS": -16.4,
+    "truePeakDBFS": -1.3,
+    "openingTitleDateRemoved": true,
+    "subtitleCueCount": 116
   },
   "files": {
-    "AlphaVault-Demo.en.srt": "d9c44cb523040a3e1a58820b24e151db66a1e03e0ad5a7dcf59b6edaed3e6922",
-    "AlphaVault-Demo.mp4": "ead82ce8b3eef9b7e6626b411933e992b2ed43364e53a99a7ee6ec18b4aa89d7",
-    "AlphaVault-Presentation.pptx": "18fd2a8be56a4760e520a52895acaee84886a3002ca4126b5c4f6c9b880c57f3",
-    "AlphaVault-Report-Draft.docx": "788f234eb3ac1fe071f155ad38070ea09cdfbe3506fc93bd5438176004d88c6e"
+    "AlphaVault-Demo.en.srt": "f6aac0237040ef37ebc3c0ad0133b69f4a40fc3fb3a49162f27c0e44856fd680",
+    "AlphaVault-Demo.mp4": "858f9cd7c30514a936cd393bce905a28492c6955ebfc73ead744d8c4e20d40b0",
+    "AlphaVault-Individual-Contribution.docx": "c4a03a1f261365cba03c0b147924dbdb2ce0bb1adbf1d4de3fb58d4a828c2697",
+    "AlphaVault-Presentation.pptx": "abc1dad51b61afbf600aacc1f5f6b04ef155f6c5b0855d8e9eccea573bf0b1d1",
+    "AlphaVault-Technical-Report.docx": "feace8adae2cae594a54c0b4c8482d672d91dec604f6fae5809097dfe63eb897",
+    "AlphaVault-User-Manual.docx": "c920f359bb7df73b4d01c8150b4e42fb6ffe0419488e230fd5f259b8edd5df25"
   },
   "author": "Du zhuotong",
   "narration": {
@@ -57,7 +63,95 @@
     "voice": "en-US-GuyNeural",
     "synthetic": true,
     "studentVoiceRecording": false,
-    "segments": 16,
+    "segments": 12,
     "sampleRateHz": 48000
-  }
+  },
+  "recordedWorkflowSeconds": 203,
+  "explanatoryChaptersSeconds": 397,
+  "chapters": [
+    {
+      "slide": 1,
+      "title": "AlphaVault",
+      "start": 0,
+      "end": 20,
+      "duration": 20
+    },
+    {
+      "slide": 2,
+      "title": "Problem and stakeholders",
+      "start": 20,
+      "end": 65,
+      "duration": 45
+    },
+    {
+      "slide": 3,
+      "title": "System architecture",
+      "start": 65,
+      "end": 105,
+      "duration": 40
+    },
+    {
+      "slide": 4,
+      "title": "Contract interaction",
+      "start": 105,
+      "end": 140,
+      "duration": 35
+    },
+    {
+      "slide": 5,
+      "title": "Persistent data model",
+      "start": 140,
+      "end": 175,
+      "duration": 35
+    },
+    {
+      "slide": 6,
+      "title": "Process flow",
+      "start": 175,
+      "end": 205,
+      "duration": 30
+    },
+    {
+      "slide": 7,
+      "title": "Dashboard guide",
+      "start": 205,
+      "end": 230,
+      "duration": 25
+    },
+    {
+      "slide": 8,
+      "title": "Recorded application workflow",
+      "start": 230,
+      "end": 433,
+      "duration": 203
+    },
+    {
+      "slide": 9,
+      "title": "Measured impact",
+      "start": 433,
+      "end": 478,
+      "duration": 45
+    },
+    {
+      "slide": 10,
+      "title": "Tests and persistent hosting",
+      "start": 478,
+      "end": 528,
+      "duration": 50
+    },
+    {
+      "slide": 11,
+      "title": "Limits and contribution record",
+      "start": 528,
+      "end": 573,
+      "duration": 45
+    },
+    {
+      "slide": 12,
+      "title": "Submission and conclusion",
+      "start": 573,
+      "end": 600,
+      "duration": 27
+    }
+  ]
 }

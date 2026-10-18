@@ -1,0 +1,434 @@
+
+> alphavault-sc6113@0.1.0 test
+> node --test --test-concurrency=1 test/*.test.mjs
+
+TAP version 13
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_darwin_arm64_127.node'
+# Require stack:
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# (node:45411) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: health, config and portfolio expose real chain state
+ok 1 - health, config and portfolio expose real chain state
+  ---
+  duration_ms: 1623.306917
+  type: 'test'
+  ...
+# Subtest: prices and strategy endpoints persist snapshots and deduplicate event sync
+ok 2 - prices and strategy endpoints persist snapshots and deduplicate event sync
+  ---
+  duration_ms: 252.1335
+  type: 'test'
+  ...
+# Subtest: database data survives close and reopen
+ok 3 - database data survives close and reopen
+  ---
+  duration_ms: 84.472416
+  type: 'test'
+  ...
+# Subtest: API validates address, pagination, action and numeric input
+ok 4 - API validates address, pagination, action and numeric input
+  ---
+  duration_ms: 13.57325
+  type: 'test'
+  ...
+# Subtest: public mode never signs transactions
+ok 5 - public mode never signs transactions
+  ---
+  duration_ms: 0.943625
+  type: 'test'
+  ...
+# Subtest: demo signing needs explicit header and rejects foreign origin
+ok 6 - demo signing needs explicit header and rejects foreign origin
+  ---
+  duration_ms: 1.355917
+  type: 'test'
+  ...
+# Subtest: wrong demo role cannot perform a privileged action
+ok 7 - wrong demo role cannot perform a privileged action
+  ---
+  duration_ms: 3.433416
+  type: 'test'
+  ...
+# Subtest: calldata builder creates an unsigned transaction with chain binding
+ok 8 - calldata builder creates an unsigned transaction with chain binding
+  ---
+  duration_ms: 0.946667
+  type: 'test'
+  ...
+# Subtest: keeper executes eligible drift once and skips cooldown; receipt indexed
+ok 9 - keeper executes eligible drift once and skips cooldown; receipt indexed
+  ---
+  duration_ms: 986.273167
+  type: 'test'
+  ...
+# Subtest: chain rollback is detected and orphaned events are removed
+ok 10 - chain rollback is detected and orphaned events are removed
+  ---
+  duration_ms: 348.745166
+  type: 'test'
+  ...
+# Subtest: dashboard and locally bundled ethers load with restrictive script CSP
+ok 11 - dashboard and locally bundled ethers load with restrictive script CSP
+  ---
+  duration_ms: 7.230042
+  type: 'test'
+  ...
+# Subtest: verified evidence endpoints reject unknown hashes and export actual receipts
+ok 12 - verified evidence endpoints reject unknown hashes and export actual receipts
+  ---
+  duration_ms: 14.170833
+  type: 'test'
+  ...
+# Subtest: deployment artifacts are exposed only by explicit local setup/demo mode
+ok 13 - deployment artifacts are exposed only by explicit local setup/demo mode
+  ---
+  duration_ms: 2.948375
+  type: 'test'
+  ...
+# Subtest: receipt bootstrap rejects wrong deployment and malformed hashes before writes
+ok 14 - receipt bootstrap rejects wrong deployment and malformed hashes before writes
+  ---
+  duration_ms: 0.287333
+  type: 'test'
+  ...
+# Subtest: receipt bootstrap verifies hashes and survives database reopen without duplication
+ok 15 - receipt bootstrap verifies hashes and survives database reopen without duplication
+  ---
+  duration_ms: 27.500667
+  type: 'test'
+  ...
+# Subtest: receipt bootstrap refuses unknown transactions instead of inventing evidence
+ok 16 - receipt bootstrap refuses unknown transactions instead of inventing evidence
+  ---
+  duration_ms: 1.646167
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_darwin_arm64_127.node'
+# Require stack:
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: three core contracts are wired; capital is actually custodied
+ok 17 - three core contracts are wired; capital is actually custodied
+  ---
+  duration_ms: 1517.994958
+  type: 'test'
+  ...
+# Subtest: a second investor receives proportionate shares and cannot take another account shares
+ok 18 - a second investor receives proportionate shares and cannot take another account shares
+  ---
+  duration_ms: 197.94225
+  type: 'test'
+  ...
+# Subtest: rebalance transfers three assets with fee-bounded NAV loss
+ok 19 - rebalance transfers three assets with fee-bounded NAV loss
+  ---
+  duration_ms: 774.920625
+  type: 'test'
+  ...
+# Subtest: slippage failure rolls back all token movements and rebalance clock
+ok 20 - slippage failure rolls back all token movements and rebalance clock
+  ---
+  duration_ms: 66.072
+  type: 'test'
+  ...
+# Subtest: unauthorized investor cannot choose strategy, edit limits, or rebalance
+ok 21 - unauthorized investor cannot choose strategy, edit limits, or rebalance
+  ---
+  duration_ms: 22.335208
+  type: 'test'
+  ...
+# Subtest: manager cannot impersonate risk officer
+ok 22 - manager cannot impersonate risk officer
+  ---
+  duration_ms: 4.138042
+  type: 'test'
+  ...
+# Subtest: keeper revocation takes immediate effect
+ok 23 - keeper revocation takes immediate effect
+  ---
+  duration_ms: 21.594959
+  type: 'test'
+  ...
+# Subtest: equal-weight strategy, momentum tilt, and all-negative cash fallback
+ok 24 - equal-weight strategy, momentum tilt, and all-negative cash fallback
+  ---
+  duration_ms: 147.771167
+  type: 'test'
+  ...
+# Subtest: volatility targeting scales total risky exposure downward
+ok 25 - volatility targeting scales total risky exposure downward
+  ---
+  duration_ms: 47.957958
+  type: 'test'
+  ...
+# Subtest: position cap, cash floor and weighted volatility reject invalid allocation
+ok 26 - position cap, cash floor and weighted volatility reject invalid allocation
+  ---
+  duration_ms: 52.40475
+  type: 'test'
+  ...
+# Subtest: paused vault blocks deposits and trades but preserves pro-rata exits
+ok 27 - paused vault blocks deposits and trades but preserves pro-rata exits
+  ---
+  duration_ms: 966.136584
+  type: 'test'
+  ...
+# Subtest: stale prices block trades and NAV-priced deposits but not in-kind redemption
+ok 28 - stale prices block trades and NAV-priced deposits but not in-kind redemption
+  ---
+  duration_ms: 976.686875
+  type: 'test'
+  ...
+# Subtest: disabled asset cannot be bought and an oracle report does not re-enable it
+ok 29 - disabled asset cannot be bought and an oracle report does not re-enable it
+  ---
+  duration_ms: 85.165666
+  type: 'test'
+  ...
+# Subtest: cooldown and deadline cannot be bypassed
+ok 30 - cooldown and deadline cannot be bypassed
+  ---
+  duration_ms: 1107.923667
+  type: 'test'
+  ...
+# Subtest: automation off and disabled strategy both gate execution
+ok 31 - automation off and disabled strategy both gate execution
+  ---
+  duration_ms: 74.128209
+  type: 'test'
+  ...
+# Subtest: deposit and redemption minimums protect transaction bounds
+ok 32 - deposit and redemption minimums protect transaction bounds
+  ---
+  duration_ms: 34.433875
+  type: 'test'
+  ...
+# Subtest: partial redemption preserves the remaining investors proportional basket
+ok 33 - partial redemption preserves the remaining investors proportional basket
+  ---
+  duration_ms: 920.186667
+  type: 'test'
+  ...
+# Subtest: direct donation cannot mint free shares; deposit preview includes donation
+ok 34 - direct donation cannot mint free shares; deposit preview includes donation
+  ---
+  duration_ms: 183.059417
+  type: 'test'
+  ...
+# Subtest: oracle and policy reject invalid inputs
+ok 35 - oracle and policy reject invalid inputs
+  ---
+  duration_ms: 20.481083
+  type: 'test'
+  ...
+# Subtest: empty-vault donation attack cannot profit by recovering virtual shares on exit
+ok 36 - empty-vault donation attack cannot profit by recovering virtual shares on exit
+  ---
+  duration_ms: 589.578083
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_darwin_arm64_127.node'
+# Require stack:
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: role plan rejects zero or conflated core roles
+ok 37 - role plan rejects zero or conflated core roles
+  ---
+  duration_ms: 846.902459
+  type: 'test'
+  ...
+# Subtest: wrong chain and changed artifacts are rejected before signing
+ok 38 - wrong chain and changed artifacts are rejected before signing
+  ---
+  duration_ms: 27.083292
+  type: 'test'
+  ...
+# Subtest: wallet rejection clears only the unsent step; checkpoint failure sends nothing
+ok 39 - wallet rejection clears only the unsent step; checkpoint failure sends nothing
+  ---
+  duration_ms: 46.249417
+  type: 'test'
+  ...
+# Subtest: an uncertain wallet submission blocks automatic duplicate sends
+ok 40 - an uncertain wallet submission blocks automatic duplicate sends
+  ---
+  duration_ms: 22.7915
+  type: 'test'
+  ...
+# Subtest: deploy three assets, resume a JSON checkpoint without redeploying, and finish all 17 steps
+ok 41 - deploy three assets, resume a JSON checkpoint without redeploying, and finish all 17 steps
+  ---
+  duration_ms: 2676.121167
+  type: 'test'
+  ...
+# Subtest: exported manifest has valid wiring and bootstrap risk permission is revoked
+ok 42 - exported manifest has valid wiring and bootstrap risk permission is revoked
+  ---
+  duration_ms: 174.834
+  type: 'test'
+  ...
+# Subtest: tampered journal hashes and bad manifest wiring are rejected
+ok 43 - tampered journal hashes and bad manifest wiring are rejected
+  ---
+  duration_ms: 113.9875
+  type: 'test'
+  ...
+# Subtest: completed deployment does not send another transaction when resumed
+ok 44 - completed deployment does not send another transaction when resumed
+  ---
+  duration_ms: 73.585375
+  type: 'test'
+  ...
+# Subtest: retry requires a matching reverted deployment transaction and retains failed attempt
+ok 45 - retry requires a matching reverted deployment transaction and retains failed attempt
+  ---
+  duration_ms: 30.510625
+  type: 'test'
+  ...
+# Subtest: smart-contract/delegated deployers are refused before wallet submission
+ok 46 - smart-contract/delegated deployers are refused before wallet submission
+  ---
+  duration_ms: 7.984542
+  type: 'test'
+  ...
+# Subtest: only a never-submitted plan can be edited, preserving role addresses
+ok 47 - only a never-submitted plan can be edited, preserving role addresses
+  ---
+  duration_ms: 19.922375
+  type: 'test'
+  ...
+# Subtest: wrapped failure recovery verifies exact single call and keeps successes or unrelated attempts blocked
+ok 48 - wrapped failure recovery verifies exact single call and keeps successes or unrelated attempts blocked
+  ---
+  duration_ms: 517.635208
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_darwin_arm64_127.node'
+# Require stack:
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# (node:45424) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: PostgreSQL indexes chain state through all read API routes and deduplicates concurrent sync
+ok 49 - PostgreSQL indexes chain state through all read API routes and deduplicates concurrent sync
+  ---
+  duration_ms: 2994.353542
+  type: 'test'
+  ...
+# Subtest: PostgreSQL transaction failure rolls back both records and cursor
+ok 50 - PostgreSQL transaction failure rolls back both records and cursor
+  ---
+  duration_ms: 2.348875
+  type: 'test'
+  ...
+# Subtest: PostgreSQL verified receipts, backtests and non-chain jobs survive database reopen
+ok 51 - PostgreSQL verified receipts, backtests and non-chain jobs survive database reopen
+  ---
+  duration_ms: 102.591166
+  type: 'test'
+  ...
+# Subtest: PostgreSQL reorg discards orphaned state and resumes indexing
+ok 52 - PostgreSQL reorg discards orphaned state and resumes indexing
+  ---
+  duration_ms: 272.811541
+  type: 'test'
+  ...
+# Subtest: PostgreSQL health failures are reported instead of claiming a healthy database
+ok 53 - PostgreSQL health failures are reported instead of claiming a healthy database
+  ---
+  duration_ms: 2.78275
+  type: 'test'
+  ...
+# Subtest: cloud configuration fails closed and verifies TLS even with insecure URL options
+ok 54 - cloud configuration fails closed and verifies TLS even with insecure URL options
+  ---
+  duration_ms: 0.719875
+  type: 'test'
+  ...
+# Subtest: PostgreSQL telemetry retention bounds storage without deleting the event ledger
+ok 55 - PostgreSQL telemetry retention bounds storage without deleting the event ledger
+  ---
+  duration_ms: 81.620083
+  type: 'test'
+  ...
+# Subtest: off-chain allocation logic matches documented contract rules
+ok 56 - off-chain allocation logic matches documented contract rules
+  ---
+  duration_ms: 0.463666
+  type: 'test'
+  ...
+# Subtest: flat prices produce zero signal and transaction costs reduce value
+ok 57 - flat prices produce zero signal and transaction costs reduce value
+  ---
+  duration_ms: 0.75975
+  type: 'test'
+  ...
+# Subtest: changing future data cannot change earlier backtest outcomes
+ok 58 - changing future data cannot change earlier backtest outcomes
+  ---
+  duration_ms: 1.113958
+  type: 'test'
+  ...
+# Subtest: backtest cost comparison and missing-history errors are explicit
+ok 59 - backtest cost comparison and missing-history errors are explicit
+  ---
+  duration_ms: 0.516667
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_darwin_arm64_127.node'
+# Require stack:
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/outputs/alphavault/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# (node:45430) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: receipt evidence validates deployment-specific approval, gas and cost
+ok 60 - receipt evidence validates deployment-specific approval, gas and cost
+  ---
+  duration_ms: 1509.761708
+  type: 'test'
+  ...
+# Subtest: mints, deployment receipts and approvals for other spenders are excluded
+ok 61 - mints, deployment receipts and approvals for other spenders are excluded
+  ---
+  duration_ms: 16.760958
+  type: 'test'
+  ...
+# Subtest: pending/unknown hashes cannot be persisted as successful evidence
+ok 62 - pending/unknown hashes cannot be persisted as successful evidence
+  ---
+  duration_ms: 2.939917
+  type: 'test'
+  ...
+# Subtest: export deduplicates method types, revalidates canonical receipts and reports missing methods
+ok 63 - export deduplicates method types, revalidates canonical receipts and reports missing methods
+  ---
+  duration_ms: 33.152625
+  type: 'test'
+  ...
+# Subtest: a reverted receipt is retained but not counted as successful coverage
+ok 64 - a reverted receipt is retained but not counted as successful coverage
+  ---
+  duration_ms: 36.836708
+  type: 'test'
+  ...
+1..64
+# tests 64
+# suites 0
+# pass 64
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 22729.725333

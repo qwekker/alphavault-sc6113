@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="35.0" font-family="Arial" font-size="34" fill="#173F50" text-anchor="middle" dominant-baseline="middle">System architecture and trust boundaries</text>
+<rect x="30" y="100" width="270" height="115" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="165.0" y="130.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Dashboard and wallet</text>
+<text x="165.0" y="177.5" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Reads + user signatures</text>
+<rect x="520" y="100" width="340" height="115" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="690.0" y="130.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Express REST API</text>
+<text x="690.0" y="177.5" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Reads, indexer, unsigned tx</text>
+<rect x="1070" y="100" width="300" height="115" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1220.0" y="130.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Persistent database</text>
+<text x="1220.0" y="177.5" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">SQLite / PostgreSQL</text>
+<path d="M300,150 L520,150" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="520,150 508.2941876694152,155.654551943446 508.2941876694152,144.345448056554" fill="#427885"/>
+<text x="410.0" y="128.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">JSON</text>
+<path d="M860,150 L1070,150" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="1070,150 1058.2941876694151,155.654551943446 1058.2941876694151,144.345448056554" fill="#427885"/>
+<text x="965.0" y="128.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">SQL</text>
+<rect x="30" y="360" width="300" height="120" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="180.0" y="390.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PortfolioVault</text>
+<text x="180.0" y="440.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Custody and shares</text>
+<rect x="520" y="360" width="340" height="120" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="690.0" y="390.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">StrategyEngine</text>
+<text x="690.0" y="440.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Validated target weights</text>
+<rect x="1070" y="360" width="300" height="120" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1220.0" y="390.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">RiskManager</text>
+<text x="1220.0" y="440.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Roles, markets, policy</text>
+<path d="M165,215 L165,360" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="165,360 159.345448056554,348.2941876694152 170.654551943446,348.2941876694152" fill="#427885"/>
+<text x="165.0" y="265.5" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Signed tx</text>
+<path d="M330,415 L520,415" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="520,415 508.2941876694152,420.654551943446 508.2941876694152,409.345448056554" fill="#427885"/>
+<text x="425.0" y="393.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">weights</text>
+<path d="M860,415 L1070,415" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="1070,415 1058.2941876694151,420.654551943446 1058.2941876694151,409.345448056554" fill="#427885"/>
+<text x="965.0" y="393.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">validate</text>
+<rect x="520" y="650" width="340" height="110" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="690.0" y="680.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">EVM RPC and logs</text>
+<text x="690.0" y="725.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Read access for the API</text>
+<rect x="30" y="650" width="300" height="110" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="180.0" y="680.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">MockExchange</text>
+<text x="180.0" y="725.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Three mock ERC20 tokens</text>
+<rect x="1070" y="650" width="300" height="110" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1220.0" y="680.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Risk officer</text>
+<text x="1220.0" y="725.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Manual reports + limits</text>
+<path d="M690,215 L690,360" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="690,360 684.345448056554,348.2941876694152 695.654551943446,348.2941876694152" fill="#427885"/>
+<text x="690.0" y="265.5" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Contract reads</text>
+<path d="M690,480 L690,650" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="690,650 684.345448056554,638.2941876694152 695.654551943446,638.2941876694152" fill="#427885"/>
+<text x="690.0" y="543.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Events</text>
+<path d="M180,480 L180,650" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="180,650 174.345448056554,638.2941876694152 185.654551943446,638.2941876694152" fill="#427885"/>
+<text x="180.0" y="543.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Swaps</text>
+<path d="M1220,650 L1220,480" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="1220,480 1225.654551943446,491.7058123305848 1214.345448056554,491.7058123305848" fill="#427885"/>
+<text x="1220.0" y="543.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Signed tx</text>
+<text x="700" y="812.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Keeper submits rebalance to Vault. Vault and Exchange also read RiskManager.</text>
+</svg>

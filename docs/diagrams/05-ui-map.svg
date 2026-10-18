@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920">
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="35.0" font-family="Arial" font-size="34" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Dashboard navigation and user interface map</text>
+<rect x="40" y="100" width="1320" height="75" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="700.0" y="137.5" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Header: current screen | chain and block | Connect wallet</text>
+<rect x="40" y="220" width="290" height="500" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="185.0" y="250.0" font-family="Arial" font-size="29" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Navigation</text>
+<text x="185.0" y="397.0" font-family="Arial" font-size="26" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Overview</text>
+<text x="185.0" y="428.0" font-family="Arial" font-size="26" fill="#173F50" text-anchor="middle" dominant-baseline="middle"></text>
+<text x="185.0" y="459.0" font-family="Arial" font-size="26" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Strategies</text>
+<text x="185.0" y="490.0" font-family="Arial" font-size="26" fill="#173F50" text-anchor="middle" dominant-baseline="middle"></text>
+<text x="185.0" y="521.0" font-family="Arial" font-size="26" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Risk controls</text>
+<text x="185.0" y="552.0" font-family="Arial" font-size="26" fill="#173F50" text-anchor="middle" dominant-baseline="middle"></text>
+<text x="185.0" y="583.0" font-family="Arial" font-size="26" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Activity ledger</text>
+<rect x="390" y="220" width="440" height="220" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="610.0" y="250.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Overview</text>
+<text x="610.0" y="323.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">NAV / share index / risk status</text>
+<text x="610.0" y="350.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Holdings and observed history</text>
+<text x="610.0" y="377.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Approve, deposit, redeem</text>
+<rect x="885" y="220" width="475" height="220" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1122.5" y="250.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Strategies</text>
+<text x="1122.5" y="323.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Rule cards and configuration</text>
+<text x="1122.5" y="350.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Target weights and execution status</text>
+<text x="1122.5" y="377.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Rebalance and synthetic research</text>
+<rect x="390" y="500" width="440" height="220" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="610.0" y="530.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Risk controls</text>
+<text x="610.0" y="603.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Pause / resume and limits</text>
+<text x="610.0" y="630.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Mock market reports</text>
+<text x="610.0" y="657.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Assets and role administration</text>
+<rect x="885" y="500" width="475" height="220" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1122.5" y="530.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Activity ledger</text>
+<text x="1122.5" y="603.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Event table and transaction links</text>
+<text x="1122.5" y="630.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Verify receipt / export evidence</text>
+<text x="1122.5" y="657.0" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Export indexed history</text>
+<path d="M330,340 L390,340" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="390,340 378.2941876694152,345.654551943446 378.2941876694152,334.345448056554" fill="#427885"/>
+<path d="M330,610 L390,610" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="390,610 378.2941876694152,615.654551943446 378.2941876694152,604.345448056554" fill="#427885"/>
+<rect x="40" y="775" width="1320" height="75" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="700.0" y="812.5" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Local demo only: role selector. Public mode: connected wallet determines authority.</text>
+<text x="700" y="895.0" font-family="Arial" font-size="23" fill="#173F50" text-anchor="middle" dominant-baseline="middle">UI map reflects public/index.html and app.js; a schematic, not a screenshot.</text>
+</svg>

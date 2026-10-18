@@ -1,28 +1,20 @@
-# Presentation skeleton
+# AlphaVault presentation outline
 
-Draft structure for approximately 7 minutes; adjust after confirming the course's required duration. This file is an outline, not an exported slide deck.
+Author: Du zhuotong. Twelve slides, ten-minute demonstration.
 
-| Slide | Time | Main message | Evidence / visual |
-|---|---:|---|---|
-| 1. AlphaVault | 20s | Quantitative portfolio management with explicit risk authority | Title and dashboard |
-| 2. Problem and scope | 35s | Treasury allocation should be inspectable and constrained | Investor/manager/officer/Keeper workflow |
-| 3. Architecture | 45s | Three core contracts are separate and interact in execution | README diagram |
-| 4. Custody and shares | 40s | Deposits mint NAV-priced shares; exits return the basket | Accounting formula + deposit/redeem |
-| 5. Strategy choices | 45s | Equal Weight, Momentum and Volatility Target | Target-weight comparison |
-| 6. Risk and execution | 45s | Reject invalid allocation before swaps; check loss afterward | Bounds, freshness, deadline, cooldown |
-| 7. Live demo | 120s | Real local/testnet receipts change actual token holdings | Follow DEMO_SCRIPT.md |
-| 8. Tests and evaluation | 40s | Demonstrated behavior is reproducible | Current test count, gas, synthetic metrics |
-| 9. Limitations | 25s | Simulation infrastructure and trust assumptions are explicit | Mock oracle/venue, Keeper dependency |
-| 10. Deliverables and next step | 20s | Source, API, DB, evidence and deployment status | Final links once actually deployed |
+| Time | Slide / segment |
+|---|---|
+| 00:00–00:20 | 1. AlphaVault |
+| 00:20–01:05 | 2. Problem and stakeholders |
+| 01:05–01:45 | 3. System architecture |
+| 01:45–02:20 | 4. Contract interaction |
+| 02:20–02:55 | 5. Persistent data model |
+| 02:55–03:25 | 6. Process flow |
+| 03:25–03:50 | 7. Dashboard guide |
+| 03:50–07:13 | 8. Recorded application workflow |
+| 07:13–07:58 | 9. Measured impact |
+| 07:58–08:48 | 10. Tests and persistent hosting |
+| 08:48–09:33 | 11. Limits and contribution record |
+| 09:33–10:00 | 12. Submission and conclusion |
 
-Speaker cues:
-
-- “Automatic” means a running off-chain Keeper submits a transaction when conditions hold.
-- The risk contract checks the proposed target, not an unchanging guarantee against later price drift.
-- Local demo role selection chooses known test accounts; hosted users sign with separate wallets.
-- State “synthetic method test” before discussing any research return or Sharpe result.
-- Explain why redemption remains available under pause and stale prices.
-- Show a failed policy check as intended behavior, not as a failed demonstration.
-- Do not substitute the earlier escrow deployment or its screenshots for AlphaVault.
-
-Export a final PPTX/PDF and capture screenshots only after the content, deployment and official format are settled. Keep raw screenshots and receipts tied to the same demonstration session.
+Slide 8 introduces the actual application recording (3:23). The video uses full-size diagram frames for slides 3–7. Speaker notes contain the explanatory narration. See DEMO_SCRIPT.md for the transcript and USER_MANUAL.md for live operation instructions.

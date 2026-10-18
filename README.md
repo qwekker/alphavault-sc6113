@@ -150,7 +150,7 @@ The complete deployment plan was rehearsed on an **isolated local chain using Se
 
 Deployment scripts, Docker configuration and a step-by-step checklist are in `docs/DEPLOYMENT.md`. `render.yaml` and `docs/HOSTING.zh-CN.md` configure free Render compute with external Supabase PostgreSQL; `config/` carries the public manifest and receipt hashes, and `scripts/check-hosted.mjs` verifies a chosen host without signing transactions. The public site is **https://alphavault-sepolia.onrender.com** and health endpoint is `/api/health`. Render Free and Supabase Free are active; `evidence/hosted-acceptance.json` records API checks and a service restart retaining a non-chain database sentinel; three separate wallets have completed the business demonstration. Keep keys outside the repository; the public web server never signs transactions. No credentials are requested in chat.
 
-The course's original handout was not found in this workspace or the referenced conversation. The requirement mapping uses the constraints stated in this task; check the official rubric, deadline, report format and individual-project permission before final submission. See `docs/REQUIREMENTS.md`, `docs/REPORT_OUTLINE.md`, `docs/PRESENTATION_OUTLINE.md` and `docs/DEMO_SCRIPT.md`.
+The requirement mapping follows the project constraints and six submission categories supplied for this task. See `docs/REQUIREMENTS.md` and `docs/SUBMISSION_MAP.md` for implementation and final artifact coverage.
 
 ### Verified Sepolia deployment
 
@@ -185,6 +185,15 @@ The indexer atomically commits the ledger and cursor, retaining the latest 2,000
 
 `test/postgres.test.mjs` runs actual PostgreSQL SQL using PGlite (WASM) and checks persistence across engine reopen. To exercise the `pg` network driver against a dedicated test database, set `TEST_DATABASE_URL` when running that test. The local WASM checks do not themselves verify Supabase credentials or network/TLS. Separate live cloud acceptance now verifies these; see `evidence/hosted-acceptance.json`.
 
-## Report and recorded demonstration
+## Final submission materials
 
-The editable 7-page report draft, 10-slide presentation and approximately 4-minute recorded demo are in [`submission/`](submission/). The video uses English subtitles and synthetic English narration, separating local-chain actions from public Sepolia historical evidence. It sends no new public transaction. See [`docs/SUBMISSION_CHECKLIST.zh-CN.md`](docs/SUBMISSION_CHECKLIST.zh-CN.md) for the artifact list and remaining rubric/source-verification tasks. The slides have an approximately 7-minute speaking outline; that is separate from the video duration.
+Author: **Du zhuotong**. The [submission map](docs/SUBMISSION_MAP.md) maps all six supplied rubric categories to files and report pages.
+
+- [14-page technical report](submission/AlphaVault-Technical-Report.docx), including five diagrams, stakeholder analysis and measurable prototype impact.
+- [12-slide presentation](submission/AlphaVault-Presentation.pptx) with speaker notes.
+- [10-minute English demonstration](submission/AlphaVault-Demo.mp4) and [English subtitles](submission/AlphaVault-Demo.en.srt). It combines actual local-chain operations, public historical evidence and technical explanation.
+- [4-page user manual](submission/AlphaVault-User-Manual.docx) and [2-page individual contribution report](submission/AlphaVault-Individual-Contribution.docx).
+- [Testing report](docs/TESTING_REPORT.md): latest 64/64 test suite, public API acceptance and earlier database restart proof.
+- [Submission checklist](docs/SUBMISSION_CHECKLIST.zh-CN.md), [full script](docs/DEMO_SCRIPT.md), editable text and SVG/PNG diagrams in docs/.
+
+The repository is private: arrange assessor access. The source ZIP excludes credentials and runtime data; GitHub retains contribution history. The recording's opening page has no date and the materials contain no student ID field. Public transaction evidence includes ERC20 approve; explorer source verification remains separately pending.

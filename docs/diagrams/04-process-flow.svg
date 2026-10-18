@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="930" viewBox="0 0 1400 930">
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="35.0" font-family="Arial" font-size="34" fill="#173F50" text-anchor="middle" dominant-baseline="middle">User actions and transaction lifecycle</text>
+<rect x="60" y="105" width="360" height="95" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="240.0" y="135.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Investor</text>
+<text x="240.0" y="172.5" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Approve then deposit / redeem</text>
+<rect x="520" y="105" width="360" height="95" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="700.0" y="135.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Manager</text>
+<text x="700.0" y="172.5" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Select rule and configure</text>
+<rect x="980" y="105" width="360" height="95" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1160.0" y="135.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Risk officer</text>
+<text x="1160.0" y="172.5" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Update markets / limits / pause</text>
+<path d="M240,200 L240,270" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="240,270 234.345448056554,258.2941876694152 245.654551943446,258.2941876694152" fill="#427885"/>
+<path d="M700,200 L700,270" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="700,270 694.345448056554,258.2941876694152 705.654551943446,258.2941876694152" fill="#427885"/>
+<path d="M1160,200 L1160,270" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="1160,270 1154.345448056554,258.2941876694152 1165.654551943446,258.2941876694152" fill="#427885"/>
+<rect x="60" y="270" width="1280" height="75" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="700.0" y="307.5" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">API prepares unsigned calldata; wallet selects account and network</text>
+<path d="M700,345 L700,405" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="700,405 694.345448056554,393.2941876694152 705.654551943446,393.2941876694152" fill="#427885"/>
+<rect x="310" y="405" width="780" height="75" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="700.0" y="442.5" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Wallet confirms request and submits transaction</text>
+<path d="M700,480 L700,545" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="700,545 694.345448056554,533.2941876694152 705.654551943446,533.2941876694152" fill="#427885"/>
+<rect x="310" y="545" width="780" height="75" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="700.0" y="582.5" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Contracts check roles, state and transaction-specific policy</text>
+<path d="M310,582 L145,582" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="145,582 156.7058123305848,576.345448056554 156.7058123305848,587.654551943446" fill="#427885"/>
+<rect x="35" y="665" width="320" height="85" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="195.0" y="695.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Rejected</text>
+<text x="195.0" y="727.5" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Show error; no success receipt</text>
+<path d="M145,582 L145,665" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="145,665 139.345448056554,653.2941876694152 150.654551943446,653.2941876694152" fill="#427885"/>
+<path d="M1090,582 L1235,582" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="1235,582 1223.2941876694151,587.654551943446 1223.2941876694151,576.345448056554" fill="#427885"/>
+<rect x="1030" y="665" width="335" height="85" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1197.5" y="695.0" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Confirmed</text>
+<text x="1197.5" y="727.5" font-family="Arial" font-size="22" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Receipt + events + balances</text>
+<path d="M1235,582 L1235,665" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="1235,665 1229.345448056554,653.2941876694152 1240.654551943446,653.2941876694152" fill="#427885"/>
+<path d="M1195,750 L1195,820" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="1195,820 1189.345448056554,808.2941876694152 1200.654551943446,808.2941876694152" fill="#427885"/>
+<path d="M1195,820 L700,820" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="700,820 711.7058123305848,814.345448056554 711.7058123305848,825.654551943446" fill="#427885"/>
+<rect x="420" y="790" width="560" height="75" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="700.0" y="827.5" font-family="Arial" font-size="25" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Index events, persist and refresh dashboard</text>
+<text x="700" y="905.0" font-family="Arial" font-size="23" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Keeper follows the same transaction path. Pause/stale prices still allow in-kind redemption.</text>
+</svg>

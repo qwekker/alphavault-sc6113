@@ -1,5 +1,7 @@
 # Verification record
 
+**Current checkpoint (18 October 2026):** the final full suite passes 64/64; public API acceptance is recorded in `evidence/submission-hosted-check.json`. The 14-page report, five diagrams, 12-slide deck, ten-minute video, user manual and contribution report are supplied. See [TESTING_REPORT.md](TESTING_REPORT.md) and [SUBMISSION_MAP.md](SUBMISSION_MAP.md). Sections below preserve earlier checkpoints; earlier statements about pending artifacts are historical.
+
 Date: 2026-10-17. Node.js 22.23.2; Solidity 0.8.30; optimizer 200 runs; Shanghai EVM; Ganache chain ID 31337.
 
 ## Automated checks

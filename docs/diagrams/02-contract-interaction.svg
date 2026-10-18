@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="950" viewBox="0 0 1400 950">
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="35.0" font-family="Arial" font-size="34" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Rebalance contract interaction</text>
+<rect x="10" y="85" width="200" height="65" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="110.0" y="117.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Keeper</text>
+<path d="M110,150 L110,875" stroke="#C4D3D7" stroke-width="3" fill="none"/>
+<rect x="290" y="85" width="200" height="65" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="390.0" y="117.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PortfolioVault</text>
+<path d="M390,150 L390,875" stroke="#C4D3D7" stroke-width="3" fill="none"/>
+<rect x="580" y="85" width="200" height="65" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="680.0" y="117.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">StrategyEngine</text>
+<path d="M680,150 L680,875" stroke="#C4D3D7" stroke-width="3" fill="none"/>
+<rect x="870" y="85" width="200" height="65" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="970.0" y="117.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">RiskManager</text>
+<path d="M970,150 L970,875" stroke="#C4D3D7" stroke-width="3" fill="none"/>
+<rect x="1170" y="85" width="200" height="65" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1270.0" y="117.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">MockExchange</text>
+<path d="M1270,150 L1270,875" stroke="#C4D3D7" stroke-width="3" fill="none"/>
+<path d="M110,215 L390,215" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="390,215 378.2941876694152,220.654551943446 378.2941876694152,209.345448056554" fill="#427885"/>
+<text x="250.0" y="193.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">1  rebalance(loss limit, deadline)</text>
+<path d="M390,300 L970,300" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="970,300 958.2941876694152,305.654551943446 958.2941876694152,294.345448056554" fill="#427885"/>
+<text x="680.0" y="278.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">2  role, pause, fresh prices, limits</text>
+<path d="M390,390 L680,390" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="680,390 668.2941876694152,395.654551943446 668.2941876694152,384.345448056554" fill="#427885"/>
+<text x="535.0" y="368.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">3  validatedWeights()</text>
+<path d="M680,465 L970,465" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="970,465 958.2941876694152,470.654551943446 958.2941876694152,459.345448056554" fill="#427885"/>
+<text x="825.0" y="443.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">4  validate(target weights)</text>
+<path d="M970,540 L680,540" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="680,540 691.7058123305848,534.345448056554 691.7058123305848,545.654551943446" fill="#427885"/>
+<text x="825.0" y="518.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">5  pass or revert</text>
+<path d="M680,615 L390,615" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="390,615 401.7058123305848,609.345448056554 401.7058123305848,620.654551943446" fill="#427885"/>
+<text x="535.0" y="593.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">6  target weights</text>
+<path d="M390,700 L1270,700" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="1270,700 1258.2941876694151,705.654551943446 1258.2941876694151,694.345448056554" fill="#427885"/>
+<text x="830.0" y="678.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">7  sell and buy; exchange reads risk prices</text>
+<path d="M390,835 L110,835" stroke="#427885" stroke-width="3" fill="none"/>
+<polygon points="110,835 121.70581233058479,829.345448056554 121.7058123305848,840.654551943446" fill="#427885"/>
+<text x="250.0" y="813.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">9  receipt and Rebalanced event</text>
+<text x="800" y="765.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">8  Vault checks final NAV loss; any revert rolls back swaps</text>
+<text x="700" y="920.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Every call is part of one atomic EVM transaction; the API does not sign.</text>
+</svg>

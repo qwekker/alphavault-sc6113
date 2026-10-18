@@ -1,184 +1,504 @@
 1
-00:00:00,350 --> 00:00:08,689
-AlphaVault is a quantitative portfolio management application by Du zhuotong,
-developed for SC6113.
+00:00:00,350 --> 00:00:06,827
+Welcome to AlphaVault, a quantitative portfolio management and risk controlled
+rebalancing application by Du zhuotong.
 
 2
-00:00:08,689 --> 00:00:11,900
-This demonstration uses mock assets.
+00:00:06,827 --> 00:00:13,305
+This 10-minute demonstration explains the problem, system design, actual application
+workflow, and measured results.
 
 3
-00:00:12,350 --> 00:00:16,790
-Three core contracts handle custody, strategy allocation, and risk checks.
+00:00:13,305 --> 00:00:19,900
+The project uses mock assets on a local chain and the Sepolia test network.
 
 4
-00:00:16,790 --> 00:00:23,900
-The backend provides a REST API and stores indexed blockchain events in a database.
+00:00:20,350 --> 00:00:25,476
+Consider a small token treasury that delegates allocation decisions to a manager.
 
 5
-00:00:24,350 --> 00:00:31,539
-We begin on an independent local chain, with chain ID 31337.
+00:00:25,476 --> 00:00:34,874
+Contributors want to see where assets are held, understand who can change the rules,
+and retain an exit when trading is paused.
 
 6
-00:00:31,539 --> 00:00:34,922
-The vault starts with 10,000 mUSD.
+00:00:34,874 --> 00:00:41,282
+A spreadsheet can describe an allocation, but it cannot enforce that allocation
+during a transfer.
 
 7
-00:00:34,922 --> 00:00:38,900
-These are simulated assets.
+00:00:41,282 --> 00:00:45,554
+AlphaVault separates the investor, strategy manager, risk officer, and Keeper.
 
 8
-00:00:39,350 --> 00:00:45,264
-The investor first approves the token allowance, then deposits 1,000 mUSD.
+00:00:45,554 --> 00:00:51,962
+Their incentives can conflict: the manager may seek exposure while the risk officer
+limits it.
 
 9
-00:00:45,264 --> 00:00:50,900
-These demo controls sign transactions using public local test accounts.
+00:00:51,962 --> 00:00:54,525
+The design makes those permissions inspectable.
 
 10
-00:00:51,350 --> 00:00:56,966
-After confirmation, the investor's shares increase from 10,000 to 11,000.
+00:00:54,525 --> 00:00:58,797
+This is a prototype scenario, not a completed user study.
 
 11
-00:00:56,966 --> 00:01:03,900
-These local balances are separate from the historical Sepolia balances shown later.
+00:00:58,797 --> 00:01:04,900
+Reduced operating effort remains a future research question rather than a measured
+benefit.
 
 12
-00:01:04,350 --> 00:01:07,179
-Next, the strategy manager selects Momentum.
+00:01:05,350 --> 00:01:10,013
+The dashboard reads portfolio data through a same origin REST API.
 
 13
-00:01:07,179 --> 00:01:14,721
-The target allocation is 20% cash, 60% mETH, and 20% mBTC.
+00:01:10,013 --> 00:01:16,372
+For public transactions, the API prepares unsigned calldata and MetaMask signs with
+the user's account.
 
 14
-00:01:14,721 --> 00:01:17,900
-Strategy selection is recorded on chain.
+00:01:16,372 --> 00:01:20,187
+The hosted server does not hold a signing key.
 
 15
-00:01:18,350 --> 00:01:21,297
-The Keeper now executes the rebalance.
+00:01:20,187 --> 00:01:24,850
+PortfolioVault holds tokens, StrategyEngine calculates target weights, and
+RiskManager enforces policy.
 
 16
-00:01:21,297 --> 00:01:26,700
+00:01:24,850 --> 00:01:26,970
+MockExchange performs test token swaps.
+
+17
+00:01:26,970 --> 00:01:33,328
+An off chain Keeper can submit an eligible rebalance, but all contract checks still
+apply.
+
+18
+00:01:33,328 --> 00:01:39,263
+The backend indexes blockchain events into PostgreSQL in the public deployment, or
+SQLite locally.
+
+19
+00:01:39,263 --> 00:01:44,900
+The database provides observations and evidence; the chain remains authoritative for
+custody.
+
+20
+00:01:45,350 --> 00:01:48,339
+A rebalance starts with an authorized Keeper request.
+
+21
+00:01:48,339 --> 00:01:52,449
+The vault checks roles, pause state, fresh prices, timing and bounds.
+
+22
+00:01:52,449 --> 00:01:55,064
+It then asks StrategyEngine for validated weights.
+
+23
+00:01:55,064 --> 00:01:58,053
+The strategy calls RiskManager before returning those weights.
+
+24
+00:01:58,053 --> 00:02:05,899
+The vault sells risky holdings to mock cash, buys the target assets, and checks the
+final loss in net asset value.
+
+25
+00:02:05,899 --> 00:02:08,141
+These operations share one atomic transaction.
+
+26
+00:02:08,141 --> 00:02:12,251
+If a bound fails, the swaps and timestamp roll back together.
+
+27
+00:02:12,251 --> 00:02:19,900
+A failed gas estimate is not a successful on chain transaction and is not included
+in the evidence count.
+
+28
+00:02:20,350 --> 00:02:22,178
+Eight tables support the application.
+
+29
+00:02:22,178 --> 00:02:26,199
+Events are identified by deployment scope, transaction hash and log index.
+
+30
+00:02:26,199 --> 00:02:30,952
+Snapshots store observed portfolio values, while prices and strategies retain per
+block observations.
+
+31
+00:02:30,952 --> 00:02:36,436
+Cursors store index progress and block hashes so the service can detect a chain
+rollback.
+
+32
+00:02:36,436 --> 00:02:39,726
+Receipts hold verified evidence, and jobs track execution outcomes.
+
+33
+00:02:39,726 --> 00:02:43,382
+Backtests are keyed by strategy and identify their synthetic source.
+
+34
+00:02:43,382 --> 00:02:46,307
+Deployment scope combines chain ID and vault address.
+
+35
+00:02:46,307 --> 00:02:49,597
+These are logical relationships, not SQL foreign key constraints.
+
+36
+00:02:49,597 --> 00:02:54,900
+Large on chain amounts are stored as strings to avoid numeric precision loss.
+
+37
+00:02:55,350 --> 00:03:00,720
+The user chooses an action, the API prepares calldata, and the wallet asks for
+confirmation.
+
+38
+00:03:00,720 --> 00:03:05,017
+Smart contracts then enforce the account's authority and the relevant state checks.
+
+39
+00:03:05,017 --> 00:03:08,597
+After success, the service indexes events and refreshes the dashboard.
+
+40
+00:03:08,597 --> 00:03:10,745
+Approval and deposit are separate transactions.
+
+41
+00:03:10,745 --> 00:03:13,609
+Selecting a strategy does not execute a trade.
+
+42
+00:03:13,609 --> 00:03:15,757
+Rebalancing needs a separate Keeper request.
+
+43
+00:03:15,757 --> 00:03:21,128
+A pause blocks deposits and trading, but investors can still redeem their
+proportional asset basket.
+
+44
+00:03:21,128 --> 00:03:24,900
+That exit does not depend on fresh market prices.
+
+45
+00:03:25,350 --> 00:03:28,850
+Overview shows portfolio value and investor actions.
+
+46
+00:03:28,850 --> 00:03:31,850
+Strategies separates allocation choice from execution.
+
+47
+00:03:31,850 --> 00:03:35,350
+Risk controls contains policy and emergency pause.
+
+48
+00:03:35,350 --> 00:03:38,350
+Activity ledger links actions to evidence.
+
+49
+00:03:38,350 --> 00:03:41,850
+The local role selector chooses test accounts.
+
+50
+00:03:41,850 --> 00:03:45,850
+In public mode, the connected wallet determines authority.
+
+51
+00:03:45,850 --> 00:03:49,900
+We now move to the recorded workflow.
+
+52
+00:03:50,350 --> 00:03:57,539
+We begin on an independent local chain, with chain ID 31337.
+
+53
+00:03:57,539 --> 00:04:00,922
+The vault starts with 10,000 mUSD.
+
+54
+00:04:00,922 --> 00:04:04,900
+These are simulated assets.
+
+55
+00:04:05,350 --> 00:04:11,264
+The investor first approves the token allowance, then deposits 1,000 mUSD.
+
+56
+00:04:11,264 --> 00:04:16,900
+These demo controls sign transactions using public local test accounts.
+
+57
+00:04:17,350 --> 00:04:22,966
+After confirmation, the investor's shares increase from 10,000 to 11,000.
+
+58
+00:04:22,966 --> 00:04:29,900
+These local balances are separate from the historical Sepolia balances shown later.
+
+59
+00:04:30,350 --> 00:04:33,179
+Next, the strategy manager selects Momentum.
+
+60
+00:04:33,179 --> 00:04:40,721
+The target allocation is 20% cash, 60% mETH, and 20% mBTC.
+
+61
+00:04:40,721 --> 00:04:43,900
+Strategy selection is recorded on chain.
+
+62
+00:04:44,350 --> 00:04:47,297
+The Keeper now executes the rebalance.
+
+63
+00:04:47,297 --> 00:04:52,700
 The contracts check permission, price freshness, position limits, and execution
 loss.
 
-17
-00:01:26,700 --> 00:01:34,900
+64
+00:04:52,700 --> 00:05:00,900
 Successful execution transfers the mock tokens and records the resulting allocation
 on chain.
 
-18
-00:01:35,350 --> 00:01:43,050
+65
+00:05:01,350 --> 00:05:09,050
 After the local rebalance, net asset value is 10,982.40 mUSD.
 
-19
-00:01:43,050 --> 00:01:47,102
+66
+00:05:09,050 --> 00:05:13,102
 The share value index is 99.84.
 
-20
-00:01:47,102 --> 00:01:53,900
+67
+00:05:13,102 --> 00:05:19,900
 The reduction reflects simulated trading fees.
 
-21
-00:01:54,350 --> 00:01:58,670
+68
+00:05:20,350 --> 00:05:24,670
 The risk officer reviews the limits and pauses the vault.
 
-22
-00:01:58,670 --> 00:02:03,854
+69
+00:05:24,670 --> 00:05:29,854
 The pause blocks deposits and rebalancing, while preserving the investor's exit
 path.
 
-23
-00:02:03,854 --> 00:02:11,900
+70
+00:05:29,854 --> 00:05:37,900
 These restrictions are enforced by the smart contracts, independently of the
 dashboard.
 
-24
-00:02:12,350 --> 00:02:18,476
+71
+00:05:38,350 --> 00:05:44,476
 While the vault is paused, the investor redeems 25% of the shares.
 
-25
-00:02:18,476 --> 00:02:21,540
+72
+00:05:44,476 --> 00:05:47,540
 Eight thousand two hundred fifty shares remain.
 
-26
-00:02:21,540 --> 00:02:27,900
+73
+00:05:47,540 --> 00:05:53,900
 Redemption returns a proportional basket of the underlying tokens.
 
-27
-00:02:28,350 --> 00:02:35,315
+74
+00:05:54,350 --> 00:06:01,315
 The activity ledger records the rebalance, pause, and redemption, with block numbers
 and transaction hashes.
 
-28
-00:02:35,315 --> 00:02:40,900
+75
+00:06:01,315 --> 00:06:06,900
 The API indexes these events, and the database retains the observations.
 
-29
-00:02:41,350 --> 00:02:43,798
+76
+00:06:07,350 --> 00:06:09,798
 The research view uses synthetic prices.
 
-30
-00:02:43,798 --> 00:02:48,694
+77
+00:06:09,798 --> 00:06:14,694
 Momentum returns negative 22.59% after simulated fees.
 
-31
-00:02:48,694 --> 00:02:51,900
+78
+00:06:14,694 --> 00:06:17,900
 This does not establish real investment performance.
 
-32
-00:02:52,350 --> 00:02:56,896
+79
+00:06:18,350 --> 00:06:22,896
 We now switch to the publicly hosted application on Sepolia.
 
-33
-00:02:56,896 --> 00:03:00,988
+80
+00:06:22,896 --> 00:06:26,988
 This section shows existing blockchain state and historical evidence.
 
-34
-00:03:00,988 --> 00:03:05,080
+81
+00:06:26,988 --> 00:06:31,080
 No new public transaction is sent during this recording.
 
-35
-00:03:05,080 --> 00:03:09,900
+82
+00:06:31,080 --> 00:06:35,900
 The environment label changes at the top.
 
-36
-00:03:10,350 --> 00:03:16,246
+83
+00:06:36,350 --> 00:06:42,246
 Public net asset value is approximately 748.80 mUSD.
 
-37
-00:03:16,246 --> 00:03:20,177
+84
+00:06:42,246 --> 00:06:46,177
 The share value index is 99.84.
 
-38
-00:03:20,177 --> 00:03:27,900
+85
+00:06:46,177 --> 00:06:53,900
 The stale prices warning means the manual reports need updating before trading.
 
-39
-00:03:28,350 --> 00:03:33,435
+86
+00:06:54,350 --> 00:06:59,435
 Exporting evidence shows ten successful method types out of thirteen supported
 methods.
 
-40
-00:03:33,435 --> 00:03:38,945
+87
+00:06:59,435 --> 00:07:04,945
 This includes the ERC20 approval, leaving nine core contract methods.
 
-41
-00:03:38,945 --> 00:03:46,900
+88
+00:07:04,945 --> 00:07:12,900
 If approval is excluded by the rubric, one additional core method needs
 demonstration.
 
-42
-00:03:47,350 --> 00:03:52,089
-AlphaVault remains a prototype with mock assets and manual prices.
+89
+00:07:13,350 --> 00:07:19,217
+The strategy experiment compares rules on the same deterministic price fixture and
+fee assumptions.
 
-43
-00:03:52,089 --> 00:03:57,302
-Future work includes independent oracles, real market evaluation, and security
-review.
+90
+00:07:19,217 --> 00:07:28,436
+Volatility Target has a maximum drawdown of 5.82%, compared with 9.04% for Equal
+Weight.
 
-44
-00:03:57,302 --> 00:03:58,600
-Thank you.
+91
+00:07:28,436 --> 00:07:32,626
+That is about 3.22 percentage points lower.
+
+92
+00:07:32,626 --> 00:07:36,817
+Annualized volatility is also lower, but both returns remain negative.
+
+93
+00:07:36,817 --> 00:07:40,169
+These results do not establish real market profitability.
+
+94
+00:07:40,169 --> 00:07:49,807
+Functional evidence is separate: six selected unauthorized privileged calls were
+rejected in the tests, and a public redemption succeeded while trading was paused.
+
+95
+00:07:49,807 --> 00:07:57,900
+The public rebalance cost 1.60 mUSD in exchange fees, with network gas paid
+separately.
+
+96
+00:07:58,350 --> 00:08:03,647
+The latest full automated run passes 64 tests with zero failures.
+
+97
+00:08:03,647 --> 00:08:09,827
+Tests cover contract permissions, accounting, rollback, price freshness, pause
+behavior, API preparation and persistence.
+
+98
+00:08:09,827 --> 00:08:21,746
+A new public acceptance check also passes: the service is in wallet mode, uses
+PostgreSQL, points to the expected Sepolia vault, and exposes ten verified
+transaction types.
+
+99
+00:08:21,746 --> 00:08:27,485
+The earlier restart experiment provides a stronger storage check than event replay
+alone.
+
+100
+00:08:27,485 --> 00:08:32,782
+A non chain jobs record remained identical after the Render service restarted.
+
+101
+00:08:32,782 --> 00:08:40,287
+Because that record is not reconstructed from blockchain events, its retention
+demonstrates persistence across that observed restart.
+
+102
+00:08:40,287 --> 00:08:44,701
+This is a specific acceptance result, not an uptime guarantee.
+
+103
+00:08:44,701 --> 00:08:47,900
+The free service can still sleep.
+
+104
+00:08:48,350 --> 00:08:57,058
+The project delivers contracts, a REST service, persistent storage, a wallet capable
+dashboard, tests, deployment evidence and submission materials.
+
+105
+00:08:57,058 --> 00:09:03,017
+The individual contribution report maps those responsibilities to artifacts and
+meaningful Git checkpoints.
+
+106
+00:09:03,017 --> 00:09:04,850
+Several engineering boundaries remain.
+
+107
+00:09:04,850 --> 00:09:12,183
+Prices are manually reported, assets and the exchange are simulated, and the
+administrator can reassign roles.
+
+108
+00:09:12,183 --> 00:09:16,767
+There is no external security audit or field usability study.
+
+109
+00:09:16,767 --> 00:09:22,267
+Unattended Keeper execution was tested locally; the public rebalance was manually
+signed.
+
+110
+00:09:22,267 --> 00:09:26,392
+Explorer source verification is separate from deployment receipt checks.
+
+111
+00:09:26,392 --> 00:09:32,900
+These limits guide the next development priorities and the interpretation of the
+evidence.
+
+112
+00:09:33,350 --> 00:09:44,080
+The submission contains a 14-page technical report with five diagrams, a user
+manual, an individual contribution report, slides, source code and this 10-minute
+demonstration.
+
+113
+00:09:44,080 --> 00:09:49,033
+The report connects the problem and stakeholder needs to measured prototype results.
+
+114
+00:09:49,033 --> 00:09:52,747
+The repository and public deployment links are shown here.
+
+115
+00:09:52,747 --> 00:09:57,699
+AlphaVault demonstrates constrained, traceable portfolio operations with an explicit
+investor exit path.
+
+116
+00:09:57,699 --> 00:09:59,900
+Thank you for watching.

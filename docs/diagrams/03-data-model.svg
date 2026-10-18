@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1030" viewBox="0 0 1400 1030">
+<rect width="100%" height="100%" fill="white"/>
+<text x="700" y="35.0" font-family="Arial" font-size="34" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Persistent data model</text>
+<text x="700" y="82.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">scope = chain ID : vault address    |    Logical joins shown; no SQL foreign keys</text>
+<rect x="55" y="140" width="590" height="170" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="350.0" y="170.0" font-family="Arial" font-size="27" fill="#173F50" text-anchor="middle" dominant-baseline="middle">events</text>
+<text x="350.0" y="216.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PK scope + tx_hash + log_index</text>
+<text x="350.0" y="245.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">block_number, block_hash</text>
+<text x="350.0" y="274.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">contract, name, payload</text>
+<rect x="755" y="140" width="590" height="170" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1050.0" y="170.0" font-family="Arial" font-size="27" fill="#173F50" text-anchor="middle" dominant-baseline="middle">snapshots</text>
+<text x="1050.0" y="216.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PK scope + block_number</text>
+<text x="1050.0" y="245.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">block_hash, timestamp, nav, supply</text>
+<text x="1050.0" y="274.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">share_index, weights</text>
+<rect x="55" y="345" width="590" height="170" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="350.0" y="375.0" font-family="Arial" font-size="27" fill="#173F50" text-anchor="middle" dominant-baseline="middle">prices</text>
+<text x="350.0" y="421.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PK scope + asset + block_number</text>
+<text x="350.0" y="450.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">price, volatility, momentum</text>
+<text x="350.0" y="479.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">updated_at</text>
+<rect x="755" y="345" width="590" height="170" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1050.0" y="375.0" font-family="Arial" font-size="27" fill="#173F50" text-anchor="middle" dominant-baseline="middle">strategies</text>
+<text x="1050.0" y="435.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PK scope + block_number</text>
+<text x="1050.0" y="464.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">selected, weights, config</text>
+<rect x="55" y="550" width="590" height="170" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="350.0" y="580.0" font-family="Arial" font-size="27" fill="#173F50" text-anchor="middle" dominant-baseline="middle">cursors</text>
+<text x="350.0" y="626.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PK scope</text>
+<text x="350.0" y="655.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">block_number, block_hash</text>
+<text x="350.0" y="684.0" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Atomic index progress</text>
+<rect x="755" y="550" width="590" height="170" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1050.0" y="580.0" font-family="Arial" font-size="27" fill="#173F50" text-anchor="middle" dominant-baseline="middle">receipts</text>
+<text x="1050.0" y="640.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PK scope + hash</text>
+<text x="1050.0" y="669.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">payload: verified transaction evidence</text>
+<rect x="55" y="755" width="590" height="170" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="350.0" y="785.0" font-family="Arial" font-size="27" fill="#173F50" text-anchor="middle" dominant-baseline="middle">jobs</text>
+<text x="350.0" y="845.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PK id; scope</text>
+<text x="350.0" y="874.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">created_at, kind, status, tx_hash, message</text>
+<rect x="755" y="755" width="590" height="170" rx="12" fill="#EFF5F5" stroke="#74949B" stroke-width="2"/>
+<text x="1050.0" y="785.0" font-family="Arial" font-size="27" fill="#173F50" text-anchor="middle" dominant-baseline="middle">backtests</text>
+<text x="1050.0" y="845.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">PK strategy; not deployment scoped</text>
+<text x="1050.0" y="874.5" font-family="Arial" font-size="24" fill="#173F50" text-anchor="middle" dominant-baseline="middle">created_at, source, result</text>
+<path d="M645,225 L755,225" stroke="#427885" stroke-width="3" fill="none"/>
+<text x="700.0" y="203.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">scope</text>
+<path d="M645,430 L755,430" stroke="#427885" stroke-width="3" fill="none"/>
+<text x="700.0" y="408.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">scope</text>
+<path d="M645,635 L755,635" stroke="#427885" stroke-width="3" fill="none"/>
+<text x="700.0" y="613.0" font-family="Arial" font-size="21" fill="#173F50" text-anchor="middle" dominant-baseline="middle">scope</text>
+<text x="700" y="1000.0" font-family="Arial" font-size="23" fill="#173F50" text-anchor="middle" dominant-baseline="middle">Large integers use strings; payload/config/result hold serialized JSON. PK = primary key.</text>
+</svg>

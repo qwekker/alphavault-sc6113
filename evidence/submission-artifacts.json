@@ -1,0 +1,78 @@
+{
+  "author": "Du zhuotong",
+  "checkedOn": "2026-10-18",
+  "reportPages": 14,
+  "manualPages": 4,
+  "contributionPages": 2,
+  "presentationSlides": 12,
+  "diagramCount": 5,
+  "videoSeconds": 600,
+  "videoSize": [
+    1280,
+    960
+  ],
+  "videoFps": 20,
+  "videoCodec": "H.264",
+  "audioCodec": "AAC",
+  "audioLanguage": "English",
+  "subtitleLanguage": "English",
+  "videoFullDecodeErrors": 0,
+  "videoIntegratedLoudnessLUFS": -16.4,
+  "videoTruePeakDBFS": -1.3,
+  "subtitleCueCount": 116,
+  "openingTitleDateRemoved": true,
+  "documentVisualReview": "All 14 report pages, 4 manual pages, 2 contribution pages; changed report page 14 and contribution page 1 re-rendered and inspected; other renders matched.",
+  "presentationValidation": {
+    "packageIntegrity": "pass",
+    "layoutFindings": 0,
+    "nativeTableSlides": [
+      2,
+      8,
+      10,
+      11
+    ],
+    "nativeChartSlides": [
+      9
+    ],
+    "firstPartyImportPassed": true,
+    "renderedSlidesReviewed": 12
+  },
+  "tests": {
+    "passed": 64,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "evidence/submission-tests.tap"
+  },
+  "publicAcceptance": "evidence/submission-hosted-check.json",
+  "restartEvidence": [
+    "evidence/hosted-acceptance.json",
+    "evidence/hosted-jobs-before-restart.json",
+    "evidence/hosted-jobs-after-restart.json"
+  ],
+  "files": {
+    "submission/AlphaVault-Demo.en.srt": {
+      "bytes": 12548,
+      "sha256": "f6aac0237040ef37ebc3c0ad0133b69f4a40fc3fb3a49162f27c0e44856fd680"
+    },
+    "submission/AlphaVault-Demo.mp4": {
+      "bytes": 14864193,
+      "sha256": "858f9cd7c30514a936cd393bce905a28492c6955ebfc73ead744d8c4e20d40b0"
+    },
+    "submission/AlphaVault-Individual-Contribution.docx": {
+      "bytes": 41218,
+      "sha256": "c4a03a1f261365cba03c0b147924dbdb2ce0bb1adbf1d4de3fb58d4a828c2697"
+    },
+    "submission/AlphaVault-Presentation.pptx": {
+      "bytes": 433463,
+      "sha256": "abc1dad51b61afbf600aacc1f5f6b04ef155f6c5b0855d8e9eccea573bf0b1d1"
+    },
+    "submission/AlphaVault-Technical-Report.docx": {
+      "bytes": 422856,
+      "sha256": "feace8adae2cae594a54c0b4c8482d672d91dec604f6fae5809097dfe63eb897"
+    },
+    "submission/AlphaVault-User-Manual.docx": {
+      "bytes": 42790,
+      "sha256": "c920f359bb7df73b4d01c8150b4e42fb6ffe0419488e230fd5f259b8edd5df25"
+    }
+  }
+}

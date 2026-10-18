@@ -1,39 +1,25 @@
-# AlphaVault 提交材料清单
+# AlphaVault 最终提交清单
 
-材料整理日期：2026-10-18。当前版本是可审阅草稿；署名为 Du zhuotong，已按要求移除学号栏；原始课程 handout 尚未提供。
+署名：Du zhuotong。材料不包含学号栏；视频第一页不显示日期。以下内容对应已提供的六组提交要求，详细页码见 [SUBMISSION_MAP.md](SUBMISSION_MAP.md)。
 
-## 已生成的文件
+| 材料 | 文件 | 规格 |
+|---|---|---|
+| 技术报告 | submission/AlphaVault-Technical-Report.docx | 14 页英文；问题、利益相关者、证据和可衡量影响 |
+| 五类图 | docs/diagrams/，已嵌入报告与 PPT | 架构、合约交互、数据模型、流程、UI；SVG + PNG |
+| 演示文稿 | submission/AlphaVault-Presentation.pptx | 12 页，英文讲稿备注 |
+| 演示视频 | submission/AlphaVault-Demo.mp4 | 10:00，英文旁白与字幕；实机片段 3:23，其余为问题、设计和验证讲解 |
+| 独立字幕 | submission/AlphaVault-Demo.en.srt | 英文 |
+| 用户手册 | submission/AlphaVault-User-Manual.docx | 4 页，启动、角色操作、确认和排错 |
+| 个人贡献报告 | submission/AlphaVault-Individual-Contribution.docx | 2 页，职责、成果、决策和 Git 记录 |
+| 测试报告 | docs/TESTING_REPORT.md | 最新 64/64，公网 API 和数据库持久化证据 |
+| 源码与证据 | GitHub 及上一级 AlphaVault-MVP.zip | README、配置模板、源码、锁文件、测试、部署证据和全部材料 |
 
-- `submission/AlphaVault-Report-Draft.docx`：7 页英文技术报告，可编辑；署名 Du zhuotong。
-- `docs/FINAL_REPORT_DRAFT.md`：报告正文的可检索文本版本。
-- `submission/AlphaVault-Presentation.pptx`：10 页英文演示文稿，附讲稿备注，可按约 7 分钟讲解。
-- `submission/AlphaVault-Demo.mp4`：约 4 分钟实机演示剪辑，英文字幕及英文合成旁白。
-- `submission/AlphaVault-Demo.en.srt`：视频字幕，可单独修改或翻译。
-- `evidence/video-recording.json`：录制环境、操作、计数和视频剪辑范围。
-- 项目上一级 `AlphaVault-MVP.zip`：源码、测试、证据和提交材料；旁边有 SHA-256 校验文件。
+公网：https://alphavault-sepolia.onrender.com
 
-## 视频内容
+GitHub：https://github.com/qwekker/alphavault-sc6113
 
-视频前半段在独立本地链（31337）操作：投资者授权/存款，经理选择 Momentum，Keeper 调仓，风险官暂停，投资者暂停后赎回，查看账本与合成回测。
+视频中的本地链操作与 Sepolia 历史状态分别标注。录屏保留真实操作顺序与速度，展示授权、存款、选策略、调仓、暂停、暂停后赎回、账本及研究输出。公网部分没有新增签名，价格过期状态如实保留。
 
-本地初始 10,000 mUSD，再存 1,000 后调仓，NAV 为 10,982.40；赎回 25% 后剩余 8,250 份。它与 Sepolia 历史测试使用不同金额。
+提交前检查老师能访问私有 GitHub 仓库，并保持公网服务在评分期间可用。现场交易前由风险官刷新两个模拟价格报告。Sepolia 10 种方法包括 ERC20 approve；若老师另行要求十种核心合约方法，需要补充一种。源码浏览器验证尚未完成，现有材料提供部署交易、字节码与合约连接验证。
 
-后半段展示 https://alphavault-sepolia.onrender.com 的 Sepolia 状态和历史交易证据，没有发送新公网交易。页面 NAV 748.80，份额指数 99.84，价格报告已过期。证据计数 10 种包含 ERC20 approve，核心方法是 9 种。
-
-视频为真实标签页捕获并加上说明幻灯片，不含钱包签名弹窗。本片采用英文合成语音（en-US-GuyNeural），并非学生本人录音。若老师要求本人讲解或实时钱包签名，请以本片为操作参考重新配音/补录。原始素材和工具放在工作目录 `work/submission-build`，不进入提交压缩包。
-
-## 提交前必须由学生核对
-
-1. 提供原始 rubric 后核对个人项目许可、报告页数、演示时长、文件命名、截止时间及 AI 辅助使用要求（若课程有规定）。
-2. 如果老师不把 approve 计入十种交易，在 Sepolia 补做 `StrategyEngine.setEnabled` 等未覆盖的核心方法，并重新导出证据；不要重复计算 pause/resume 或两种资产的 updateMarket。
-3. 源码浏览器验证仍待完成。现有证据验证了部署交易、字节码存在和合约连接关系，不等于 Etherscan 已验证源码。编译配置为 Solidity 0.8.30、optimizer 200、Shanghai。
-4. 仓库目前为私有。确认老师能访问仓库，或按课程要求提交源码 ZIP。不要为了演示随意改成公开，也不要打包 .env、数据库口令或运行数据。
-5. 检查免费 Render/Supabase 服务在评分窗口内可用。交易演示前由风险官刷新两种模拟市场报告，检查钱包 Sepolia 测试 ETH。
-6. 先完整播放视频确认字幕、配音和时长是否满足课程要求。当前成片约 4 分钟，PPT 讲解安排约 7 分钟，两者不是同一个时长要求。
-
-## 可直接使用的演示入口
-
-- 公网应用：https://alphavault-sepolia.onrender.com
-- 项目启动：Node 22 环境，`npm ci`，`npm run dev`；默认本地页面 http://127.0.0.1:3100。
-- Sepolia 配置与重启：参考 `HOSTING.zh-CN.md`、`SEPOLIA_WALKTHROUGH.zh-CN.md`。
-- 原始证据：`SEPOLIA_RESULTS.md`、`VERIFICATION.md` 及 `evidence/hosted-acceptance.json`。
+旧的 7 页报告草稿和短视频已由最终版替代。可编辑文字稿位于 docs/，证据在 evidence/；压缩包不包含环境口令、运行数据库或 node_modules。

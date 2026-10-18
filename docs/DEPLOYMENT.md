@@ -61,7 +61,7 @@ Mount:
 
 Set `RECEIPT_SEED_FILE=/app/config/sepolia-receipts.json` to import the historical public receipts into an empty database after RPC verification. Set `RPC_URL`, `DEPLOYMENT_FILE=/app/config/sepolia-deployment.json`, `DB_PATH=/app/data/alphavault.sqlite`, `HOST=0.0.0.0`, `PORT=3100`.
 
-Use `compose.yaml` on a VPS or configure an equivalent Node/container service with a persistent disk. Put HTTPS at the hosting provider or reverse proxy. Never route the unlocked local demo RPC or `/api/demo/action` from a demo process to the public Internet. Do not use ephemeral serverless storage for SQLite. One instance with a persistent volume is the MVP deployment model; horizontal scaling needs a shared database/indexer design.
+Use `compose.yaml` on a VPS or configure an equivalent Node/container service with a persistent disk. Put HTTPS at the hosting provider or reverse proxy. Never route the unlocked local demo RPC or `/api/demo/action` from a demo process to the public Internet. Do not use ephemeral serverless storage for SQLite. The Compose option uses a persistent volume; the active Render deployment uses external PostgreSQL. Horizontal scaling additionally needs indexer coordination.
 
 ## 5. Automatic Keeper
 
@@ -80,9 +80,9 @@ Run exactly one Keeper for this vault. It checks every ten seconds, trades only 
 
 Record the final HTTPS frontend/API URLs, deployment addresses, chain ID, verification links and availability date. Run the demonstration with separate wallet accounts. Collect successful receipts for the 13 methods in README; attach screenshots of strategy selection, before/after allocations, a policy rejection, paused redemption and the ledger. Restart the hosted service and verify the same database records remain, including a non-chain persistence sentinel. An unsuccessful gas estimate has no transaction hash; do not list it as a failed mined transaction.
 
-The MetaMask wizard, manifest validation and receipt exporter have also been exercised on public Sepolia; see `SEPOLIA_RESULTS.md`. Public hosting and its persistence/restart acceptance are still pending. The CLI deployment path was rehearsed locally.
+The MetaMask wizard, manifest validation and receipt exporter have also been exercised on public Sepolia; see `SEPOLIA_RESULTS.md`. Public HTTPS/API acceptance and the earlier PostgreSQL restart experiment passed; see `TESTING_REPORT.md` and `evidence/current-hosted-check.json`. The CLI deployment path was rehearsed locally.
 
 
 ## Prepared hosting configuration
 
-See `HOSTING.zh-CN.md` and `../render.yaml` for the current single-instance persistent-disk deployment. The Blueprint describes paid resources and has not been applied. The Docker image now includes public configuration files; runtime data and private environment files remain excluded. `scripts/check-hosted.mjs` checks a deployed URL and can compare historical evidence after restart; the script explicitly does not treat reindexable chain history as proof of disk persistence.
+See `HOSTING.zh-CN.md` and `../render.yaml` for the active single-instance Render Free service with external Supabase PostgreSQL. The current Blueprint declares no Render disk or paid database. Automatic deployment is off; source pushes alone do not redeploy the running service. The Docker image now includes public configuration files; runtime data and private environment files remain excluded. `scripts/check-hosted.mjs` checks a deployed URL and can compare historical evidence after restart; the script explicitly does not treat reindexable chain history as proof of disk persistence.

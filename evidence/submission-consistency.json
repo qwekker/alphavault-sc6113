@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-10-18T09:14:43.007212+00:00",
+  "github": {
+    "full_name": "qwekker/alphavault-sc6113",
+    "private": false,
+    "visibility": "public",
+    "html_url": "https://github.com/qwekker/alphavault-sc6113",
+    "default_branch": "main",
+    "authenticationUsed": false
+  },
+  "reviewedCommit": "32efd3e4ad6f1233baee211fb1add24bcb654b3f",
+  "remoteMainAtReview": "32efd3e4ad6f1233baee211fb1add24bcb654b3f",
+  "manifestMatchesPublicConfig": true,
+  "portfolio": {
+    "blockNumber": 11940103,
+    "navUsd": 748.8,
+    "shareIndex": 99.84,
+    "totalSupply": "750000000000000000000000000",
+    "selected": 1,
+    "target": [
+      2000,
+      6000,
+      2000
+    ],
+    "paused": false,
+    "automationEnabled": true,
+    "cooldown": 120,
+    "valuationStale": true,
+    "limits": {
+      "maxWeight": 6500,
+      "minCash": 1500,
+      "maxVolatility": 3500,
+      "maxSlippage": 100,
+      "maxAge": 3600
+    }
+  },
+  "publicFiles": {
+    "index.html": {
+      "sha256": "89bba9f6dfbace6c55814a82113fae659526614d776f75ef38ba9aa6a9730cf3",
+      "matchesLocal": true
+    },
+    "app.js": {
+      "sha256": "0ae79920b76a24c19d70cac1212638c1704f9e629503d671071a190e6dba9a32",
+      "matchesLocal": true
+    },
+    "styles.css": {
+      "sha256": "75b8432e92e794f535ba1882b362c0db90617e1b8081e47a7d93ccfa1bd40832",
+      "matchesLocal": true
+    }
+  },
+  "changedFromInitialHostedCheckpoint": [],
+  "runtimeVersionCaveat": "Health does not expose a server Git SHA. Public UI bytes match current local source; relevant application source files are unchanged from initial hosted checkpoint 52aca85.",
+  "syntheticBacktestsReproducedExactly": true,
+  "sourceVerification": {
+    "RiskManager": {
+      "url": "https://sepolia.etherscan.io/address/0xe526418735631F067ea62eC84A7c3A383C37AcaE",
+      "status": "not reverified",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    "StrategyEngine": {
+      "url": "https://sepolia.etherscan.io/address/0x548055cd0103CAA87FAD3a4e329f4c5Dfbd14bFe",
+      "status": "not reverified",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    "PortfolioVault": {
+      "url": "https://sepolia.etherscan.io/address/0x4076F1c885eF0f0651005e862D3264D538C941C9",
+      "verifyAndPublishPromptPresent": true,
+      "verifiedSourceClaimed": false
+    }
+  }
+}

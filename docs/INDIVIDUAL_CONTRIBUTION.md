@@ -35,7 +35,7 @@ The Git history below records meaningful saved checkpoints. The initial implemen
 | ac0fff6 | Live hosting and PostgreSQL restart acceptance |
 | e6c7a24 | Report draft, editable presentation and recorded demonstration |
 | e57a928 | English narration and author identity |
-| Current submission revision | Expanded report and diagrams, ten-minute demonstration, manual and this contribution report; see latest git log |
+| 32efd3e and subsequent revision | Fourteen-page report, diagrams, ten-minute demo, manual and contribution report; current revision aligns public repository and deployment status |
 
 ## Verification performed
 
@@ -47,5 +47,5 @@ Three separate wallets were used for the investor/admin/Keeper, manager and risk
 
 The system remains a course prototype: the oracle and exchange are simulated, the administrator can reassign roles, and no security audit or field usability study has been completed. Explorer source verification is separate from receipt/wiring verification and remains pending. If the assessor excludes ERC20 approval from public transaction types, a further core-method demonstration is required. Future engineering work should prioritize independent prices, real-data research with net trading and realistic costs, stronger administration, and external review.
 
-The source archive excludes credentials, runtime databases and node_modules. The repository is private, so the assessor needs access or the supplied source ZIP. Final presentation and operating readiness should be checked before the assessment; the ten-minute recording provides a reproducible fallback when a live service is sleeping.
+The source archive excludes credentials, runtime databases and node_modules. The repository is public, and the source ZIP provides an additional review copy. Final presentation and operating readiness should be checked before the assessment; the ten-minute recording provides a reproducible fallback when a live service is sleeping.
 

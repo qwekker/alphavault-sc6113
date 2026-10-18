@@ -1,6 +1,6 @@
 # Verification record
 
-**Current checkpoint (18 October 2026):** the final full suite passes 64/64; public API acceptance is recorded in `evidence/submission-hosted-check.json`. The 14-page report, five diagrams, 12-slide deck, ten-minute video, user manual and contribution report are supplied. See [TESTING_REPORT.md](TESTING_REPORT.md) and [SUBMISSION_MAP.md](SUBMISSION_MAP.md). Sections below preserve earlier checkpoints; earlier statements about pending artifacts are historical.
+**Current checkpoint (18 October 2026):** the final full suite passes 64/64; public API acceptance is recorded in `evidence/current-hosted-check.json`. The 14-page report, five diagrams, 12-slide deck, ten-minute video, user manual and contribution report are supplied. See [TESTING_REPORT.md](TESTING_REPORT.md) and [SUBMISSION_MAP.md](SUBMISSION_MAP.md). Sections below preserve earlier checkpoints; earlier statements about pending artifacts are historical.
 
 Date: 2026-10-17. Node.js 22.23.2; Solidity 0.8.30; optimizer 200 runs; Shanghai EVM; Ganache chain ID 31337.
 
@@ -142,3 +142,7 @@ A separate local chain on port 3110 / RPC 18550 was used for actual browser reco
 ## English narration and author revision (2026-10-18)
 
 The report and presentation now identify Du zhuotong. The student ID field was removed. The previous silent Chinese-caption video was replaced with English captions and synthetic English narration (en-US-GuyNeural), using the same recorded actions. Sixteen audio slots are padded to exact sample counts to prevent cumulative timing drift. No application code or on-chain state changed. Updated artifacts, subtitle file and checks are recorded in `evidence/video-recording.json`.
+
+## Final consistency review 18 October 2026
+
+The public GitHub repository was checked without authentication. The latest full suite again passed 64/64 and public API acceptance passed. Frontend bytes match the repository, and deterministic strategy results reproduce the saved fixture. Stale private-repository, paid-disk and incomplete-submission statements were corrected in current documents, slides and the video closing frame. Earlier sections remain historical checkpoints. See `SUBMISSION_REVIEW.zh-CN.md` and `evidence/submission-consistency.json`.

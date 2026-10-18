@@ -4,7 +4,7 @@ Author: Du zhuotong. Verification checkpoint: 18 October 2026.
 
 ## Latest automated result
 
-The complete suite passed **64 tests, 0 failed, 0 skipped, 0 cancelled** in 22.73 seconds. Source: [submission-tests.tap](../evidence/submission-tests.tap). Environment: Node.js 22.23.2, Solidity 0.8.30 with optimizer 200 and Shanghai target, isolated local EVM. This total already includes the current test files; older partial runs must not be added to it.
+The complete suite passed **64 tests, 0 failed, 0 skipped, 0 cancelled** in 22.68 seconds. Source: [current-tests.tap](../evidence/current-tests.tap). Environment: Node.js 22.23.2, Solidity 0.8.30 with optimizer 200 and Shanghai target, isolated local EVM. This total already includes the current test files; older partial runs must not be added to it.
 
 ```sh
 npm ci
@@ -28,10 +28,10 @@ PGlite exercises PostgreSQL SQL locally. It does not by itself test Supabase cre
 Run:
 
 ```sh
-EXPECTED_DATABASE=postgres node scripts/check-hosted.mjs https://alphavault-sepolia.onrender.com evidence/submission-hosted-check.json
+EXPECTED_DATABASE=postgres node scripts/check-hosted.mjs https://alphavault-sepolia.onrender.com evidence/current-hosted-check.json
 ```
 
-The saved check at **2026-10-18 08:46:40 UTC** passed: health ok, PostgreSQL, wallet mode, Sepolia chain 11155111, the expected PortfolioVault, 10 distinct verified types across 12 receipt hashes. Observed block: 11939971; NAV: 748.80 mUSD; paused: false. These are historical observations, not guaranteed current prices. [Latest public check](../evidence/submission-hosted-check.json).
+The saved check at **2026-10-18 09:12:06 UTC** passed: health ok, PostgreSQL, wallet mode, Sepolia chain 11155111, the expected PortfolioVault, 10 distinct verified types across 12 receipt hashes. Observed block: 11940098; NAV: 748.80 mUSD; paused: false. These are historical observations, not guaranteed current prices. [Latest public check](../evidence/current-hosted-check.json).
 
 The latest read-only run did not restart the service, so its `databaseRestartVerified: false` correctly means that this run alone has no restart proof. The earlier [hosted acceptance](../evidence/hosted-acceptance.json) and identical [before](../evidence/hosted-jobs-before-restart.json)/[after](../evidence/hosted-jobs-after-restart.json) jobs sentinel record establish persistence across the observed Render restart. This non-chain row cannot be reconstructed by replaying blockchain events.
 

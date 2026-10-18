@@ -23,7 +23,7 @@ The implementation is deployed on Sepolia and the dashboard is publicly accessib
 | Public deployment and materials | Sepolia contracts plus Render HTTPS application. This 14-page report, slides, ten-minute video, user manual and individual contribution report accompany the source archive. |
 
 Public application: https://alphavault-sepolia.onrender.com
-Repository: https://github.com/qwekker/alphavault-sc6113 (private at this checkpoint). This report follows the six submission categories supplied for this project; the original course handout was not provided. [1, 5]
+Repository: https://github.com/qwekker/alphavault-sc6113 (public repository). This report follows the six submission categories supplied for this project; the original course handout was not provided. [1, 5]
 
 
 ---
@@ -41,7 +41,7 @@ This is a design scenario, not a claim that a particular organization was interv
 | Strategy manager | Change allocation rules and parameters | Return seeking may conflict with position or volatility caps |
 | Risk officer | Enforce exposure policy and respond to incidents | Pause protects trading but may frustrate the manager; manual prices are trusted |
 | Keeper / operator | Reliable eligible execution and observable jobs | Availability and gas costs; cannot change policy to force execution |
-| Admin and reviewer | Manage access; reproduce results and inspect history | Admin remains powerful; private repository access must be arranged |
+| Admin and reviewer | Manage access; reproduce results and inspect history | Admin remains powerful; reviewers can inspect the public repository |
 
 Acceptance focuses on observable behavior: unauthorized actions are rejected; valid allocation changes move actual test tokens; blocked trading does not remove in-kind exit; and records survive restart. The broader benefit of lower operating effort is a hypothesis for later user testing. A centralized service with standard approval controls is a valid alternative when participants do not need public verification or cannot manage wallets.
 
@@ -196,7 +196,7 @@ Cumulative simulated transaction costs are 674.45 units for Equal Weight, 430.12
 
 ## Testing and Sepolia results
 
-The pre-deployment full suite passed 64 tests. After the Supabase CA change, the seven PostgreSQL tests passed again. Contract tests cover separation of roles, strategy weights, bounded trades, cooldown/deadline checks, partial redemption, pause/staleness behavior, and donation rounding. API tests cover unsigned calldata, deployment binding, persistence, reorg handling and receipt validation. PostgreSQL unit tests execute SQL with PGlite; separate cloud acceptance confirms the real pg driver and TLS connection. A complete rerun on 18 October 2026 passed all 64 tests with zero failures; see evidence/submission-tests.tap. These are verified checkpoints rather than a claim of exhaustive coverage. [7, 8]
+The current full suite contains 64 tests. After the Supabase CA change, the seven PostgreSQL tests passed again. Contract tests cover separation of roles, strategy weights, bounded trades, cooldown/deadline checks, partial redemption, pause/staleness behavior, and donation rounding. API tests cover unsigned calldata, deployment binding, persistence, reorg handling and receipt validation. PostgreSQL unit tests execute SQL with PGlite; separate cloud acceptance confirms the real pg driver and TLS connection. A complete rerun on 18 October 2026 passed all 64 tests with zero failures; see evidence/current-tests.tap. These are verified checkpoints rather than a claim of exhaustive coverage. [7, 8]
 
 ## Public business workflow
 
@@ -233,7 +233,7 @@ The evaluation separates implementation effects from real-world adoption. The fu
 | Execution cost at public rebalance | 1.60 mUSD reduction from 1,000 = 0.16%; 563,260 gas | Mock fee result and separate network cost, not live DEX slippage |
 | Persistence before/after one restart | The same non-chain jobs sentinel retained | One observed restart retained data; does not establish an uptime SLA |
 
-The six rejection calls correspond to four investor attempts, one manager attempt and one revoked-Keeper attempt in contracts.test.mjs. The latest complete test run is recorded in submission-tests.tap. The drawdown and volatility differences are calculated from full-precision backtests.json values, with Equal Weight as an explicit baseline. These results support the narrow claim that the prototype can constrain tested actions and that its conservative rule reduced variability on this fixture. They do not establish alpha, general market robustness or reduced staffing cost. [4, 6, 7, 8]
+The six rejection calls correspond to four investor attempts, one manager attempt and one revoked-Keeper attempt in contracts.test.mjs. The latest complete test run is recorded in current-tests.tap. The drawdown and volatility differences are calculated from full-precision backtests.json values, with Equal Weight as an explicit baseline. These results support the narrow claim that the prototype can constrain tested actions and that its conservative rule reduced variability on this fixture. They do not establish alpha, general market robustness or reduced staffing cost. [4, 6, 7, 8]
 
 A future impact study should preregister a representative task set, compare completion time and error rate against an approval-based spreadsheet workflow, and test real out-of-sample market periods with gas and liquidity costs. Until such data exists, usability and organizational savings remain unmeasured.
 
@@ -243,7 +243,7 @@ A future impact study should preregister a representative task set, compare comp
 
 ## REST service and durable hosting
 
-The hosted system uses a Node.js 22 Docker container on Render Free and external Supabase PostgreSQL in Singapore. The dashboard and REST service share an origin. The deployed code checkpoint is 52aca85. Its public health endpoint reports wallet mode, chain ID 11155111 and PostgreSQL, and checks database and RPC connectivity. No signing key is stored in the application. The DATABASE_URL remains a Render secret. [3, 8]
+The hosted system uses a Node.js 22 Docker container on Render Free and external Supabase PostgreSQL in Singapore. The dashboard and REST service share an origin. The initial hosted code checkpoint was 52aca85; application sources remain unchanged in the reviewed main branch. Its public health endpoint reports wallet mode, chain ID 11155111 and PostgreSQL, and checks database and RPC connectivity. No signing key is stored in the application. The DATABASE_URL remains a Render secret. [3, 8]
 
 | API group | Selected routes | Purpose |
 | --- | --- | --- |
@@ -260,7 +260,7 @@ The database retains the latest 2,000 snapshot blocks per deployment for portfol
 
 ## Hosted acceptance and operating limits
 
-Both saved public acceptance runs passed. First startup imported 12 verified receipt hashes. Following a service restart, startup imported zero and skipped the same 12. To distinguish persistence from reconstruction using chain data, the acceptance procedure inserted a non-chain jobs sentinel through the SQL editor. Its row and message remained identical after restart. The combined evidence therefore supports hosted database persistence across that restart. [8]
+The initial before/after restart acceptance runs passed. First startup imported 12 verified receipt hashes. Following a service restart, startup imported zero and skipped the same 12. To distinguish persistence from reconstruction using chain data, the acceptance procedure inserted a non-chain jobs sentinel through the SQL editor. Its row and message remained identical after restart. The combined evidence therefore supports hosted database persistence across that restart. [8]
 
 A new public API acceptance run on 18 October 2026 again passed wallet-mode, PostgreSQL, deployment binding and receipt checks; it did not repeat the earlier restart experiment. The browser check verified a public dashboard with Momentum, NAV 748.80 and stale-price disclosure. It did not send a new wallet transaction from the public origin. Free compute sleeps when idle and an inactive database may pause. Price reports expire after one hour. Continuous availability, current tradability and unattended cloud rebalancing are not established by the recorded deployment checkpoint. [8]
 
@@ -300,9 +300,9 @@ C risk officer: 0xF540005bC24b6E39A6abD22923BC9a7550C94252
 
 [6] server/quant.mjs and evidence/backtests.json. Deterministic synthetic experiment, 160 daily intervals after warm-up.
 
-[7] evidence/submission-tests.tap (latest 64/64); free-hosting-tests.tap and postgres-tests.tap (earlier checkpoints); test/*.test.mjs.
+[7] evidence/current-tests.tap (latest 64/64); free-hosting-tests.tap and postgres-tests.tap (earlier checkpoints); test/*.test.mjs.
 
-[8] evidence/submission-hosted-check.json (latest API); hosted-acceptance.json and hosted-jobs-before-restart.json / hosted-jobs-after-restart.json (restart proof).
+[8] evidence/current-hosted-check.json (latest API); hosted-acceptance.json and hosted-jobs-before-restart.json / hosted-jobs-after-restart.json (restart proof).
 
 [9] scripts/compile.mjs and public deployment manifest in config/. Compiler configuration and deployed addresses.
 
@@ -312,4 +312,4 @@ C risk officer: 0xF540005bC24b6E39A6abD22923BC9a7550C94252
 
 ## Submission and operational notes
 
-The report has 14 pages and the demonstration runs for ten minutes. Confirm marker access to the private repository or submit the source archive. Explorer source verification remains pending if separately required. Before a live trading demonstration, the risk officer must refresh both mock market reports. If approval does not count toward transaction types, record one additional core method. The accompanying video separates local actions from public historical evidence. No audit or real-market return claim is included.
+The report has 14 pages and the demonstration runs for ten minutes. The repository is public; the source archive is also included. Explorer source verification remains pending if separately required. Before a live trading demonstration, the risk officer must refresh both mock market reports. If approval does not count toward transaction types, record one additional core method. The accompanying video separates local actions from public historical evidence. No audit or real-market return claim is included.

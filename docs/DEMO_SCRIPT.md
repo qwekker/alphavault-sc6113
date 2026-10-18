@@ -1,6 +1,6 @@
 # AlphaVault ten-minute demonstration script
 
-Author: Du zhuotong. English narration and subtitles. The first video page has no date.
+Author: Du Zhuotong. English narration and subtitles. The first video page has no date.
 
 | Time | Slide / segment |
 |---|---|
@@ -23,7 +23,7 @@ The actual application capture runs at its original speed from 03:50 to 07:13. L
 
 ## 00:00 — AlphaVault
 
-Welcome to AlphaVault, a quantitative portfolio management and risk controlled rebalancing application by Du zhuotong. This ten minute demonstration explains the problem, system design, actual application workflow, and measured results. The project uses mock assets on a local chain and the Sepolia test network.
+Welcome to AlphaVault, a quantitative portfolio management and risk controlled rebalancing application by Du Zhuotong. This ten minute demonstration explains the problem, system design, actual application workflow, and measured results. The project uses mock assets on a local chain and the Sepolia test network.
 
 ## 00:20 — Problem and stakeholders
 
@@ -31,7 +31,7 @@ Consider a small token treasury that delegates allocation decisions to a manager
 
 ## 01:05 — System architecture
 
-The dashboard reads portfolio data through a same origin REST API. For public transactions, the API prepares unsigned calldata and MetaMask signs with the user's account. The hosted server does not hold a signing key. PortfolioVault holds tokens, StrategyEngine calculates target weights, and RiskManager enforces policy. MockExchange performs test token swaps. An off chain Keeper can submit an eligible rebalance, but all contract checks still apply. The backend indexes blockchain events into PostgreSQL in the public deployment, or SQLite locally. The database provides observations and evidence; the chain remains authoritative for custody.
+The dashboard reads portfolio data through a same origin Python Flask REST API. For public transactions, the API prepares unsigned calldata and MetaMask signs with the user's account. The hosted server does not hold a signing key. PortfolioVault holds tokens, StrategyEngine calculates target weights, and RiskManager enforces policy. MockExchange performs test token swaps. An off chain Keeper can submit an eligible rebalance, but all contract checks still apply. The backend indexes blockchain events into PostgreSQL in the public deployment, or SQLite locally. The database provides observations and evidence; the chain remains authoritative for custody.
 
 ## 01:45 — Contract interaction
 
@@ -131,7 +131,7 @@ The strategy experiment compares rules on the same deterministic price fixture a
 
 ## 07:58 — Tests and persistent hosting
 
-The latest full automated run passes sixty four tests with zero failures. Tests cover contract permissions, accounting, rollback, price freshness, pause behavior, API preparation and persistence. A new public acceptance check also passes: the service is in wallet mode, uses PostgreSQL, points to the expected Sepolia vault, and exposes ten verified transaction types. The earlier restart experiment provides a stronger storage check than event replay alone. A non chain jobs record remained identical after the Render service restarted. Because that record is not reconstructed from blockchain events, its retention demonstrates persistence across that observed restart. This is a specific acceptance result, not an uptime guarantee. The free service can still sleep.
+The Python Flask suite passes thirty six tests, and the contract and legacy regression suite passes sixty four tests. Both runs have zero failures. Tests cover contract permissions, accounting, rollback, price freshness, pause behavior, API preparation and persistence. A new public acceptance check also passes: the Flask service is in wallet mode, uses PostgreSQL, points to the expected Sepolia vault, and exposes ten verified transaction types. The earlier restart experiment provides a stronger storage check than event replay alone. A non chain jobs record remained identical after the Render service restarted. Because that record is not reconstructed from blockchain events, its retention demonstrates persistence across that observed restart. This is a specific acceptance result, not an uptime guarantee. The free service can still sleep.
 
 ## 08:48 — Limits and contribution record
 

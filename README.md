@@ -199,7 +199,7 @@ Author: **Du Zhuotong**. The [submission map](docs/SUBMISSION_MAP.md) maps all s
 - [12-slide presentation](submission/AlphaVault-Presentation.pptx) with speaker notes.
 - [10-minute English demonstration](submission/AlphaVault-Demo.mp4) and [English subtitles](submission/AlphaVault-Demo.en.srt). It combines actual local-chain operations, public historical evidence and technical explanation.
 - [4-page user manual](submission/AlphaVault-User-Manual.docx) and [2-page individual contribution report](submission/AlphaVault-Individual-Contribution.docx).
-- [Testing report](docs/TESTING_REPORT.md): latest 64/64 test suite, public API acceptance and earlier database restart proof.
+- [Testing report](docs/TESTING_REPORT.md): 36 Flask tests plus 64 contract/legacy regression tests, public API acceptance and earlier database restart proof.
 - [Submission checklist](docs/SUBMISSION_CHECKLIST.zh-CN.md), [full script](docs/DEMO_SCRIPT.md), editable text and SVG/PNG diagrams in docs/.
 
 The repository is public and can be viewed without access approval. The source ZIP excludes credentials and runtime data; GitHub retains contribution history. The recording's opening page has no date and the materials contain no student ID field. Public transaction evidence includes ERC20 approve; explorer source verification remains separately pending.

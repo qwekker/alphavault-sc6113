@@ -1,6 +1,6 @@
 # AlphaVault presentation outline
 
-Author: Du zhuotong. Twelve slides, ten-minute demonstration.
+Author: Du Zhuotong. Twelve slides, ten-minute demonstration.
 
 | Time | Slide / segment |
 |---|---|

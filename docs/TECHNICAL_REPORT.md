@@ -1,14 +1,10 @@
-# AlphaVault technical report
+# DAPP Report - AlphaVault
 
-Decentralized Quantitative Portfolio Management and Risk Controlled Rebalancing Platform
-
-SC6113 DApp project • Submission report • Evidence checkpoint 18 October 2026
-
-Author: Du zhuotong
+Du Zhuotong
 
 ## Abstract
 
-AlphaVault implements a portfolio-management workflow in which investors deposit mock cash, a manager selects an allocation rule, and a separate risk officer sets trading constraints. A Keeper triggers a transaction that calculates and validates target weights before moving tokens. The three core Solidity contracts separate custody, strategy selection and risk policy. An Express REST API indexes chain events into SQLite locally or PostgreSQL in the hosted deployment, while a wallet-connected dashboard displays portfolio state and transaction evidence.
+AlphaVault implements a portfolio-management workflow in which investors deposit mock cash, a manager selects an allocation rule, and a separate risk officer sets trading constraints. A Keeper triggers a transaction that calculates and validates target weights before moving tokens. The three core Solidity contracts separate custody, strategy selection and risk policy. A Python Flask REST API indexes chain events into SQLite locally or PostgreSQL in the hosted deployment, while a wallet-connected dashboard displays portfolio state and transaction evidence.
 
 The implementation is deployed on Sepolia and the dashboard is publicly accessible over HTTPS. Saved evidence records 12 successful public business transactions across 10 method types, including ERC20 approval, and a hosted database sentinel that survived a service restart. The public rebalance and paused redemption demonstrate token movements and an exit path under a trading pause. The strategy study uses deterministic synthetic prices. It evaluates implementation behavior and trading costs, without establishing investment profitability.
 
@@ -16,7 +12,7 @@ The implementation is deployed on Sepolia and the dashboard is publicly accessib
 
 | Criterion supplied for this project | Implementation and evidence |
 | --- | --- |
-| Individual project | Separate AlphaVault source tree. Earlier escrow projects remain unchanged. Du zhuotong is the named project owner. |
+| Individual project | Separate AlphaVault source tree. Earlier escrow projects remain unchanged. Du Zhuotong is the named project owner. |
 | At least three roles and interacting contracts | Investor, manager and risk officer use separate wallets. Keeper/admin roles also exist. Vault calls StrategyEngine and RiskManager. |
 | At least ten transaction types | 13 supported methods demonstrated locally. Sepolia has 10 types including approve, or 9 core methods. |
 | REST API and persistent database | Same-origin JSON endpoints and a persistent event/receipt store. Hosted PostgreSQL restart acceptance passed. |
@@ -196,7 +192,7 @@ Cumulative simulated transaction costs are 674.45 units for Equal Weight, 430.12
 
 ## Testing and Sepolia results
 
-The current full suite contains 64 tests. After the Supabase CA change, the seven PostgreSQL tests passed again. Contract tests cover separation of roles, strategy weights, bounded trades, cooldown/deadline checks, partial redemption, pause/staleness behavior, and donation rounding. API tests cover unsigned calldata, deployment binding, persistence, reorg handling and receipt validation. PostgreSQL unit tests execute SQL with PGlite; separate cloud acceptance confirms the real pg driver and TLS connection. A complete rerun on 18 October 2026 passed all 64 tests with zero failures; see evidence/current-tests.tap. These are verified checkpoints rather than a claim of exhaustive coverage. [7, 8]
+Validation passes 36 Python Flask tests and 64 Solidity/legacy regression tests with zero failures. Flask tests cover all 13 business methods, unsigned calldata, input and origin checks, paused exit, receipt verification, chain rollback, database reopen and bounded telemetry. Quantitative parity tests match the original deterministic results. The legacy suite retains contract accounting, risk and PostgreSQL SQL tests. Public acceptance separately checks the deployed Python driver, PostgreSQL TLS connection and existing records. These suites overlap in scope and do not constitute an exhaustive security audit. [7, 8]
 
 ## Public business workflow
 
@@ -233,7 +229,7 @@ The evaluation separates implementation effects from real-world adoption. The fu
 | Execution cost at public rebalance | 1.60 mUSD reduction from 1,000 = 0.16%; 563,260 gas | Mock fee result and separate network cost, not live DEX slippage |
 | Persistence before/after one restart | The same non-chain jobs sentinel retained | One observed restart retained data; does not establish an uptime SLA |
 
-The six rejection calls correspond to four investor attempts, one manager attempt and one revoked-Keeper attempt in contracts.test.mjs. The latest complete test run is recorded in current-tests.tap. The drawdown and volatility differences are calculated from full-precision backtests.json values, with Equal Weight as an explicit baseline. These results support the narrow claim that the prototype can constrain tested actions and that its conservative rule reduced variability on this fixture. They do not establish alpha, general market robustness or reduced staffing cost. [4, 6, 7, 8]
+The six rejection calls correspond to four investor attempts, one manager attempt and one revoked-Keeper attempt in contracts.test.mjs. The latest regression run is recorded in flask-migration-node-regression.tap. The drawdown and volatility differences are calculated from full-precision backtests.json values, with Equal Weight as an explicit baseline. These results support the narrow claim that the prototype can constrain tested actions and that its conservative rule reduced variability on this fixture. They do not establish alpha, general market robustness or reduced staffing cost. [4, 6, 7, 8]
 
 A future impact study should preregister a representative task set, compare completion time and error rate against an approval-based spreadsheet workflow, and test real out-of-sample market periods with gas and liquidity costs. Until such data exists, usability and organizational savings remain unmeasured.
 
@@ -243,7 +239,7 @@ A future impact study should preregister a representative task set, compare comp
 
 ## REST service and durable hosting
 
-The hosted system uses a Node.js 22 Docker container on Render Free and external Supabase PostgreSQL in Singapore. The dashboard and REST service share an origin. The initial hosted code checkpoint was 52aca85; application sources remain unchanged in the reviewed main branch. Its public health endpoint reports wallet mode, chain ID 11155111 and PostgreSQL, and checks database and RPC connectivity. No signing key is stored in the application. The DATABASE_URL remains a Render secret. [3, 8]
+The hosted system runs Python 3.12, Flask, Web3.py and Gunicorn on Render Free, with external Supabase PostgreSQL in Singapore. Node.js compiles Solidity in a separate build stage; the runtime image uses Python. The dashboard and API share an origin. The Flask source checkpoint is 9439d16. Health reports python-flask, wallet mode, Sepolia and PostgreSQL. The existing contracts and database schema are retained. MetaMask signs public transactions; DATABASE_URL remains a Render secret. [3, 8]
 
 | API group | Selected routes | Purpose |
 | --- | --- | --- |
@@ -292,17 +288,17 @@ C risk officer: 0xF540005bC24b6E39A6abD22923BC9a7550C94252
 
 [2] contracts/PortfolioVault.sol, StrategyEngine.sol, RiskManager.sol and MockExchange.sol. Authoritative implementation.
 
-[3] docs/API.md; server/service.mjs, actions.mjs, store.mjs and postgres-store.mjs. API, indexer and storage behavior.
+[3] docs/API.md; backend/app.py, service.py, actions.py and store.py. Flask API, indexer and SQL persistence.
 
 [4] docs/SEPOLIA_RESULTS.md; evidence/sepolia-business-evidence.json, sepolia-final-portfolio.json and sepolia-verification.json. Public receipts and deployment observations, 17 October 2026.
 
 [5] Public dashboard https://alphavault-sepolia.onrender.com and health route /api/health. Hosted acceptance checkpoint 18 October 2026 Singapore time.
 
-[6] server/quant.mjs and evidence/backtests.json. Deterministic synthetic experiment, 160 daily intervals after warm-up.
+[6] backend/quant.py and evidence/backtests.json. Deterministic synthetic experiment, 160 daily intervals after warm-up.
 
-[7] evidence/current-tests.tap (latest 64/64); free-hosting-tests.tap and postgres-tests.tap (earlier checkpoints); test/*.test.mjs.
+[7] evidence/flask-tests.txt (36/36); flask-migration-node-regression.tap (64/64); test_python/ and test/*.test.mjs.
 
-[8] evidence/current-hosted-check.json (latest API); hosted-acceptance.json and hosted-jobs-before-restart.json / hosted-jobs-after-restart.json (restart proof).
+[8] evidence/flask-hosted-acceptance.json (Flask API and retained data); hosted-acceptance.json and hosted-jobs-before-restart.json / hosted-jobs-after-restart.json (restart proof).
 
 [9] scripts/compile.mjs and public deployment manifest in config/. Compiler configuration and deployed addresses.
 

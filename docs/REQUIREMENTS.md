@@ -26,4 +26,8 @@ No existing source files, deployment files, .env files, wallets or reports were 
 
 ## Final submission coverage
 
-The six supplied submission categories are mapped in [SUBMISSION_MAP.md](SUBMISSION_MAP.md). The final technical report has 14 pages and the video runs for 10 minutes. Author identity is Du zhuotong; no student ID field is included. Public access, the approval-count distinction and optional explorer source verification are documented in the final submission checklist.
+The six supplied submission categories are mapped in [SUBMISSION_MAP.md](SUBMISSION_MAP.md). The final technical report has 14 pages and the video runs for 10 minutes. Author identity is Du Zhuotong; no student ID field is included. Public access, the approval-count distinction and optional explorer source verification are documented in the final submission checklist.
+
+## Explicit source-format requirement
+
+Submit Solidity (.sol), ABI (.abi JSON), Python Flask, HTML, CSS, JavaScript and the Render URL, with a software demonstration or recorded software video. The active implementation uses backend/*.py and app.py; source files are included directly in the final submission under Source-Code.

@@ -1,7 +1,7 @@
 1
 00:00:00,350 --> 00:00:06,827
 Welcome to AlphaVault, a quantitative portfolio management and risk controlled
-rebalancing application by Du zhuotong.
+rebalancing application by Du Zhuotong.
 
 2
 00:00:06,827 --> 00:00:13,305
@@ -49,39 +49,39 @@ Reduced operating effort remains a future research question rather than a measur
 benefit.
 
 12
-00:01:05,350 --> 00:01:10,013
-The dashboard reads portfolio data through a same origin REST API.
+00:01:05,350 --> 00:01:10,744
+The dashboard reads portfolio data through a same origin Python Flask REST API.
 
 13
-00:01:10,013 --> 00:01:16,372
+00:01:10,744 --> 00:01:16,967
 For public transactions, the API prepares unsigned calldata and MetaMask signs with
 the user's account.
 
 14
-00:01:16,372 --> 00:01:20,187
+00:01:16,967 --> 00:01:20,701
 The hosted server does not hold a signing key.
 
 15
-00:01:20,187 --> 00:01:24,850
+00:01:20,701 --> 00:01:25,265
 PortfolioVault holds tokens, StrategyEngine calculates target weights, and
 RiskManager enforces policy.
 
 16
-00:01:24,850 --> 00:01:26,970
+00:01:25,265 --> 00:01:27,339
 MockExchange performs test token swaps.
 
 17
-00:01:26,970 --> 00:01:33,328
+00:01:27,339 --> 00:01:33,563
 An off chain Keeper can submit an eligible rebalance, but all contract checks still
 apply.
 
 18
-00:01:33,328 --> 00:01:39,263
+00:01:33,563 --> 00:01:39,371
 The backend indexes blockchain events into PostgreSQL in the public deployment, or
 SQLite locally.
 
 19
-00:01:39,263 --> 00:01:44,900
+00:01:39,371 --> 00:01:44,900
 The database provides observations and evidence; the chain remains authoritative for
 custody.
 
@@ -407,98 +407,103 @@ The public rebalance cost 1.60 mUSD in exchange fees, with network gas paid
 separately.
 
 96
-00:07:58,350 --> 00:08:03,647
-The latest full automated run passes 64 tests with zero failures.
+00:07:58,350 --> 00:08:05,858
+The Python Flask suite passes thirty six tests, and the contract and legacy
+regression suite passes 64 tests.
 
 97
-00:08:03,647 --> 00:08:09,827
+00:08:05,858 --> 00:08:07,834
+Both runs have zero failures.
+
+98
+00:08:07,834 --> 00:08:13,366
 Tests cover contract permissions, accounting, rollback, price freshness, pause
 behavior, API preparation and persistence.
 
-98
-00:08:09,827 --> 00:08:21,746
-A new public acceptance check also passes: the service is in wallet mode, uses
+99
+00:08:13,366 --> 00:08:24,431
+A new public acceptance check also passes: the Flask service is in wallet mode, uses
 PostgreSQL, points to the expected Sepolia vault, and exposes ten verified
 transaction types.
 
-99
-00:08:21,746 --> 00:08:27,485
+100
+00:08:24,431 --> 00:08:29,568
 The earlier restart experiment provides a stronger storage check than event replay
 alone.
 
-100
-00:08:27,485 --> 00:08:32,782
+101
+00:08:29,568 --> 00:08:34,310
 A non chain jobs record remained identical after the Render service restarted.
 
-101
-00:08:32,782 --> 00:08:40,287
+102
+00:08:34,310 --> 00:08:41,027
 Because that record is not reconstructed from blockchain events, its retention
 demonstrates persistence across that observed restart.
 
-102
-00:08:40,287 --> 00:08:44,701
+103
+00:08:41,027 --> 00:08:44,979
 This is a specific acceptance result, not an uptime guarantee.
 
-103
-00:08:44,701 --> 00:08:47,900
+104
+00:08:44,979 --> 00:08:47,900
 The free service can still sleep.
 
-104
+105
 00:08:48,350 --> 00:08:57,058
 The project delivers contracts, a REST service, persistent storage, a wallet capable
 dashboard, tests, deployment evidence and submission materials.
 
-105
+106
 00:08:57,058 --> 00:09:03,017
 The individual contribution report maps those responsibilities to artifacts and
 meaningful Git checkpoints.
 
-106
+107
 00:09:03,017 --> 00:09:04,850
 Several engineering boundaries remain.
 
-107
+108
 00:09:04,850 --> 00:09:12,183
 Prices are manually reported, assets and the exchange are simulated, and the
 administrator can reassign roles.
 
-108
+109
 00:09:12,183 --> 00:09:16,767
 There is no external security audit or field usability study.
 
-109
+110
 00:09:16,767 --> 00:09:22,267
 Unattended Keeper execution was tested locally; the public rebalance was manually
 signed.
 
-110
+111
 00:09:22,267 --> 00:09:26,392
 Explorer source verification is separate from deployment receipt checks.
 
-111
+112
 00:09:26,392 --> 00:09:32,900
 These limits guide the next development priorities and the interpretation of the
 evidence.
 
-112
+113
 00:09:33,350 --> 00:09:44,080
 The submission contains a 14-page technical report with five diagrams, a user
 manual, an individual contribution report, slides, source code and this 10-minute
 demonstration.
 
-113
+114
 00:09:44,080 --> 00:09:49,033
 The report connects the problem and stakeholder needs to measured prototype results.
 
-114
+115
 00:09:49,033 --> 00:09:52,747
 The repository and public deployment links are shown here.
 
-115
+116
 00:09:52,747 --> 00:09:57,699
 AlphaVault demonstrates constrained, traceable portfolio operations with an explicit
 investor exit path.
 
-116
+117
 00:09:57,699 --> 00:09:59,900
 Thank you for watching.

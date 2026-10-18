@@ -1,6 +1,18 @@
+# Flask migration validation
+
+The current Python Flask suite passes 36 tests, and the Solidity/legacy regression suite passes 64 tests, with zero failures. Commands: python -m pytest -v; npm test. These suites overlap and should not be interpreted as 100 distinct security guarantees.
+
+Evidence: evidence/flask-tests.txt, evidence/flask-tests-final.txt, evidence/flask-tests.xml and evidence/flask-migration-node-regression.tap. The isolated EVM fixture executes all 13 business methods. It checks blocked inputs and signing requests, paused exit, Keeper cooldown, canonical receipt coverage, rollback, database reopen, atomic SQL failure and bounded telemetry. Python quantitative results match the original deterministic fixture.
+
+Public verification: evidence/flask-hosted-acceptance.json confirms Python Flask, wallet mode, PostgreSQL, the expected Sepolia manifest, portfolio/history/price/strategy APIs, backtest persistence, unsigned calldata, rejected demo signing and the retained non-chain jobs record. Existing public evidence contains 12 successful receipts across 10 types. No new public transaction was sent.
+
+## Earlier implementation checkpoints
+
+The following records document earlier contract and Express checkpoints. The active HTTP backend is now Flask.
+
 # AlphaVault testing report
 
-Author: Du zhuotong. Verification checkpoint: 18 October 2026.
+Author: Du Zhuotong. Verification checkpoint: 18 October 2026.
 
 ## Latest automated result
 

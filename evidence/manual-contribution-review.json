@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-10-18T10:05:22.739110+00:00",
+  "reviewedCommit": "844507e6e559737a242f2ebaf39c3d8bfb2f5066",
+  "scope": "User manual and individual contribution report; code, UI, saved evidence, Git checkpoints and read-only live health/config checks",
+  "tests": {
+    "passed": 64,
+    "failed": 0,
+    "log": "evidence/manual-contribution-review-tests.tap",
+    "initialAttempt": "HTTP tests could not bind sockets before network permission; rerun after permission passed all 64."
+  },
+  "public": {
+    "health": {
+      "ok": true,
+      "database": "postgres",
+      "mode": "wallet",
+      "chainId": 11155111
+    },
+    "manifestMatches": true,
+    "repository": "https://github.com/qwekker/alphavault-sc6113",
+    "visibility": "public",
+    "newChainTransactions": false,
+    "restartRepeated": false
+  },
+  "pageCounts": {
+    "manual": 4,
+    "contribution": 2
+  },
+  "pageNumbersRetained": true,
+  "headersRemoved": true,
+  "sources": {
+    "public/index.html": "89bba9f6dfbace6c55814a82113fae659526614d776f75ef38ba9aa6a9730cf3",
+    "public/app.js": "0ae79920b76a24c19d70cac1212638c1704f9e629503d671071a190e6dba9a32",
+    "scripts/demo.mjs": "f941b5d75a1a9a257e75ec340cb5e26505770db37a02fc3cdefd879d224d9a61",
+    "scripts/chain.mjs": "b80bad6515529b73de14dd4c09daff6d8ea3b7de4d4ab0277b1ced24a13a1cbd",
+    "scripts/keeper.mjs": "87a3e1eb7ad352e8b1b4186e0beb3df02c68617f11414763722c0293a9bf5287",
+    "server/actions.mjs": "eb46af13aab71df3adb344c861b0b82a393411969e2d150970ce72fe603927c2",
+    "server/service.mjs": "408e4205879f25c84bd52ab7cccd583fef0feda634784a37946f82b8b792c234",
+    "server/receipts.mjs": "a6e5575b63e4c997f5726c3fb320654d6835241fe74edeb91786163ed4399705",
+    "contracts/PortfolioVault.sol": "cc09f2a5fcd1050c9e4be437c4255dd14cc1d11c3b3f03ac2e8f61b420b491a7",
+    "contracts/StrategyEngine.sol": "ac1c1bed42bc306450bdc42bcec432c36868d4042fb942e16d4e7e25ebb6635c",
+    "contracts/RiskManager.sol": "db174f87fa13bd639a5cdaa886ddfe87ca4707cf84ca54f0bababf15438e4f6c",
+    "config/sepolia-deployment.json": "d15c3c38532dba1e1191058540204b21fad1352114d866842936967871f29be1",
+    "evidence/current-tests.tap": "0ca8d4d82422a90ae20dacff6360a21cc9dc2fe39ca5c07443a0797c397087ac",
+    "evidence/current-hosted-check.json": "7d3f94d29d42a85b826d0382e4173da64b0c9aaa08298776b2fc2e87d894f4f0",
+    "evidence/hosted-acceptance.json": "e32682fd542c53c0681f6e0a52cae34cc276d08b2018e312ab356e475b12bc73"
+  },
+  "changes": [
+    "Distinguish local automatic signing from wallet confirmations and explain reconnection.",
+    "Clarify open investor access, wallet cash lookup and approval amount.",
+    "Separate paused-deposit recovery from stale-price recovery.",
+    "Document non-autofilling market form and full fixture inputs for both assets.",
+    "Clarify Keeper drift checks, local testing boundary and synthetic research operation.",
+    "Specify latest-50 event export and date historical method coverage.",
+    "Correct evidence paths, Git checkpoints and separate source archive from 12-file compact submission."
+  ],
+  "documents": {
+    "AlphaVault-User-Manual.docx": "2b6e9e5c6608a2ce57016503c4d1ff0bb0c862fecc1fcf27ad7eb57f0a729d0a",
+    "AlphaVault-Individual-Contribution.docx": "e0acee90dab22a55fae1681e1b84946cfadf1f723556dde7a8b52e2e00a2838c"
+  },
+  "authorCapitalizationUpdated": true,
+  "historicalCheckpoint": true,
+  "supersededByFlaskReview": {
+    "sourceCommit": "9439d162892da040c938f9050a5b6163ccd3d538",
+    "tests": "evidence/flask-tests-final.txt",
+    "publicAcceptance": "evidence/flask-hosted-acceptance.json",
+    "documents": {
+      "AlphaVault-User-Manual.docx": "7722031754f9643693bb08ac8f5e4f27ed50a6d162da80ca0519ea701175b2b0",
+      "AlphaVault-Individual-Contribution.docx": "d1493a58e7e81c9cfb257ea72fa4a1ed4a9cc420a8227dfc86d1e74ba0b366bd"
+    },
+    "changes": [
+      "Flask local installation and public runtime documented",
+      "Direct Source-Code submission included",
+      "36 Flask and 64 regression tests distinguished",
+      "Pages and author formatting preserved"
+    ]
+  }
+}

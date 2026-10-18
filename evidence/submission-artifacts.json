@@ -1,5 +1,5 @@
 {
-  "author": "Du zhuotong",
+  "author": "Du Zhuotong",
   "checkedOn": "2026-10-18",
   "reportPages": 14,
   "manualPages": 4,
@@ -17,11 +17,9 @@
   "audioLanguage": "English",
   "subtitleLanguage": "English",
   "videoFullDecodeErrors": 0,
-  "videoIntegratedLoudnessLUFS": -16.4,
-  "videoTruePeakDBFS": -1.3,
-  "subtitleCueCount": 116,
+  "subtitleCueCount": 117,
   "openingTitleDateRemoved": true,
-  "documentVisualReview": "All pages previously reviewed. This revision re-rendered report (14 pages) and contribution (2 pages). Changed report pages 1, 2, 11, 12, 13, 14 and contribution page 2 inspected. Other page images match the approved prior renders; manual is unchanged.",
+  "documentVisualReview": "All 22 pages rendered and visually reviewed; final changed report pages 12 and 14 and contribution page 2 rechecked. Page counts remain 14/4/2/2.",
   "presentationValidation": {
     "packageIntegrity": "pass",
     "layoutFindings": 0,
@@ -36,47 +34,81 @@
     ],
     "firstPartyImportPassed": true,
     "renderedSlidesReviewed": 12,
-    "revisionReview": "Opening slide removes Ten-minute project demonstration. Slides 2\u201312 render identically to the prior approved deck. Revised opening inspected."
+    "revisionReview": "All 12 slides reviewed; architecture, test results and source deliverables updated. Native chart and four native tables validated."
   },
   "tests": {
-    "passed": 64,
-    "failed": 0,
-    "skipped": 0,
-    "evidence": "evidence/current-tests.tap"
+    "flask": {
+      "passed": 36,
+      "failed": 0,
+      "evidence": "evidence/flask-tests-final.txt"
+    },
+    "contractAndLegacyRegression": {
+      "passed": 64,
+      "failed": 0,
+      "evidence": "evidence/flask-migration-node-regression.tap"
+    },
+    "overlap": "Suites have overlapping scenarios; not 100 distinct requirements."
   },
-  "publicAcceptance": "evidence/current-hosted-check.json",
+  "publicAcceptance": "evidence/flask-hosted-acceptance.json",
   "restartEvidence": [
     "evidence/hosted-acceptance.json",
     "evidence/hosted-jobs-before-restart.json",
     "evidence/hosted-jobs-after-restart.json"
   ],
   "files": {
-    "submission/AlphaVault-Demo.en.srt": {
-      "bytes": 12548,
-      "sha256": "f6aac0237040ef37ebc3c0ad0133b69f4a40fc3fb3a49162f27c0e44856fd680"
-    },
-    "submission/AlphaVault-Demo.mp4": {
-      "bytes": 14855583,
-      "sha256": "a32f10e6c8fcb0a834d976923a3f9349e09ab6ab6cda7d7cee2ad42476a32ed6"
-    },
-    "submission/AlphaVault-Individual-Contribution.docx": {
-      "bytes": 41215,
-      "sha256": "f8305bf0719af4643021521b848e5104bcf1f385fe44e0fb2524dc15cbd300e3"
+    "submission/AlphaVault-Deployment-and-Testing.docx": {
+      "bytes": 40638,
+      "sha256": "feebc152df1e49fd2d98cbbcf1de175cc9e08cb962432a47edb7a432392189ca"
     },
     "submission/AlphaVault-Presentation.pptx": {
-      "bytes": 433435,
-      "sha256": "7e3b76b05d5704b15e6fcf21fdd649952cfd563b58821c897285bee9f15190ae"
+      "bytes": 688713,
+      "sha256": "0960f642bf8011b8919f7225c22678e3dd20b87e720e760dada6b03ce6ab0df5"
     },
-    "submission/AlphaVault-Technical-Report.docx": {
-      "bytes": 422860,
-      "sha256": "6eb16cd22b3a2c5a6a04f22b412edbf25a9adc2a86cc11b1011456252d73a112"
+    "submission/AlphaVault-Demo.mp4": {
+      "bytes": 14532825,
+      "sha256": "5af23b05924ab806f2da315da451b92524d82643dfaea2be082eb4176b8e31cb"
+    },
+    "submission/AlphaVault-Individual-Contribution.docx": {
+      "bytes": 40687,
+      "sha256": "d1493a58e7e81c9cfb257ea72fa4a1ed4a9cc420a8227dfc86d1e74ba0b366bd"
+    },
+    "submission/AlphaVault-Demo.en.srt": {
+      "bytes": 12676,
+      "sha256": "8ee4a5a22225a42506a961d310c53b8df213ce7e69d99c27f3b2b1d3cc3ba773"
     },
     "submission/AlphaVault-User-Manual.docx": {
-      "bytes": 42790,
-      "sha256": "c920f359bb7df73b4d01c8150b4e42fb6ffe0419488e230fd5f259b8edd5df25"
+      "bytes": 42795,
+      "sha256": "7722031754f9643693bb08ac8f5e4f27ed50a6d162da80ca0519ea701175b2b0"
+    },
+    "submission/AlphaVault-Technical-Report.docx": {
+      "bytes": 422135,
+      "sha256": "bddda610e743e2dc482fb76be6b32cb56f91262e25944675051954c1ba4d87f3"
     }
   },
   "consistencyReview": "evidence/submission-consistency.json",
   "githubVisibility": "public",
-  "openingDurationLabelRemoved": true
+  "openingDurationLabelRemoved": true,
+  "headerFooterCleanup": {
+    "pageNumbersPreserved": true,
+    "documentPageCounts": [
+      14,
+      4,
+      2,
+      2
+    ],
+    "reportTitle": "DAPP Report - AlphaVault"
+  },
+  "manualContributionReview": "evidence/manual-contribution-review.json",
+  "authorCapitalizationUpdated": true,
+  "supportDocumentFormatting": {
+    "authorLine": "Du Zhuotong",
+    "titleColor": "000000",
+    "titleCase": true,
+    "pageCounts": [
+      4,
+      2
+    ],
+    "pageNumbersPreserved": true
+  },
+  "deploymentReportPages": 2
 }

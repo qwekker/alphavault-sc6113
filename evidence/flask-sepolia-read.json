@@ -1,0 +1,97 @@
+{
+  "backend": "python-flask",
+  "chainId": 11155111,
+  "seconds": 32.73,
+  "state": {
+    "scope": "11155111:0x4076f1c885ef0f0651005e862d3264d538c941c9",
+    "blockNumber": 11940596,
+    "blockHash": "0x9630edb909fa19b4eb845a99546c83323bf413b6d3b0c158b52d70ceabb1f91c",
+    "timestamp": 1792320720,
+    "nav": "748800000000000003000",
+    "navUsd": 748.8,
+    "totalSupply": "750000000000000000000000000",
+    "shareIndex": 99.84,
+    "assets": [
+      {
+        "address": "0xe1C4F513b40B8A188aAD8aA173beF339f37068Ff",
+        "symbol": "mUSD",
+        "decimals": 18,
+        "price": "1000000000000000000",
+        "priceUsd": 1.0,
+        "volatility": 0,
+        "momentum": 0,
+        "updatedAt": 1792244700,
+        "enabled": true,
+        "stale": false,
+        "balance": "150000000000000000000",
+        "balanceFormatted": 150.0,
+        "valueUsd": 150.0,
+        "weightBps": 2003
+      },
+      {
+        "address": "0x3FbC8F294aCf246507032175A2689A7691300944",
+        "symbol": "mETH",
+        "decimals": 18,
+        "price": "3000000000000000000000",
+        "priceUsd": 3000.0,
+        "volatility": 4000,
+        "momentum": 800,
+        "updatedAt": 1792249824,
+        "enabled": true,
+        "stale": true,
+        "balance": "149700000000000001",
+        "balanceFormatted": 0.1497,
+        "valueUsd": 449.1,
+        "weightBps": 5997
+      },
+      {
+        "address": "0xc71d024c775EC1c62A05DDF0E38308C986B26972",
+        "symbol": "mBTC",
+        "decimals": 18,
+        "price": "60000000000000000000000",
+        "priceUsd": 60000.0,
+        "volatility": 3000,
+        "momentum": 400,
+        "updatedAt": 1792249980,
+        "enabled": true,
+        "stale": true,
+        "balance": "2495000000000000",
+        "balanceFormatted": 0.002495,
+        "valueUsd": 149.7,
+        "weightBps": 1999
+      }
+    ],
+    "weights": [
+      2003,
+      5997,
+      1999
+    ],
+    "target": [
+      2000,
+      6000,
+      2000
+    ],
+    "validationError": "stale price', '0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000b7374616c65207072696365000000000000000000000000000000000000000000')",
+    "selected": 1,
+    "paused": false,
+    "automationEnabled": true,
+    "lastRebalance": 1792250280,
+    "cooldown": 120,
+    "cashBuffer": 2000,
+    "targetVolatility": 1200,
+    "strategyEnabled": [
+      true,
+      true,
+      true
+    ],
+    "limits": {
+      "maxWeight": 6500,
+      "minCash": 1500,
+      "maxVolatility": 3500,
+      "maxSlippage": 100,
+      "maxAge": 3600
+    },
+    "valuationStale": true
+  },
+  "historyCount": 19
+}

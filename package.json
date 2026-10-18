@@ -9,15 +9,17 @@
   "scripts": {
     "compile": "node scripts/compile.mjs",
     "test": "node --test --test-concurrency=1 test/*.test.mjs",
-    "dev": "node scripts/demo.mjs",
-    "start": "node server/start.mjs",
+    "dev": "python3 scripts/demo.py",
+    "start": "python3 -m gunicorn --config gunicorn.conf.py 'app:create_app()'",
+    "dev:legacy": "node scripts/demo.mjs",
+    "test:flask": "python3 -m pytest test_python -v",
     "keeper": "node scripts/keeper.mjs",
     "deploy:sepolia": "node --env-file-if-exists=.env.sepolia.local scripts/deploy-sepolia.mjs",
     "evidence": "node scripts/evidence.mjs",
     "check": "npm run compile && npm test",
     "setup": "node scripts/setup-server.mjs",
     "sepolia:check": "node --env-file-if-exists=.env.sepolia.local scripts/sepolia-check.mjs",
-    "sepolia": "node --env-file=.env.sepolia.local server/start.mjs",
+    "sepolia": "python3 app.py",
     "import:deployment": "node --env-file-if-exists=.env.sepolia.local scripts/import-deployment.mjs"
   },
   "dependencies": {

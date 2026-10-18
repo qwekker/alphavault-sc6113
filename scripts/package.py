@@ -5,7 +5,7 @@ import zipfile
 
 root = Path(__file__).resolve().parents[1]
 archive = root.parent / 'AlphaVault-MVP.zip'
-excluded = {'node_modules', 'data', '.git', '__pycache__'}
+excluded = {'node_modules', 'data', '.git', '__pycache__', '.venv', '.pytest_cache'}
 files = []
 for path in root.rglob('*'):
     rel = path.relative_to(root)

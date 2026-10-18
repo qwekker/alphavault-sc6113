@@ -5,3 +5,7 @@ data
 .git
 evidence
 work
+.venv
+__pycache__
+.pytest_cache
+submission

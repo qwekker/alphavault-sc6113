@@ -26,7 +26,7 @@ Example request:
 {"action":"selectStrategy","args":{"id":1}}
 ```
 
-Unsigned response has `to`, `data`, `value`, `chainId`, and required `role`. The browser checks the network and asks the connected wallet to sign. The required role label is informational; Solidity is authoritative. Contract functions with a positive numeric amount reject missing/negative/NaN inputs. See `server/actions.mjs` for the complete action schema.
+Unsigned response has `to`, `data`, `value`, `chainId`, and required `role`. The browser checks the network and asks the connected wallet to sign. The required role label is informational; Solidity is authoritative. Contract functions with a positive numeric amount reject missing/negative/NaN inputs. See `backend/actions.py` for the complete action schema.
 
 Demo requests additionally contain `role` and the `X-AlphaVault-Demo: 1` header. The server requires loopback access and rejects a foreign Origin. Demo signers contain only public local test accounts and are never available in `npm start`. Do not publish `npm run dev` behind a reverse proxy or forward its unlocked RPC port.
 
@@ -35,3 +35,5 @@ Indexer scope is `(chainId, vault address)`. Events are unique by `(scope, txHas
 Snapshots are created on observation, not every historical block. After a first-time index or reorg rebuild, event history can be complete while earlier NAV observations are unavailable. SQLite persists those collected observations across restarts. Stale valuations are clearly flagged and must not be mistaken for currently executable oracle prices.
 
 Evidence export is limited to 300 saved receipts and reports `totalSaved`, `exportLimit` and `truncated`. It validates contract calldata and target deployment, counts only status-1 supported business methods, and excludes reverted/pending/orphaned entries from successful coverage. Receipt observations are not a promise of finality.
+
+The active implementation is Python Flask in `backend/app.py`. `/api/health` and `/api/config` report `backend: python-flask`. The production process is Gunicorn; public writes are wallet-signed.

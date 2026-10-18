@@ -1,6 +1,6 @@
 {
   "recordedOn": "2026-10-18",
-  "format": "Edited real Chrome tab capture with Chinese subtitles; no audio narration",
+  "format": "Edited real Chrome tab capture with English subtitles and synthetic English narration",
   "durationSeconds": 238.7,
   "sourceCaptureSeconds": 248.66,
   "sourceRangeUsed": [
@@ -36,13 +36,28 @@
     "height": 960,
     "codec": "H.264",
     "fps": 20,
-    "audioNarration": false,
-    "visualReview": "Keyframes checked across captured actions, public evidence, introductory and closing slides"
+    "audioNarration": true,
+    "visualReview": "English caption keyframes checked across all major actions; named title and changed report pages inspected; remaining slide/page renders unchanged.",
+    "audioCodec": "AAC",
+    "audioDurationSeconds": 238.7,
+    "sampleAccurateSegmentSlots": true,
+    "subtitleLanguage": "English",
+    "integratedLoudnessLUFS": -16.3,
+    "truePeakDBFS": -1.2
   },
   "files": {
-    "AlphaVault-Report-Draft.docx": "7c7f1c50225a5e9464f290e679641714db300b3dde65d1ad036503848869e008",
-    "AlphaVault-Presentation.pptx": "bc55e12b25659d63bd322d9ac99034ead9b4926407b5c32299c56f66a5fa2d60",
-    "AlphaVault-Demo.mp4": "bde84d58806829859db1e4bce5a3b30ba88f9f093f4b7eb3018741fb1dc2948e",
-    "AlphaVault-Demo.zh-CN.srt": "4ecbb53e34706a166cdc15a5e4725588df7d320951903791152591e035691c63"
+    "AlphaVault-Demo.en.srt": "d9c44cb523040a3e1a58820b24e151db66a1e03e0ad5a7dcf59b6edaed3e6922",
+    "AlphaVault-Demo.mp4": "ead82ce8b3eef9b7e6626b411933e992b2ed43364e53a99a7ee6ec18b4aa89d7",
+    "AlphaVault-Presentation.pptx": "18fd2a8be56a4760e520a52895acaee84886a3002ca4126b5c4f6c9b880c57f3",
+    "AlphaVault-Report-Draft.docx": "788f234eb3ac1fe071f155ad38070ea09cdfbe3506fc93bd5438176004d88c6e"
+  },
+  "author": "Du zhuotong",
+  "narration": {
+    "language": "en-US",
+    "voice": "en-US-GuyNeural",
+    "synthetic": true,
+    "studentVoiceRecording": false,
+    "segments": 16,
+    "sampleRateHz": 48000
   }
 }

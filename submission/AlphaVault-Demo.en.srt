@@ -1,0 +1,184 @@
+1
+00:00:00,350 --> 00:00:08,689
+AlphaVault is a quantitative portfolio management application by Du zhuotong,
+developed for SC6113.
+
+2
+00:00:08,689 --> 00:00:11,900
+This demonstration uses mock assets.
+
+3
+00:00:12,350 --> 00:00:16,790
+Three core contracts handle custody, strategy allocation, and risk checks.
+
+4
+00:00:16,790 --> 00:00:23,900
+The backend provides a REST API and stores indexed blockchain events in a database.
+
+5
+00:00:24,350 --> 00:00:31,539
+We begin on an independent local chain, with chain ID 31337.
+
+6
+00:00:31,539 --> 00:00:34,922
+The vault starts with 10,000 mUSD.
+
+7
+00:00:34,922 --> 00:00:38,900
+These are simulated assets.
+
+8
+00:00:39,350 --> 00:00:45,264
+The investor first approves the token allowance, then deposits 1,000 mUSD.
+
+9
+00:00:45,264 --> 00:00:50,900
+These demo controls sign transactions using public local test accounts.
+
+10
+00:00:51,350 --> 00:00:56,966
+After confirmation, the investor's shares increase from 10,000 to 11,000.
+
+11
+00:00:56,966 --> 00:01:03,900
+These local balances are separate from the historical Sepolia balances shown later.
+
+12
+00:01:04,350 --> 00:01:07,179
+Next, the strategy manager selects Momentum.
+
+13
+00:01:07,179 --> 00:01:14,721
+The target allocation is 20% cash, 60% mETH, and 20% mBTC.
+
+14
+00:01:14,721 --> 00:01:17,900
+Strategy selection is recorded on chain.
+
+15
+00:01:18,350 --> 00:01:21,297
+The Keeper now executes the rebalance.
+
+16
+00:01:21,297 --> 00:01:26,700
+The contracts check permission, price freshness, position limits, and execution
+loss.
+
+17
+00:01:26,700 --> 00:01:34,900
+Successful execution transfers the mock tokens and records the resulting allocation
+on chain.
+
+18
+00:01:35,350 --> 00:01:43,050
+After the local rebalance, net asset value is 10,982.40 mUSD.
+
+19
+00:01:43,050 --> 00:01:47,102
+The share value index is 99.84.
+
+20
+00:01:47,102 --> 00:01:53,900
+The reduction reflects simulated trading fees.
+
+21
+00:01:54,350 --> 00:01:58,670
+The risk officer reviews the limits and pauses the vault.
+
+22
+00:01:58,670 --> 00:02:03,854
+The pause blocks deposits and rebalancing, while preserving the investor's exit
+path.
+
+23
+00:02:03,854 --> 00:02:11,900
+These restrictions are enforced by the smart contracts, independently of the
+dashboard.
+
+24
+00:02:12,350 --> 00:02:18,476
+While the vault is paused, the investor redeems 25% of the shares.
+
+25
+00:02:18,476 --> 00:02:21,540
+Eight thousand two hundred fifty shares remain.
+
+26
+00:02:21,540 --> 00:02:27,900
+Redemption returns a proportional basket of the underlying tokens.
+
+27
+00:02:28,350 --> 00:02:35,315
+The activity ledger records the rebalance, pause, and redemption, with block numbers
+and transaction hashes.
+
+28
+00:02:35,315 --> 00:02:40,900
+The API indexes these events, and the database retains the observations.
+
+29
+00:02:41,350 --> 00:02:43,798
+The research view uses synthetic prices.
+
+30
+00:02:43,798 --> 00:02:48,694
+Momentum returns negative 22.59% after simulated fees.
+
+31
+00:02:48,694 --> 00:02:51,900
+This does not establish real investment performance.
+
+32
+00:02:52,350 --> 00:02:56,896
+We now switch to the publicly hosted application on Sepolia.
+
+33
+00:02:56,896 --> 00:03:00,988
+This section shows existing blockchain state and historical evidence.
+
+34
+00:03:00,988 --> 00:03:05,080
+No new public transaction is sent during this recording.
+
+35
+00:03:05,080 --> 00:03:09,900
+The environment label changes at the top.
+
+36
+00:03:10,350 --> 00:03:16,246
+Public net asset value is approximately 748.80 mUSD.
+
+37
+00:03:16,246 --> 00:03:20,177
+The share value index is 99.84.
+
+38
+00:03:20,177 --> 00:03:27,900
+The stale prices warning means the manual reports need updating before trading.
+
+39
+00:03:28,350 --> 00:03:33,435
+Exporting evidence shows ten successful method types out of thirteen supported
+methods.
+
+40
+00:03:33,435 --> 00:03:38,945
+This includes the ERC20 approval, leaving nine core contract methods.
+
+41
+00:03:38,945 --> 00:03:46,900
+If approval is excluded by the rubric, one additional core method needs
+demonstration.
+
+42
+00:03:47,350 --> 00:03:52,089
+AlphaVault remains a prototype with mock assets and manual prices.
+
+43
+00:03:52,089 --> 00:03:57,302
+Future work includes independent oracles, real market evaluation, and security
+review.
+
+44
+00:03:57,302 --> 00:03:58,600
+Thank you.

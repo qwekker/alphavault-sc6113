@@ -135,3 +135,8 @@ Free compute can sleep, Supabase may pause an inactive project, and manual mock 
 An editable 7-page report and 10-slide presentation were generated from the implementation and saved evidence, with rendered page/slide inspection. The slides include an editable synthetic NAV chart and speaker notes. The report remains a draft with missing student identity and no original rubric reconciliation.
 
 A separate local chain on port 3110 / RPC 18550 was used for actual browser recording: approve, deposit, select Momentum, Keeper rebalance, risk pause and investor redemption while paused. Initial seeded NAV 10,000 became 11,000 after deposit, 10,982.40 after trading fees, and the investor retained 8,250 shares after redemption. Local and public states are distinct. The recording then showed the deployed public dashboard and RPC-revalidated method coverage. No new public transaction was signed. The edited MP4 includes Chinese captions and no audio narration. The later browser-blocked direct health navigation is outside the retained clip and is not claimed as an additional API check. See `evidence/video-recording.json` and `docs/SUBMISSION_CHECKLIST.zh-CN.md`.
+
+
+## English narration and author revision (2026-10-18)
+
+The report and presentation now identify Du zhuotong. The student ID field was removed. The previous silent Chinese-caption video was replaced with English captions and synthetic English narration (en-US-GuyNeural), using the same recorded actions. Sixteen audio slots are padded to exact sample counts to prevent cumulative timing drift. No application code or on-chain state changed. Updated artifacts, subtitle file and checks are recorded in `evidence/video-recording.json`.

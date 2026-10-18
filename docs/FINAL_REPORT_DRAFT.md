@@ -4,7 +4,7 @@ Decentralized Quantitative Portfolio Management and Risk Controlled Rebalancing 
 
 SC6113 DApp project • Working draft • Evidence checkpoint 18 October 2026
 
-Student name: [To be supplied]    Student ID: [To be supplied]
+Author: Du zhuotong
 
 ## Abstract
 
@@ -205,4 +205,4 @@ C risk officer: 0xF540005bC24b6E39A6abD22923BC9a7550C94252
 
 ## Remaining submission work
 
-Fill in the student identity and reconcile this draft with the original rubric, page limit, deadline and demonstration duration. Review the recorded demonstration, confirm marker access to the private repository or submit the source archive, and complete explorer source verification if required. Before a live trading demonstration, the risk officer must refresh both mock market reports. If approval does not count toward transaction types, record one additional core method. The accompanying video separates local actions from public historical evidence. No audit or real-market return claim is included.
+Reconcile this draft with the original rubric, page limit, deadline and demonstration duration. Review the recorded demonstration, confirm marker access to the private repository or submit the source archive, and complete explorer source verification if required. Before a live trading demonstration, the risk officer must refresh both mock market reports. If approval does not count toward transaction types, record one additional core method. The accompanying video separates local actions from public historical evidence. No audit or real-market return claim is included.

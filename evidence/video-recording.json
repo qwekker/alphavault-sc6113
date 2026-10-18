@@ -31,7 +31,8 @@
     "Browser tab capture excludes browser chrome and wallet side panel.",
     "Public view shows historical Sepolia state; no new public signatures or unattended public Keeper claim.",
     "The first video page shows the author without a date.",
-    "Consistency revision corrects the closing frame to public repository. Narration, subtitles, recorded actions and duration are unchanged."
+    "Consistency revision corrects the closing frame to public repository. Narration, subtitles, recorded actions and duration are unchanged.",
+    "Opening slide removes Ten-minute project demonstration at the author\u2019s request. Duration is 600 seconds; decoded narration is identical to the preceding revision."
   ],
   "validation": {
     "fullDecodePassed": true,
@@ -40,7 +41,7 @@
     "codec": "H.264",
     "fps": 20,
     "audioNarration": true,
-    "visualReview": "Previously reviewed all chapters and recorded actions; corrected closing frame inspected. New video passes full decode and remains 600 seconds.",
+    "visualReview": "Revised opening inspected; only the opening slide source changed. Full video decode passed and audio sample hash matches the previous version.",
     "audioCodec": "AAC",
     "audioDurationSeconds": 600,
     "sampleAccurateSegmentSlots": true,
@@ -48,13 +49,14 @@
     "integratedLoudnessLUFS": -16.4,
     "truePeakDBFS": -1.3,
     "openingTitleDateRemoved": true,
-    "subtitleCueCount": 116
+    "subtitleCueCount": 116,
+    "openingDurationLabelRemoved": true
   },
   "files": {
     "AlphaVault-Demo.en.srt": "f6aac0237040ef37ebc3c0ad0133b69f4a40fc3fb3a49162f27c0e44856fd680",
-    "AlphaVault-Demo.mp4": "d920db13a8806ac21ab79f33f9e79092eb86c9d6f645ab6f6322b05b6ca5ffad",
+    "AlphaVault-Demo.mp4": "a32f10e6c8fcb0a834d976923a3f9349e09ab6ab6cda7d7cee2ad42476a32ed6",
     "AlphaVault-Individual-Contribution.docx": "f8305bf0719af4643021521b848e5104bcf1f385fe44e0fb2524dc15cbd300e3",
-    "AlphaVault-Presentation.pptx": "d9042d4bf52478e324bf7392519d692800139aaf8755879dd8deab685495d768",
+    "AlphaVault-Presentation.pptx": "7e3b76b05d5704b15e6fcf21fdd649952cfd563b58821c897285bee9f15190ae",
     "AlphaVault-Technical-Report.docx": "6eb16cd22b3a2c5a6a04f22b412edbf25a9adc2a86cc11b1011456252d73a112",
     "AlphaVault-User-Manual.docx": "c920f359bb7df73b4d01c8150b4e42fb6ffe0419488e230fd5f259b8edd5df25"
   },

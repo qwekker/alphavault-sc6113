@@ -36,7 +36,7 @@
     ],
     "firstPartyImportPassed": true,
     "renderedSlidesReviewed": 12,
-    "revisionReview": "Slide 12 changed and inspected; slides 1\u201311 render identically to the prior approved deck."
+    "revisionReview": "Opening slide removes Ten-minute project demonstration. Slides 2\u201312 render identically to the prior approved deck. Revised opening inspected."
   },
   "tests": {
     "passed": 64,
@@ -56,16 +56,16 @@
       "sha256": "f6aac0237040ef37ebc3c0ad0133b69f4a40fc3fb3a49162f27c0e44856fd680"
     },
     "submission/AlphaVault-Demo.mp4": {
-      "bytes": 14863694,
-      "sha256": "d920db13a8806ac21ab79f33f9e79092eb86c9d6f645ab6f6322b05b6ca5ffad"
+      "bytes": 14855583,
+      "sha256": "a32f10e6c8fcb0a834d976923a3f9349e09ab6ab6cda7d7cee2ad42476a32ed6"
     },
     "submission/AlphaVault-Individual-Contribution.docx": {
       "bytes": 41215,
       "sha256": "f8305bf0719af4643021521b848e5104bcf1f385fe44e0fb2524dc15cbd300e3"
     },
     "submission/AlphaVault-Presentation.pptx": {
-      "bytes": 433456,
-      "sha256": "d9042d4bf52478e324bf7392519d692800139aaf8755879dd8deab685495d768"
+      "bytes": 433435,
+      "sha256": "7e3b76b05d5704b15e6fcf21fdd649952cfd563b58821c897285bee9f15190ae"
     },
     "submission/AlphaVault-Technical-Report.docx": {
       "bytes": 422860,
@@ -77,5 +77,6 @@
     }
   },
   "consistencyReview": "evidence/submission-consistency.json",
-  "githubVisibility": "public"
+  "githubVisibility": "public",
+  "openingDurationLabelRemoved": true
 }

@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-10-18T11:34:58.716130+00:00",
+  "testedSourceCommit": "775b0b4027fffef6f8d0acb2ad03992f3aa08b59",
+  "deployedBackendCheckpoint": "9439d162892da040c938f9050a5b6163ccd3d538",
+  "scope": "Submission package/source parity, ABI reproduction, actual packaged-code tests, documents, slide notes, video decode and read-only public state. No public transactions were sent.",
+  "tests": {
+    "flask": {
+      "passed": 36,
+      "failed": 0,
+      "log": "evidence/submission-package-flask-tests.txt"
+    },
+    "contractAndLegacy": {
+      "passed": 64,
+      "failed": 0,
+      "log": "evidence/submission-package-node-tests.tap"
+    },
+    "environment": "Copied submitted Source-Code into an isolated work directory; reused installed dependency versions. Dependency installation was not repeated."
+  },
+  "abiMatch": {
+    "StrategyEngine.abi": true,
+    "RiskManager.abi": true,
+    "PortfolioVault.abi": true,
+    "IERC20.abi": true,
+    "MockERC20.abi": true,
+    "MockExchange.abi": true
+  },
+  "compiledArtifactsMatch": true,
+  "live": {
+    "checkedAt": "2026-10-18T11:30:59.068133+00:00",
+    "health": {
+      "ok": true,
+      "backend": "python-flask",
+      "database": "postgres",
+      "mode": "wallet",
+      "chainId": 11155111
+    },
+    "manifestMatches": true,
+    "frontendMatches": {
+      "index.html": true,
+      "app.js": true,
+      "styles.css": true
+    },
+    "github": {
+      "private": false,
+      "default_branch": "main",
+      "html_url": "https://github.com/qwekker/alphavault-sc6113"
+    },
+    "repositoryHeadAtCheck": "775b0b4027fffef6f8d0acb2ad03992f3aa08b59",
+    "successfulReceiptCount": 12,
+    "successfulKinds": 10,
+    "coreKindsExcludingApprove": 9,
+    "navUsd": 748.8,
+    "shareIndex": 99.84,
+    "paused": false,
+    "valuationStale": true
+  },
+  "materials": {
+    "documentPageCounts": [
+      14,
+      4,
+      2,
+      2
+    ],
+    "documentsIdenticalToPriorReviewedRenders": true,
+    "slides": 12,
+    "slideVisualsUnchanged": true,
+    "onlyPptxChangedPart": "ppt/notesSlides/notesSlide10.xml",
+    "videoSeconds": 600,
+    "videoFullDecodePassed": true,
+    "videoAndSubtitlesUnchangedInThisAudit": true,
+    "author": "Du Zhuotong"
+  },
+  "corrections": [
+    "API document now attributes backend calldata encoding to Web3.py and browser wallet interaction to ethers.",
+    "Slide 10 speaker-note citations now point to the Flask and regression logs and Flask public acceptance.",
+    "README and superseded outline links work from the submitted Source-Code folder via the public repository; root START-HERE maps local deliverables.",
+    "Sepolia walkthrough now states Flask/Gunicorn, external PostgreSQL and completed public hosting, and activates Python environment.",
+    "Finder .DS_Store metadata excluded from rebuilt ZIP."
+  ],
+  "boundaries": [
+    "Sepolia has 10 successful method types including approve, or 9 core methods.",
+    "The 203-second real application segment was recorded earlier with the same frontend and contracts; Flask explanations were updated separately.",
+    "Public price reports are stale; refresh both markets before new trading actions.",
+    "Explorer source verification remains separate and pending; no cloud signing Keeper is claimed."
+  ]
+}

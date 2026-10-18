@@ -193,12 +193,14 @@ The indexer atomically commits the ledger and cursor, retaining the latest 2,000
 
 ## Final submission materials
 
+In the assessment ZIP, these materials are in sibling folders 01–06 beside Source-Code; see START-HERE.txt at the ZIP root. The links below open the public repository copies.
+
 Author: **Du Zhuotong**. The [submission map](docs/SUBMISSION_MAP.md) maps all six supplied rubric categories to files and report pages.
 
-- [14-page technical report](submission/AlphaVault-Technical-Report.docx), including five diagrams, stakeholder analysis and measurable prototype impact.
-- [12-slide presentation](submission/AlphaVault-Presentation.pptx) with speaker notes.
-- [10-minute English demonstration](submission/AlphaVault-Demo.mp4) and [English subtitles](submission/AlphaVault-Demo.en.srt). It combines actual local-chain operations, public historical evidence and technical explanation.
-- [4-page user manual](submission/AlphaVault-User-Manual.docx) and [2-page individual contribution report](submission/AlphaVault-Individual-Contribution.docx).
+- [14-page technical report](https://github.com/qwekker/alphavault-sc6113/blob/main/submission/AlphaVault-Technical-Report.docx), including five diagrams, stakeholder analysis and measurable prototype impact.
+- [12-slide presentation](https://github.com/qwekker/alphavault-sc6113/blob/main/submission/AlphaVault-Presentation.pptx) with speaker notes.
+- [10-minute English demonstration](https://github.com/qwekker/alphavault-sc6113/blob/main/submission/AlphaVault-Demo.mp4) and [English subtitles](https://github.com/qwekker/alphavault-sc6113/blob/main/submission/AlphaVault-Demo.en.srt). It combines actual local-chain operations, public historical evidence and technical explanation.
+- [4-page user manual](https://github.com/qwekker/alphavault-sc6113/blob/main/submission/AlphaVault-User-Manual.docx) and [2-page individual contribution report](https://github.com/qwekker/alphavault-sc6113/blob/main/submission/AlphaVault-Individual-Contribution.docx).
 - [Testing report](docs/TESTING_REPORT.md): 36 Flask tests plus 64 contract/legacy regression tests, public API acceptance and earlier database restart proof.
 - [Submission checklist](docs/SUBMISSION_CHECKLIST.zh-CN.md), [full script](docs/DEMO_SCRIPT.md), editable text and SVG/PNG diagrams in docs/.
 

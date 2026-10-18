@@ -34,7 +34,7 @@
     ],
     "firstPartyImportPassed": true,
     "renderedSlidesReviewed": 12,
-    "revisionReview": "All 12 slides reviewed; architecture, test results and source deliverables updated. Native chart and four native tables validated."
+    "revisionReview": "All 12 slides reviewed; architecture, test results and source deliverables updated. Native chart and four native tables validated. Slide 10 evidence citations corrected; slide XML, charts, images and all other package parts unchanged."
   },
   "tests": {
     "flask": {
@@ -61,8 +61,8 @@
       "sha256": "feebc152df1e49fd2d98cbbcf1de175cc9e08cb962432a47edb7a432392189ca"
     },
     "submission/AlphaVault-Presentation.pptx": {
-      "bytes": 688713,
-      "sha256": "0960f642bf8011b8919f7225c22678e3dd20b87e720e760dada6b03ce6ab0df5"
+      "bytes": 688838,
+      "sha256": "eabaab36a170b3ff3c733538ebc24c6229736511538c58cee6905fe2a2bf9ca9"
     },
     "submission/AlphaVault-Demo.mp4": {
       "bytes": 14532825,
@@ -85,7 +85,7 @@
       "sha256": "bddda610e743e2dc482fb76be6b32cb56f91262e25944675051954c1ba4d87f3"
     }
   },
-  "consistencyReview": "evidence/submission-consistency.json",
+  "consistencyReview": "evidence/submission-package-consistency.json",
   "githubVisibility": "public",
   "openingDurationLabelRemoved": true,
   "headerFooterCleanup": {

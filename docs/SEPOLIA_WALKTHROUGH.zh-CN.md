@@ -1,6 +1,6 @@
 # AlphaVault：MetaMask 部署步骤
 
-当前状态：七份合约及全部 17 步初始化已在真实 Sepolia 完成并核验；两笔智能账户包装失败交易已恢复并保留回执。本工作区已配置钱包模式服务，运行 `nvm use 22`、`npm run sepolia` 后打开 http://127.0.0.1:3102；以下部署步骤供复现，不必重新部署。部署向导运行在独立端口，不会覆盖现有本地链。
+当前状态：七份合约及全部 17 步初始化已在真实 Sepolia 完成并核验；两笔智能账户包装失败交易已恢复并保留回执。钱包模式现由 Python Flask 提供。先按 README 安装 Python 依赖并激活 `.venv`，配置 `.env.sepolia.local` 后运行 `npm run sepolia`；示例端口为 http://127.0.0.1:3102；以下部署步骤供复现，不必重新部署。部署向导运行在独立端口，不会覆盖现有本地链。
 
 ## 1. 准备三个账户
 
@@ -80,6 +80,7 @@ PORT=3102
 该文件被 Git 和源码打包规则排除。浏览器部署模式无需任何私钥配置。
 
 ```sh
+source .venv/bin/activate
 npm run sepolia:check
 npm run import:deployment -- "/实际下载路径/deployment.json"
 npm run sepolia
@@ -102,13 +103,13 @@ npm run sepolia
 
 CLI/其他浏览器发出的交易不会自动出现在该回执集合中；可通过哈希补录。链上事件账本仍独立索引。
 
-## 7. 接下来部署公网
+## 7. 公网部署与复现
 
-测试网演示通过后，使用 Docker/Node 服务器加持久化磁盘部署同一套钱包模式 API，配置 HTTPS，再补充公网链接和演示截图。此步骤仍需实际托管目标，不能用 localhost 或旧 escrow 地址代替。
+公网部署已完成：https://alphavault-sepolia.onrender.com。Render 使用 Docker 构建，在 Node 阶段编译合约，运行阶段使用 Python Flask/Gunicorn；持久化数据保存在外部 Supabase PostgreSQL。复现步骤见 [部署说明](DEPLOYMENT.md) 和 [免费托管说明](HOSTING.zh-CN.md)。不要把免费实例的临时文件系统当作持久化数据库。
 
 参考：ethers v6 的 [ContractFactory 和交易回执 API](https://docs.ethers.org/v6/single-page/)，MetaMask 的[账户连接说明](https://docs.metamask.io/metamask-connect/evm/guides/manage-user-accounts/)。
 
 
 ## 本轮业务演示已完成
 
-三钱包已完成 12 笔成功业务交易，覆盖 10 种方法（含 ERC20 授权）。已验证调仓、暂停期间赎回和恢复运行；剩余 750 份额、金库净值约 748.80 mUSD。见 `SEPOLIA_RESULTS.md` 与 `../evidence/sepolia-business-evidence.json`。无需重复发送这些交易；下一步是公网网站/API 部署和最终提交材料。
+三钱包已完成 12 笔成功业务交易，覆盖 10 种方法（含 ERC20 授权）。已验证调仓、暂停期间赎回和恢复运行；剩余 750 份额、金库净值约 748.80 mUSD。见 `SEPOLIA_RESULTS.md` 与 `../evidence/sepolia-business-evidence.json`。无需重复发送这些交易；公网 Flask 服务和最终提交材料均已完成。该段的余额是历史观测值，当前状态以 API 为准。

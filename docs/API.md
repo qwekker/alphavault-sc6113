@@ -1,6 +1,6 @@
 # REST API
 
-Base URL is the same origin as the dashboard. JSON responses; on-chain integers are decimal strings to avoid precision loss. UI numbers are display-only. Transaction input encoding uses ethers integer arithmetic.
+Base URL is the same origin as the dashboard. JSON responses; on-chain integers are decimal strings to avoid precision loss. UI numbers are display-only. The Flask backend validates inputs with Python integers and encodes unsigned calldata with Web3.py; ethers in the browser handles wallet interaction.
 
 | Method | Route | Purpose |
 |---|---|---|

@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-8.4.2, pluggy-1.7.0 -- /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/work/flask-venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/work/consistency-audit/packaged-run
+configfile: pytest.ini
+collecting ... collected 36 items
+
+work/consistency-audit/packaged-run/test_python/test_api.py::test_dashboard_chain_state_and_assets PASSED [  2%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_read_inputs[/api/history?limit=201] PASSED [  5%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_read_inputs[/api/history?limit=0] PASSED [  8%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_read_inputs[/api/history?limit=1.5] PASSED [ 11%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_read_inputs[/api/account/nope] PASSED [ 13%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_read_inputs[/api/backtests/3] PASSED [ 16%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_read_inputs[/api/backtests/-1] PASSED [ 19%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[None] PASSED [ 22%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data1] PASSED [ 25%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data2] PASSED [ 27%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data3] PASSED [ 30%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data4] PASSED [ 33%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data5] PASSED [ 36%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data6] PASSED [ 38%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data7] PASSED [ 41%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data8] PASSED [ 44%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_invalid_transaction_inputs[data9] PASSED [ 47%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_json_limits_and_unknown_routes PASSED [ 50%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_public_mode_has_no_signing_endpoint PASSED [ 52%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_demo_request_guards_and_role_enforcement PASSED [ 55%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_all_thirteen_business_methods_and_evidence PASSED [ 58%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_pause_blocks_deposit_but_allows_exit PASSED [ 61%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_keeper_executes_then_obeys_cooldown PASSED [ 63%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_restart_persistence_and_atomic_batch PASSED [ 66%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_reorg_removes_orphan_events_and_receipt_coverage PASSED [ 69%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_receipts_reject_wrong_target_or_spender PASSED [ 72%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_receipt_seed_is_idempotent PASSED [ 75%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_retention_keeps_event_ledger PASSED [ 77%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_public_storage_requires_postgres PASSED [ 80%]
+work/consistency-audit/packaged-run/test_python/test_api.py::test_amount_precision PASSED [ 83%]
+work/consistency-audit/packaged-run/test_python/test_quant.py::test_python_research_matches_frozen_original_results[0] PASSED [ 86%]
+work/consistency-audit/packaged-run/test_python/test_quant.py::test_python_research_matches_frozen_original_results[1] PASSED [ 88%]
+work/consistency-audit/packaged-run/test_python/test_quant.py::test_python_research_matches_frozen_original_results[2] PASSED [ 91%]
+work/consistency-audit/packaged-run/test_python/test_quant.py::test_future_prices_cannot_change_past_results PASSED [ 94%]
+work/consistency-audit/packaged-run/test_python/test_quant.py::test_nonpositive_momentum_and_high_volatility_reduce_risk PASSED [ 97%]
+work/consistency-audit/packaged-run/test_python/test_quant.py::test_research_endpoint_persists PASSED [100%]
+
+=============================== warnings summary ===============================
+work/flask-venv/lib/python3.12/site-packages/websockets/legacy/__init__.py:6
+  /Users/duzhuotong/Documents/Codex/2026-10-17/referenced-chatgpt-conversation-this-is-an/work/flask-venv/lib/python3.12/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+    warnings.warn(  # deprecated in 14.0 - 2024-11-09
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 36 passed, 1 warning in 6.72s =========================
